@@ -89,7 +89,7 @@ namespace Part2
                 }
             }
             else
-                lblError.Text = "Username is taken...";
+                lblError.Text = "Username is taken";
         }
 
         protected void btnBack_Click(object sender, EventArgs e)
