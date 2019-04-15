@@ -58,15 +58,6 @@ namespace Part2 {
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// lblDuplicateID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDuplicateID;
-        
-        /// <summary>
         /// lblName control.
         /// </summary>
         /// <remarks>
@@ -112,31 +103,22 @@ namespace Part2 {
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
-        /// lblPasswordsDontMatch control.
+        /// lblPhoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPasswordsDontMatch;
+        protected global::System.Web.UI.WebControls.Label lblPhoneNumber;
         
         /// <summary>
-        /// lblReenterPassword control.
+        /// txtPhoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReenterPassword;
-        
-        /// <summary>
-        /// txtReenterPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtReenterPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
         
         /// <summary>
         /// lblAddress control.
@@ -290,15 +272,6 @@ namespace Part2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRegister;
-        
-        /// <summary>
-        /// chkbxRememberMe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkbxRememberMe;
         
         /// <summary>
         /// lblError control.

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Utilities;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace Part2
@@ -12,7 +13,7 @@ namespace Part2
     public partial class Registration : System.Web.UI.Page
     {
         DBConnect objDB = new DBConnect();
-        APICalls api = new APICalls();
+        SqlCommand objcommand = new SqlCommand();
         string url = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug46231/TermProjectWS/api/service/Merchants";
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,88 +29,68 @@ namespace Part2
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             Register register = new Register();
-            CustomerInformation newCustomer = new CustomerInformation();
+            objcommand.CommandType = CommandType.StoredProcedure;
+            objcommand.CommandText = "TP_GetLoginID";
 
-            newCustomer.LoginID = txtEmail.Text;
-            newCustomer.Name = txtName.Text;
-            newCustomer.Password = txtPassword.Text;
-            newCustomer.Address = txtAddress.Text;
-            newCustomer.City = txtCity.Text;
-            newCustomer.State = ddlState.Text;
-            newCustomer.ZipCode = txtZipcode.Text;
-            newCustomer.SecurityQuestion1 = ddlSecurityQuestion1.Text;
-            newCustomer.SecurityAnswer1 = txtSecurityAnswer1.Text;
-            newCustomer.SecurityQuestion2 = ddlSecurityQuestion2.Text;
-            newCustomer.SecurityAnswer2 = txtSecurityAnswer2.Text;
+            objcommand.Parameters.AddWithValue("@LoginID", txtEmail.Text);
 
-            if (Validation())
+            DataSet ds = objDB.GetDataSetUsingCmdObj(objcommand);
+
+            if (ds.Tables[0].Rows.Count == 0)
             {
-                //Add new Customer to TP_Customer DB
-                if (register.NewCustomer(newCustomer) == true)
+                CustomerInformation newCustomer = new CustomerInformation();
+                newCustomer.LoginID = txtEmail.Text;
+                newCustomer.Name = txtName.Text;
+                newCustomer.Password = txtPassword.Text;
+                newCustomer.PhoneNumber = txtPhoneNumber.Text;
+                newCustomer.Address = txtAddress.Text;
+                newCustomer.City = txtCity.Text;
+                newCustomer.State = ddlState.Text;
+                newCustomer.ZipCode = txtZipcode.Text;
+                newCustomer.SecurityQuestion1 = ddlSecurityQuestion1.Text;
+                newCustomer.SecurityAnswer1 = txtSecurityAnswer1.Text;
+                newCustomer.SecurityQuestion2 = ddlSecurityQuestion2.Text;
+                newCustomer.SecurityAnswer2 = txtSecurityAnswer2.Text;
+
+                if (newCustomer != null)
                 {
-                    //if "Remember Me" is checked, store username in cookie
-                    if (chkbxRememberMe.Checked)
+                    try
                     {
-                        HttpCookie cookie = new HttpCookie("LoginCookie");
-                        cookie.Values["Email"] = txtEmail.Text;
-                        cookie.Values["LastVisited"] = DateTime.Now.ToString();
-                        cookie.Expires = DateTime.Now.AddYears(1);
-                        Response.Cookies.Add(cookie);
+                        objcommand.CommandType = CommandType.StoredProcedure;
+                        objcommand.CommandText = "TP_NewCustomer";
+
+                        objcommand.Parameters.AddWithValue("@LoginID", newCustomer.LoginID);
+                        objcommand.Parameters.AddWithValue("@Name", newCustomer.Name);
+                        objcommand.Parameters.AddWithValue("@Password", newCustomer.Password);
+                        objcommand.Parameters.AddWithValue("@PhoneNumber", newCustomer.PhoneNumber);
+                        objcommand.Parameters.AddWithValue("@Address", newCustomer.Address);
+                        objcommand.Parameters.AddWithValue("@City", newCustomer.City);
+                        objcommand.Parameters.AddWithValue("@State", newCustomer.State);
+                        objcommand.Parameters.AddWithValue("@Zipcode", newCustomer.ZipCode);
+                        objcommand.Parameters.AddWithValue("@SecurityQuestion1", newCustomer.SecurityQuestion1);
+                        objcommand.Parameters.AddWithValue("@SecurityAnswer1", newCustomer.SecurityAnswer1);
+                        objcommand.Parameters.AddWithValue("@SecurityQuestion2", newCustomer.SecurityQuestion2);
+                        objcommand.Parameters.AddWithValue("SecurityAnswer2", newCustomer.SecurityAnswer2);
+
+                        int result = objDB.DoUpdateUsingCmdObj(objcommand);
+
+                        if (result != -1)
+                        {
+                            lblError.Text = "Successfully created an account";
+                        }
+                        else
+                        {
+                            lblError.Text = "An error occurred. Please try again!";
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        // if not checked, don't store username in cookie
-                        Response.Cookies.Remove("loginID");
+                        throw ex;
                     }
                 }
-                Response.Redirect("Login.aspx");
             }
             else
-            {
-                txtName.Text = "";
-                txtEmail.Text = "";
-                txtPassword.Text = "";
-                txtReenterPassword.Text = "";
-
-                lblError.Text = "Error. Try Again.";
-            }
-        }
-
-        public bool Validation()
-        {
-            bool validInput;
-            bool passwordsEqual = String.Equals(txtPassword.ToString(), txtReenterPassword.ToString());
-
-            if (txtName.Text == "")
-            {
-                lblInvalidName.Text = "Please enter your name.";
-                validInput = false;
-            }
-
-            //check if email is valid
-            if (txtEmail.Text.IndexOf("@") == -1 || txtEmail.Text.IndexOf(".") == -1)
-            {
-                validInput = false;
-            }
-            else
-            {
-                validInput = true;
-            }
-
-            //passwords dont match
-            if (!passwordsEqual)
-            {
-                lblPasswordsDontMatch.Text = "Passwords Must Match";
-                txtPassword.Text = "";
-                txtReenterPassword.Text = "";
-                validInput = false;
-            }
-            else
-            {
-                validInput = true;
-            }
-
-            return validInput;
+                lblError.Text = "Username is taken";
         }
 
         protected void btnBack_Click(object sender, EventArgs e)

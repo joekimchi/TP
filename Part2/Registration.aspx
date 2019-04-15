@@ -24,7 +24,6 @@
                 <br />
                 <asp:TextBox ID="txtEmail" runat="server" AutoCompleteType="Email"></asp:TextBox>
                 <br />
-                <asp:Label ID="lblDuplicateID" runat="server"></asp:Label>
             </div>
             
             <br />
@@ -44,15 +43,15 @@
                 <br />
                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                 <br />
-                <asp:Label ID="lblPasswordsDontMatch" runat="server"></asp:Label>
             </div>
 
             <br />
 
-            <div >
-                <asp:Label ID="lblReenterPassword" runat="server" Text="Re-enter Password"></asp:Label>
+            <div>
+                <asp:Label ID="lblPhoneNumber" runat="server" Text="Phone Number"></asp:Label>
                 <br />
-                <asp:TextBox ID="txtReenterPassword" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:TextBox ID="txtPhoneNumber" runat="server"></asp:TextBox>
+                <br />
             </div>
 
             <br />
@@ -176,7 +175,6 @@
             <div>
                 <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Register Account"/>
                 <br />
-                <asp:CheckBox ID="chkbxRememberMe" runat="server" Text="Remember Me" />
                 <br />
                 <asp:Label ID="lblError" runat="server"></asp:Label>
             </div>
