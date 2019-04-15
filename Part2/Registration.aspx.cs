@@ -38,43 +38,43 @@ namespace Part2
             objcommand.Parameters.AddWithValue("@LoginID", txtEmail.Text);
             DataSet ds = objDB.GetDataSetUsingCmdObj(objcommand);
 
-            //if username is not already taken
+                        //if username is not already taken
             if (ds.Tables[0].Rows.Count == 0)
             {
-                Customer newCustomer = new Customer();
-                newCustomer.LoginID = txtEmail.Text;
-                newCustomer.Name = txtName.Text;
-                newCustomer.Password = txtPassword.Text;
-                newCustomer.PhoneNumber = txtPhoneNumber.Text;
-                newCustomer.Address = txtAddress.Text;
-                newCustomer.City = txtCity.Text;
-                newCustomer.State = ddlState.Text;
-                newCustomer.ZipCode = txtZipcode.Text;
-                newCustomer.SecurityQuestion1 = ddlSecurityQuestion1.Text;
-                newCustomer.SecurityAnswer1 = txtSecurityAnswer1.Text;
-                newCustomer.SecurityQuestion2 = ddlSecurityQuestion2.Text;
-                newCustomer.SecurityAnswer2 = txtSecurityAnswer2.Text;
+                Customer customer = new Customer();
+                customer.Email = txtEmail.Text;
+                customer.Name = txtName.Text;
+                customer.Password = txtPassword.Text;
+                customer.Phone = txtPhoneNumber.Text;
+                customer.Address = txtAddress.Text;
+                customer.City = txtCity.Text;
+                customer.State = ddlState.Text;
+                customer.ZipCode = Convert.ToInt32(txtZipcode.Text);
+                customer.SecurityQuestion1 = ddlSecurityQuestion1.Text;
+                customer.SecurityAnswer1 = txtSecurityAnswer1.Text;
+                customer.SecurityQuestion2 = ddlSecurityQuestion2.Text;
+                customer.SecurityAnswer2 = txtSecurityAnswer2.Text;
 
-                if (newCustomer != null)
+                if (customer != null)
                 {
                     try
                     {
                         objcommand.Parameters.Clear();
                         objcommand.CommandType = CommandType.StoredProcedure;
-                        objcommand.CommandText = "TP_NewCustomer";
+                        objcommand.CommandText = "TP_customer";
 
-                        objcommand.Parameters.AddWithValue("@LoginID", newCustomer.LoginID);
-                        objcommand.Parameters.AddWithValue("@Name", newCustomer.Name);
-                        objcommand.Parameters.AddWithValue("@Password", newCustomer.Password);
-                        objcommand.Parameters.AddWithValue("@PhoneNumber", newCustomer.PhoneNumber);
-                        objcommand.Parameters.AddWithValue("@Address", newCustomer.Address);
-                        objcommand.Parameters.AddWithValue("@City", newCustomer.City);
-                        objcommand.Parameters.AddWithValue("@State", newCustomer.State);
-                        objcommand.Parameters.AddWithValue("@Zipcode", newCustomer.ZipCode);
-                        objcommand.Parameters.AddWithValue("@SecurityQuestion1", newCustomer.SecurityQuestion1);
-                        objcommand.Parameters.AddWithValue("@SecurityAnswer1", newCustomer.SecurityAnswer1);
-                        objcommand.Parameters.AddWithValue("@SecurityQuestion2", newCustomer.SecurityQuestion2);
-                        objcommand.Parameters.AddWithValue("@SecurityAnswer2", newCustomer.SecurityAnswer2);
+                        objcommand.Parameters.AddWithValue("@LoginID", customer.Email);
+                        objcommand.Parameters.AddWithValue("@Name", customer.Name);
+                        objcommand.Parameters.AddWithValue("@Password", customer.Password);
+                        objcommand.Parameters.AddWithValue("@PhoneNumber", customer.Phone);
+                        objcommand.Parameters.AddWithValue("@Address", customer.Address);
+                        objcommand.Parameters.AddWithValue("@City", customer.City);
+                        objcommand.Parameters.AddWithValue("@State", customer.State);
+                        objcommand.Parameters.AddWithValue("@Zipcode", customer.ZipCode);
+                        objcommand.Parameters.AddWithValue("@SecurityQuestion1", customer.SecurityQuestion1);
+                        objcommand.Parameters.AddWithValue("@SecurityAnswer1", customer.SecurityAnswer1);
+                        objcommand.Parameters.AddWithValue("@SecurityQuestion2", customer.SecurityQuestion2);
+                        objcommand.Parameters.AddWithValue("@SecurityAnswer2", customer.SecurityAnswer2);
 
                         int result = objDB.DoUpdateUsingCmdObj(objcommand);
 
