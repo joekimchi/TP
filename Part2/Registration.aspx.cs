@@ -41,19 +41,19 @@ namespace Part2
             //if username is not already taken
             if (ds.Tables[0].Rows.Count == 0)
             {
-                CustomerInformation newCustomer = new CustomerInformation();
-                newCustomer.LoginID = txtEmail.Text;
-                newCustomer.Name = txtName.Text;
-                newCustomer.Password = txtPassword.Text;
-                newCustomer.PhoneNumber = txtPhoneNumber.Text;
-                newCustomer.Address = txtAddress.Text;
-                newCustomer.City = txtCity.Text;
-                newCustomer.State = ddlState.Text;
-                newCustomer.ZipCode = txtZipcode.Text;
-                newCustomer.SecurityQuestion1 = ddlSecurityQuestion1.Text;
-                newCustomer.SecurityAnswer1 = txtSecurityAnswer1.Text;
-                newCustomer.SecurityQuestion2 = ddlSecurityQuestion2.Text;
-                newCustomer.SecurityAnswer2 = txtSecurityAnswer2.Text;
+                Customer customer = new Customer();
+                customer.Email = txtEmail.Text;
+                customer.Name = txtName.Text;
+                customer.Password = txtPassword.Text;
+                customer.Phone = txtPhoneNumber.Text;
+                customer.Address = txtAddress.Text;
+                customer.City = txtCity.Text;
+                customer.State = ddlState.Text;
+                customer.ZipCode = Convert.ToInt32(txtZipcode.Text);
+                customer.SecurityQuestion1 = ddlSecurityQuestion1.Text;
+                customer.SecurityAnswer1 = txtSecurityAnswer1.Text;
+                customer.SecurityQuestion2 = ddlSecurityQuestion2.Text;
+                customer.SecurityAnswer2 = txtSecurityAnswer2.Text;
 
                 if (customer != null)
                 {
