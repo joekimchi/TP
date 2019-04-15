@@ -18,7 +18,7 @@ namespace Part2
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            CustomerInformation newCustomer = new CustomerInformation();
+           // CustomerInformation newCustomer = new CustomerInformation();
             Register register = new Register();
 
             bool loginSuccess;

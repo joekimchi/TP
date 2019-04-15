@@ -12,7 +12,7 @@ namespace Utilities
 {
     public class Register
     {
-       /* public bool NewCustomer(CustomerInformation newCustomer)
+        public bool NewCustomer(CustomerInformation newCustomer)
         {
             DBConnect objDB = new DBConnect();
             SqlCommand objCommand = new SqlCommand();

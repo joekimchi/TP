@@ -12,6 +12,7 @@ namespace Part2
 {
     public partial class Registration : System.Web.UI.Page
     {
+
         DBConnect objDB = new DBConnect();
         SqlCommand objcommand = new SqlCommand();
 
@@ -19,7 +20,6 @@ namespace Part2
         {
 
         }
-
         protected void btnRegisterforMerchantAccount_Click(object sender, EventArgs e)
         {
             Response.Redirect("RegisterMerchant.aspx", false);
@@ -41,7 +41,7 @@ namespace Part2
             //if username is not already taken
             if (ds.Tables[0].Rows.Count == 0)
             {
-                CustomerInformation newCustomer = new CustomerInformation();
+                Customer newCustomer = new Customer();
                 newCustomer.LoginID = txtEmail.Text;
                 newCustomer.Name = txtName.Text;
                 newCustomer.Password = txtPassword.Text;
