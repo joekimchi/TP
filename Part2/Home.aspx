@@ -28,7 +28,9 @@
         <div id="Merchant">
             <br />
             <br />
-            <asp:Button ID="btnRetrieveAPIKey" runat="server" Text="Retrieve API Key" />
+            <asp:Button ID="btnRetrieveAPIKey" runat="server" Text="Retrieve API Key" OnClick="btnRetrieveAPIKey_Click" />
+            <br />
+            <asp:Label ID="lblAPIKey" runat="server"></asp:Label>
         </div>
     </form>
 </body>
