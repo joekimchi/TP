@@ -42,6 +42,7 @@ namespace Utilities
                 return true;
             }
         }
+        */
 
         public bool ValidCustomerLogin(string email, string password)
         {

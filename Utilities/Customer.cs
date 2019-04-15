@@ -9,7 +9,7 @@ namespace Utilities
     public class Customer : ContactInformation
     {
         private String customerID;
-        
+
         public String CustomerID
         {
             get { return customerID; }

@@ -14,12 +14,7 @@ namespace Utilities
         private String state;
         private int zipCode;
         private String email;
-        public string Password { get; set; }
         private String phoneNumber;
-        public string SecurityQuestion1 { get; set; }
-        public string SecurityAnswer1 { get; set; }
-        public string SecurityQuestion2 { get; set; }
-        public string SecurityAnswer2 { get; set; }
 
         public ContactInformation()
         {

@@ -18,7 +18,7 @@ namespace Part2
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            CustomerInformation newCustomer = new CustomerInformation();
+           // CustomerInformation newCustomer = new CustomerInformation();
             Register register = new Register();
 
             bool loginSuccess;
@@ -40,7 +40,7 @@ namespace Part2
             if (loginSuccess)
             {
                 //just to test if it works
-                Response.Redirect("testpage.aspx");
+                Response.Redirect("Home.aspx");
 
                 //Remember Me is checked - store email into cookie
                 if (chkbxRememberMe.Checked)
