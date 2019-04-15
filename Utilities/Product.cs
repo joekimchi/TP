@@ -1,33 +1,66 @@
-﻿namespace Utilities
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Utilities
 {
     public class Product
     {
-        public int ID { get; set; }
-        public string Description { get; set; }
-        public float Price { get; set; }
-        public string ImageURL { get; set; }
-        public int DepartmentID { get; set; }
+        private String productID;
+        private String title;
+        private String description;
+        private double price;
+        private int quantity;
+        private String imageUrl;
+        private String departmentID;
 
         public Product()
         {
 
         }
 
-        public Product(int id, string desc, float price, string imgURL, int deptID)
+        public String ProductID
         {
-            ID = id;
-            Description = desc;
-            Price = price;
-            ImageURL = imgURL;
-            DepartmentID = deptID;
+            get { return productID; }
+            set { productID = value; }
         }
 
-        public Product(int id, string desc, float price, string imgURL)
+        public String Title
         {
-            ID = id;
-            Description = desc;
-            Price = price;
-            ImageURL = imgURL;
+            get { return title; }
+            set { title = value; }
+        }
+
+        public String Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
+
+        public double Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+
+        public int Quantity
+        {
+            get { return quantity; }
+            set { quantity = value; }
+        }
+
+        public String ImageUrl
+        {
+            get { return imageUrl; }
+            set { imageUrl = value; }
+        }
+
+        public String DepartmentID
+        {
+            get { return departmentID; }
+            set { departmentID = value; }
         }
     }
 }

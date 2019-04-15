@@ -40,7 +40,7 @@ namespace Part2
             if (loginSuccess)
             {
                 //just to test if it works
-                Response.Redirect("testpage.aspx");
+                Response.Redirect("Home.aspx");
 
                 //Remember Me is checked - store email into cookie
                 if (chkbxRememberMe.Checked)

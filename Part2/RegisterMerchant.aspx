@@ -20,9 +20,28 @@
             <br />
             <asp:Label ID="lblDuplicateID" runat="server"></asp:Label>
             <br />
+            Site Name<br />
+            <asp:TextBox ID="txtSiteName" runat="server"></asp:TextBox>
+            <br />
+            Site URL<br />
+            <asp:TextBox ID="txtSiteURL" runat="server"></asp:TextBox>
+            <br />
+            Merchant
             Name
             <br />
             <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+            <br />
+            Address<br />
+            <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
+            <br />
+            City<br />
+            <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
+            <br />
+            State<br />
+            <asp:TextBox ID="txtState" runat="server"></asp:TextBox>
+            <br />
+            Zip Code<br />
+            <asp:TextBox ID="txtZipCode" runat="server"></asp:TextBox>
             <br />
             Email<br />
             <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>

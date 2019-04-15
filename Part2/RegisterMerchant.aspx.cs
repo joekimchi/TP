@@ -12,8 +12,7 @@ namespace Part2
     public partial class RegisterMerchant : System.Web.UI.Page
     {
         DBConnect objDB = new DBConnect();
-        APICalls api = new APICalls();
-        string url = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug46231/TermProjectWS/api/service/Merchants";
+        string url = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug46231/TermProjectWS/api/service/Merchants/Reg/";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,11 +22,16 @@ namespace Part2
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             string siteID = txtSiteID.Text;
+            string siteName = txtSiteName.Text;
+            String siteURL = txtSiteURL.Text;
             string name = txtName.Text;
             string email = txtEmail.Text;
             string phone = txtPhone.Text;
             string apikey = api.APIKeyGen(5);
-            String siteURL = name + ".com";
+            string address = txtAddress.Text;
+            string city = txtCity.Text;
+            
+
 
             SqlCommand objCommand = new SqlCommand();
             objCommand.CommandType = System.Data.CommandType.StoredProcedure;
