@@ -25,16 +25,20 @@ namespace Part2
             Response.Redirect("RegisterMerchant.aspx", false);
         }
 
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx", false);
+        }
+
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             Register register = new Register();
             objcommand.CommandType = CommandType.StoredProcedure;
             objcommand.CommandText = "TP_GetLoginID";
-
             objcommand.Parameters.AddWithValue("@LoginID", txtEmail.Text);
-
             DataSet ds = objDB.GetDataSetUsingCmdObj(objcommand);
 
+            //if username is not already taken
             if (ds.Tables[0].Rows.Count == 0)
             {
                 CustomerInformation newCustomer = new CustomerInformation();
@@ -55,6 +59,7 @@ namespace Part2
                 {
                     try
                     {
+                        objcommand.Parameters.Clear();
                         objcommand.CommandType = CommandType.StoredProcedure;
                         objcommand.CommandText = "TP_NewCustomer";
 
@@ -69,17 +74,17 @@ namespace Part2
                         objcommand.Parameters.AddWithValue("@SecurityQuestion1", newCustomer.SecurityQuestion1);
                         objcommand.Parameters.AddWithValue("@SecurityAnswer1", newCustomer.SecurityAnswer1);
                         objcommand.Parameters.AddWithValue("@SecurityQuestion2", newCustomer.SecurityQuestion2);
-                        objcommand.Parameters.AddWithValue("SecurityAnswer2", newCustomer.SecurityAnswer2);
+                        objcommand.Parameters.AddWithValue("@SecurityAnswer2", newCustomer.SecurityAnswer2);
 
                         int result = objDB.DoUpdateUsingCmdObj(objcommand);
 
-                        if (result != -1)
+                        if (result == -1)
                         {
-                            lblError.Text = "Successfully created an account";
+                            lblError.Text = "An error occurred.";
                         }
                         else
                         {
-                            lblError.Text = "An error occurred. Please try again!";
+                            lblError.Text = "Account Successfully Created";
                         }
                     }
                     catch (Exception ex)
@@ -89,12 +94,9 @@ namespace Part2
                 }
             }
             else
-                lblError.Text = "Username is taken";
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Login.aspx", false);
+            {
+                lblError.Text = "Username is taken. Please try again.";
+            }
         }
     }
 }
