@@ -25,16 +25,20 @@ namespace Part2
             Response.Redirect("RegisterMerchant.aspx", false);
         }
 
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx", false);
+        }
+
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             Register register = new Register();
             objcommand.CommandType = CommandType.StoredProcedure;
             objcommand.CommandText = "TP_GetLoginID";
-
             objcommand.Parameters.AddWithValue("@LoginID", txtEmail.Text);
-
             DataSet ds = objDB.GetDataSetUsingCmdObj(objcommand);
 
+            //if username is not already taken
             if (ds.Tables[0].Rows.Count == 0)
             {
                 CustomerInformation newCustomer = new CustomerInformation();
@@ -93,11 +97,6 @@ namespace Part2
             {
                 lblError.Text = "Username is taken. Please try again.";
             }
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Login.aspx", false);
         }
     }
 }
