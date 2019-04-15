@@ -11,7 +11,7 @@
         <h1>Merchant Registration </h1>
         <div>
             <asp:Button ID="btnBack" runat="server" Text="Back to Login" OnClick="btnBack_Click" />
-            <asp:Button ID="btnRegisterNewCustomer" runat="server" OnClick="btnRegisterNewCustomer_Click" Text="Register new Customer" />
+            <asp:Button ID="btnRegisterNewCustomer" runat="server" OnClick="btnRegisterNewCustomer_Click" Text="Register New Customer" />
         </div>
         <br />
         <div>

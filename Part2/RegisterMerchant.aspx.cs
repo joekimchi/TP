@@ -6,12 +6,17 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Utilities;
 using System.Data.SqlClient;
+using System.Data;
+using System.Web.Script.Serialization;
+using System.Net;
+using System.IO;
 
 namespace Part2
 {
     public partial class RegisterMerchant : System.Web.UI.Page
     {
         DBConnect objDB = new DBConnect();
+        Validation v = new Validation();
         string url = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug46231/TermProjectWS/api/service/Merchants/Reg/";
 
         protected void Page_Load(object sender, EventArgs e)
@@ -24,17 +29,19 @@ namespace Part2
             string siteID = txtSiteID.Text;
             string siteName = txtSiteName.Text;
             String siteURL = txtSiteURL.Text;
-            string name = txtName.Text;
-            string email = txtEmail.Text;
-            string phone = txtPhone.Text;
-            string apikey = api.APIKeyGen(5);
-            string address = txtAddress.Text;
-            string city = txtCity.Text;
-            
+            string apikey = v.APIKeyGen(5);
 
+            ContactInformation ci = new ContactInformation();
+            ci.Name = txtName.Text;
+            ci.Address = txtAddress.Text;
+            ci.City = txtCity.Text;
+            ci.State = txtState.Text;
+            ci.ZipCode = int.Parse(txtZipCode.Text);
+            ci.Email = txtEmail.Text;
+            ci.Phone = txtPhone.Text;
 
             SqlCommand objCommand = new SqlCommand();
-            objCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "TP_FindID";
             objCommand.Parameters.AddWithValue("@SiteID", siteID);
             if (objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows.Count > 0)
@@ -43,7 +50,27 @@ namespace Part2
             else
             {
                 lblDuplicateID.Text = "";
-                bool result = api.RegisterSite(url, siteID, name, apikey, email, phone, siteURL);
+
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                string jsonci = js.Serialize(ci);
+
+                WebRequest request = WebRequest.Create(url + siteID + "/" + siteName + "/" + siteURL + "/" + apikey);
+                request.Method = "POST";
+                request.ContentLength = jsonci.Length;
+                request.ContentType = "application/json";
+
+                StreamWriter writer = new StreamWriter(request.GetRequestStream());
+                writer.Write(jsonci);
+                writer.Flush();
+                writer.Close();
+
+                WebResponse response = request.GetResponse();
+                Stream theDataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(theDataStream);
+                bool result = bool.Parse(reader.ReadToEnd());
+                reader.Close();
+                response.Close();
+
                 if (result == true)
                     lblResult.Text = "Merchant Account successfully added.<br>Your APIKey is: " + apikey;
                 else
