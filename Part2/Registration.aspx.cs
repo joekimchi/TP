@@ -14,7 +14,6 @@ namespace Part2
     {
         DBConnect objDB = new DBConnect();
         SqlCommand objcommand = new SqlCommand();
-        string url = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug46231/TermProjectWS/api/service/Merchants";
 
         protected void Page_Load(object sender, EventArgs e)
         {
