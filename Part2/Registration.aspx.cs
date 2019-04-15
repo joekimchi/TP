@@ -32,13 +32,12 @@ namespace Part2
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            Register register = new Register();
             objcommand.CommandType = CommandType.StoredProcedure;
             objcommand.CommandText = "TP_GetLoginID";
             objcommand.Parameters.AddWithValue("@LoginID", txtEmail.Text);
             DataSet ds = objDB.GetDataSetUsingCmdObj(objcommand);
 
-                        //if username is not already taken
+            //if username is not already taken
             if (ds.Tables[0].Rows.Count == 0)
             {
                 Customer customer = new Customer();
@@ -61,7 +60,7 @@ namespace Part2
                     {
                         objcommand.Parameters.Clear();
                         objcommand.CommandType = CommandType.StoredProcedure;
-                        objcommand.CommandText = "TP_customer";
+                        objcommand.CommandText = "TP_NewCustomer";
 
                         objcommand.Parameters.AddWithValue("@LoginID", customer.Email);
                         objcommand.Parameters.AddWithValue("@Name", customer.Name);
@@ -80,7 +79,7 @@ namespace Part2
 
                         if (result == -1)
                         {
-                            lblError.Text = "An error occurred.";
+                            lblError.Text = "An error occurred. Please try again.";
                         }
                         else
                         {

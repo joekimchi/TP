@@ -18,51 +18,7 @@ namespace Part2
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-           // CustomerInformation newCustomer = new CustomerInformation();
-            Register register = new Register();
 
-            bool loginSuccess;
-            if (ddlLoginType.SelectedValue == "0")
-            {
-                loginSuccess = register.ValidCustomerLogin(txtEmail.Text, txtPassword.Text);
-            }
-            else loginSuccess = register.ValidMerchantLogin(txtEmail.Text, txtPassword.Text);
-
-            //if session exists, load cookie value into txtbox
-            if (Session["LoginID"] != null)
-            {
-                HttpCookie emailCookie = Request.Cookies["loginID"];
-                txtEmail.Text = emailCookie.Values["LoginID"].ToString();
-                chkbxRememberMe.Checked = true;
-            }
-
-            //if user enters a valid username and password
-            if (loginSuccess)
-            {
-                //just to test if it works
-                Response.Redirect("Home.aspx");
-
-                //Remember Me is checked - store email into cookie
-                if (chkbxRememberMe.Checked)
-                {
-                    HttpCookie emailCookie = new HttpCookie("LoginCookie");
-                    emailCookie.Values["Email"] = txtEmail.Text;
-                    emailCookie.Values["LastVisited"] = DateTime.Now.ToString();
-                    emailCookie.Expires = DateTime.Now.AddYears(1);
-                    Response.Cookies.Add(emailCookie);
-                }
-                else
-                {
-                    //remove user's email from username textbox
-                    Response.Cookies.Remove("loginID");
-                }
-            }
-
-            //invalid login
-            else
-            {
-                lblLoginErrorMessage.Text = "Incorrect Credentials";
-            }
         }
 
         protected void btnNewUser_Click(object sender, EventArgs e)
