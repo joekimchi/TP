@@ -22,16 +22,37 @@
             <br />
         </div>
         <div id="Customer" runat="server">
-            <br />
             <asp:Button ID="btnChangeCreditInformation" runat="server" Text="Change Credit Card Information" OnClick="btnChangeCreditInformation_Click" />
+            <br />
+            <br />
+            <asp:GridView ID="gvCustomer" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="SiteName" HeaderText="Site Name" />
+                    <asp:BoundField DataField="Date" HeaderText="Date" />
+                    <asp:BoundField DataField="Time" HeaderText="Time" />
+                    <asp:BoundField DataField="TotalDollarSales" HeaderText="Total Dollar Sales" />
+                </Columns>
+            </asp:GridView>
             <br />
         </div>
         <div id="Merchant" runat="server">
-            <br />
-            <br />
             <asp:Button ID="btnRetrieveAPIKey" runat="server" Text="Retrieve API Key" OnClick="btnRetrieveAPIKey_Click" />
             <br />
             <asp:Label ID="lblAPIKey" runat="server"></asp:Label>
+            <br />
+            <asp:GridView ID="gvMerchant" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="Date" HeaderText="Date" ReadOnly="True" SortExpression="Date" />
+                    <asp:BoundField DataField="Time" HeaderText="Time" />
+                    <asp:BoundField DataField="TotalDollarSales" HeaderText="Total Dollar Sales" />
+                </Columns>
+            </asp:GridView>
+        </div>
+        <div id="Manager" runat="server">
+
+            <br />
+            <asp:Button ID="btnManagementReport" runat="server" OnClick="btnManagementReport_Click" Text="View Management Report" />
+
         </div>
     </form>
 </body>

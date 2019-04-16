@@ -13,5 +13,11 @@ namespace Part2
         {
 
         }
+
+        protected void btnSubmitChanges_Click(object sender, EventArgs e)
+        {
+            string cardNumber = txtCardNumber.Text;
+            string expiration = txtExpiration.Text;
+        }
     }
 }

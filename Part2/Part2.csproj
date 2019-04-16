@@ -71,6 +71,7 @@
     <Content Include="Home.aspx" />
     <Content Include="img\amazon.png" />
     <Content Include="Login.aspx" />
+    <Content Include="ManagementReport.aspx" />
     <Content Include="RegisterMerchant.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Stylesheet.css" />
@@ -99,6 +100,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementReport.aspx.cs">
+      <DependentUpon>ManagementReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagementReport.aspx.designer.cs">
+      <DependentUpon>ManagementReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterMerchant.aspx.cs">

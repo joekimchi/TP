@@ -58,6 +58,15 @@ namespace Part2 {
         protected global::System.Web.UI.WebControls.Button btnChangeCreditInformation;
         
         /// <summary>
+        /// gvCustomer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvCustomer;
+        
+        /// <summary>
         /// Merchant control.
         /// </summary>
         /// <remarks>
@@ -83,5 +92,32 @@ namespace Part2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAPIKey;
+        
+        /// <summary>
+        /// gvMerchant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvMerchant;
+        
+        /// <summary>
+        /// Manager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Manager;
+        
+        /// <summary>
+        /// btnManagementReport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnManagementReport;
     }
 }
