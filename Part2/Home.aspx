@@ -16,16 +16,17 @@
             <br />
             <br />
             <br />
-            <asp:Button ID="btnChangePassword" runat="server" Text="Change Password" />
+            <asp:Button ID="btnChangePassword" runat="server" Text="Change Password" OnClick="btnChangePassword_Click" />
             <br />
             <br />
             <br />
         </div>
-        <div id="Customer">
+        <div id="Customer" runat="server">
             <br />
-            <asp:Button ID="btnChangeCreditInformation" runat="server" Text="Change Credit Card Information" />
+            <asp:Button ID="btnChangeCreditInformation" runat="server" Text="Change Credit Card Information" OnClick="btnChangeCreditInformation_Click" />
+            <br />
         </div>
-        <div id="Merchant">
+        <div id="Merchant" runat="server">
             <br />
             <br />
             <asp:Button ID="btnRetrieveAPIKey" runat="server" Text="Retrieve API Key" OnClick="btnRetrieveAPIKey_Click" />

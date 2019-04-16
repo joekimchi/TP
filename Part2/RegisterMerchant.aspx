@@ -43,8 +43,11 @@
             Zip Code<br />
             <asp:TextBox ID="txtZipCode" runat="server"></asp:TextBox>
             <br />
-            Email<br />
+            Email (This will be your Login)<br />
             <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+            <br />
+            Password<br />
+            <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
             <br />
             Phone Number<br />
             <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>

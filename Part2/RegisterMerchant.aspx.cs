@@ -38,6 +38,7 @@ namespace Part2
             ci.State = txtState.Text;
             ci.ZipCode = int.Parse(txtZipCode.Text);
             ci.Email = txtEmail.Text;
+            ci.Password = txtPassword.Text;
             ci.Phone = txtPhone.Text;
 
             SqlCommand objCommand = new SqlCommand();
