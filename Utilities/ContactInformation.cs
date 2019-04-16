@@ -16,9 +16,7 @@ namespace Utilities
         private String email;
         private String phoneNumber;
         private String password;
-        private String securityQuestion1;
         private String securityAnswer1;
-        private String securityQuestion2;
         private String securityAnswer2;
 
         public ContactInformation()
@@ -74,22 +72,10 @@ namespace Utilities
             set { password = value; }
         }
 
-        public String SecurityQuestion1
-        {
-            get { return securityQuestion1; }
-            set { securityQuestion1 = value; }
-        }
-
         public String SecurityAnswer1
         {
             get { return securityAnswer1; }
             set { securityAnswer1 = value; }
-        }
-
-        public String SecurityQuestion2
-        {
-            get { return securityQuestion2; }
-            set { securityQuestion2 = value; }
         }
 
         public String SecurityAnswer2
