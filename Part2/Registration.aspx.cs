@@ -84,6 +84,8 @@ namespace Part2
                         else
                         {
                             lblError.Text = "Account Successfully Created";
+                            Response.AddHeader("REFRESH", "3;URL=Login.aspx");
+                            lblError.Text += "\r\n" + "Redirecting to Login...";
                         }
                     }
                     catch (Exception ex)
