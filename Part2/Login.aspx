@@ -22,13 +22,14 @@
                     <asp:TextBox ID="txtEmail" runat="server" Width="225px"></asp:TextBox>
                     <br />
                 </div>
+                <br />
                 <!--Password input -->
                 <div>
                     <asp:Label ID="lblPassowrd" runat="server" Text="Password"></asp:Label>
                     <br />
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="225px"></asp:TextBox>
                     <br />
-                    <asp:HyperLink ID="HyperLink1" runat="server">Forgot your password?</asp:HyperLink>
+                    <asp:HyperLink ID="hyperPassword" runat="server" NavigateUrl="ForgotPassword.aspx">Forgot your password?</asp:HyperLink>
                     <br />
                 </div>
                 <br />
@@ -51,7 +52,7 @@
                 <asp:Button ID="btnNewUser" runat="server" Text="Create your Amazon account" OnClick="btnNewUser_Click" Width="225px" />
                 <br />
                 <br />
-                <asp:Button ID="btnBack" runat="server" Text="Return Home" OnClick="btnBack_Click" />
+                <asp:Button ID="btnBack" runat="server" Text="Back to Amazon" OnClick="btnBack_Click" />
             </div>
         </fieldset>
     </form>
