@@ -17,7 +17,7 @@ namespace Part2
             {
                 loginID = "";
                 password = "";
-                accountType = "";
+                accountType = 0;
             }
 
             if (accountType == 0)
@@ -46,6 +46,16 @@ namespace Part2
         protected void btnChangePassword_Click(object sender, EventArgs e)
         {
             Response.Redirect("ChangePassword.apsx?LoginID=" + loginID + "&AccountType=" + accountType, false);
+        }
+
+        protected void btnUpdateAccountInformation_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("UpdateAccountInformation.aspx?LoginID=" + loginID + "&AccountType=" + accountType, false);
+        }
+
+        protected void btnChangeCreditInformation_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("UpdateCreditCardInformation.aspx", false);
         }
     }
 }
