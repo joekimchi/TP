@@ -51,11 +51,11 @@ namespace Part2
                 else
                 {
                     Session["CustomerUsername"] = username;
-                    Response.Redirect(".aspx");
+                    Response.Redirect("Home.aspx");
                 }
             }
             //if dropdown selection is Merchant
-            else
+            if (ddlLoginType.Text == "Merchant")
             {
                 objcommand.CommandType = CommandType.StoredProcedure;
                 objcommand.CommandText = "TP_MerchantLogin";
@@ -71,7 +71,7 @@ namespace Part2
                 else
                 {
                     Session["MerchantUsername"] = username;
-                    Response.Redirect(".aspx");
+                    Response.Redirect("Home.aspx");
                 }
             }
         }

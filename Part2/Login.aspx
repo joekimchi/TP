@@ -35,8 +35,8 @@
                 <br />
                 <div>
                     <asp:DropDownList ID="ddlLoginType" runat="server">
-                        <asp:ListItem Selected="True" Value="0">Customer</asp:ListItem>
-                        <asp:ListItem Value="1">Merchant</asp:ListItem>
+                        <asp:ListItem Selected="True" Value="Customer">Customer</asp:ListItem>
+                        <asp:ListItem Value="Merchant">Merchant</asp:ListItem>
                     </asp:DropDownList>
                     <br />
                     <asp:Label ID="lblLoginErrorMessage" runat="server"></asp:Label>
