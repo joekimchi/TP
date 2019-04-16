@@ -49,9 +49,7 @@ namespace Part2
                 customer.City = txtCity.Text;
                 customer.State = ddlState.Text;
                 customer.ZipCode = Convert.ToInt32(txtZipcode.Text);
-                customer.SecurityQuestion1 = ddlSecurityQuestion1.Text;
                 customer.SecurityAnswer1 = txtSecurityAnswer1.Text;
-                customer.SecurityQuestion2 = ddlSecurityQuestion2.Text;
                 customer.SecurityAnswer2 = txtSecurityAnswer2.Text;
 
                 if (customer != null)
@@ -70,9 +68,7 @@ namespace Part2
                         objcommand.Parameters.AddWithValue("@City", customer.City);
                         objcommand.Parameters.AddWithValue("@State", customer.State);
                         objcommand.Parameters.AddWithValue("@Zipcode", customer.ZipCode);
-                        objcommand.Parameters.AddWithValue("@SecurityQuestion1", customer.SecurityQuestion1);
                         objcommand.Parameters.AddWithValue("@SecurityAnswer1", customer.SecurityAnswer1);
-                        objcommand.Parameters.AddWithValue("@SecurityQuestion2", customer.SecurityQuestion2);
                         objcommand.Parameters.AddWithValue("@SecurityAnswer2", customer.SecurityAnswer2);
 
                         int result = objDB.DoUpdateUsingCmdObj(objcommand);
@@ -84,6 +80,8 @@ namespace Part2
                         else
                         {
                             lblError.Text = "Account Successfully Created";
+                            Response.AddHeader("REFRESH", "5;URL=Login.aspx");
+                            lblError.Text += "<br>Redirecting to Login...";
                         }
                     }
                     catch (Exception ex)

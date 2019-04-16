@@ -22,24 +22,6 @@ namespace Part2 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnBack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBack;
-        
-        /// <summary>
-        /// btnRegisterforMerchantAccount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegisterforMerchantAccount;
-        
-        /// <summary>
         /// lblEmail control.
         /// </summary>
         /// <remarks>
@@ -202,24 +184,6 @@ namespace Part2 {
         protected global::System.Web.UI.WebControls.Label lblSecurityQuestion1;
         
         /// <summary>
-        /// ddlSecurityQuestion1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSecurityQuestion1;
-        
-        /// <summary>
-        /// lblSecurityAnswer1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSecurityAnswer1;
-        
-        /// <summary>
         /// txtSecurityAnswer1 control.
         /// </summary>
         /// <remarks>
@@ -238,24 +202,6 @@ namespace Part2 {
         protected global::System.Web.UI.WebControls.Label lblSecurityQuestion2;
         
         /// <summary>
-        /// ddlSecurityQuestion2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSecurityQuestion2;
-        
-        /// <summary>
-        /// lblSecurityAnswer2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSecurityAnswer2;
-        
-        /// <summary>
         /// txtSecurityAnswer2 control.
         /// </summary>
         /// <remarks>
@@ -263,6 +209,15 @@ namespace Part2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSecurityAnswer2;
+        
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
         /// btnRegister control.
@@ -274,12 +229,21 @@ namespace Part2 {
         protected global::System.Web.UI.WebControls.Button btnRegister;
         
         /// <summary>
-        /// lblError control.
+        /// hyperSignIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.HyperLink hyperSignIn;
+        
+        /// <summary>
+        /// btnRegisterforMerchantAccount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegisterforMerchantAccount;
     }
 }
