@@ -12,7 +12,7 @@
         <img src="img/amazon.png" alt="amazon.com" style="width: 200px; height: 55px;"/>
         <br />
         <br />
-        <div>
+        <div style="text-align: center">
             <fieldset style="width:250px", text-align:"center">
                 <h1>Create account </h1>
                 <div>
