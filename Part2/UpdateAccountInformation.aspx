@@ -8,8 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1>
-            Update Account Information</h1>
+        <h1>Update Account Information</h1>
         <div id="AccountInformation" runat="server">
 
             <asp:Button ID="btnBack" runat="server" OnClick="btnBack_Click" Text="Back to Home" />
@@ -39,7 +38,6 @@
             <br />
             <asp:Label ID="lblResult" runat="server"></asp:Label>
             <br />
-
         </div>
     </form>
 </body>

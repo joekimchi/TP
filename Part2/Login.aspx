@@ -14,7 +14,7 @@
         <br />
         <fieldset style="width:250px", text-align:"center">
             <div>
-                <h1>Sign in</h1>
+                <h3>Sign in</h3>
                 <!--Username input-->
                 <div>
                     <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
@@ -22,20 +22,21 @@
                     <asp:TextBox ID="txtEmail" runat="server" Width="225px"></asp:TextBox>
                     <br />
                 </div>
+                <br />
                 <!--Password input -->
                 <div>
                     <asp:Label ID="lblPassowrd" runat="server" Text="Password"></asp:Label>
                     <br />
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="225px"></asp:TextBox>
                     <br />
-                    <asp:HyperLink ID="HyperLink1" runat="server">Forgot your password?</asp:HyperLink>
+                    <asp:HyperLink ID="hyperPassword" runat="server" NavigateUrl="ForgotPassword.aspx">Forgot your password?</asp:HyperLink>
                     <br />
                 </div>
                 <br />
                 <div>
                     <asp:DropDownList ID="ddlLoginType" runat="server">
-                        <asp:ListItem Selected="True" Value="0">Customer</asp:ListItem>
-                        <asp:ListItem Value="1">Merchant</asp:ListItem>
+                        <asp:ListItem Selected="True" Value="Customer">Customer</asp:ListItem>
+                        <asp:ListItem Value="Merchant">Merchant</asp:ListItem>
                     </asp:DropDownList>
                     <br />
                     <asp:Label ID="lblLoginErrorMessage" runat="server"></asp:Label>
@@ -51,7 +52,7 @@
                 <asp:Button ID="btnNewUser" runat="server" Text="Create your Amazon account" OnClick="btnNewUser_Click" Width="225px" />
                 <br />
                 <br />
-                <asp:Button ID="btnBack" runat="server" Text="Return Home" OnClick="btnBack_Click" />
+                <asp:Button ID="btnBack" runat="server" Text="Back to Amazon" OnClick="btnBack_Click" />
             </div>
         </fieldset>
     </form>
