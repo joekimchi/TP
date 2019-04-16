@@ -74,6 +74,8 @@
     <Content Include="RegisterMerchant.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Stylesheet.css" />
+    <Content Include="UpdateAccountInformation.aspx" />
+    <Content Include="UpdateCreditCardInformation.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +114,20 @@
     </Compile>
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAccountInformation.aspx.cs">
+      <DependentUpon>UpdateAccountInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAccountInformation.aspx.designer.cs">
+      <DependentUpon>UpdateAccountInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCreditCardInformation.aspx.cs">
+      <DependentUpon>UpdateCreditCardInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateCreditCardInformation.aspx.designer.cs">
+      <DependentUpon>UpdateCreditCardInformation.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

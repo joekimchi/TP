@@ -12,7 +12,7 @@
                     Home
         </h1>    
         <div id="Default">
-            <asp:Button ID="btnUpdateAccountInformation" runat="server" Text="Update Account Information" />
+            <asp:Button ID="btnUpdateAccountInformation" runat="server" Text="Update Account Information" OnClick="btnUpdateAccountInformation_Click" />
             <br />
             <br />
             <br />
