@@ -9,9 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1>
-                    Home
-        </h1>    
+        <h1>Home</h1>    
         <div id="Default">
             <asp:Button ID="btnUpdateAccountInformation" runat="server" Text="Update Account Information" OnClick="btnUpdateAccountInformation_Click" />
             <br />

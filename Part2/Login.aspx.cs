@@ -37,7 +37,7 @@ namespace Part2
             username = txtEmail.Text;
             password = txtPassword.Text;
 
-            DBConnect newUserConnection = new DBConnect();
+            DBConnect db = new DBConnect();
             DataSet ds = new DataSet();
 
             SqlCommand objcommand = new SqlCommand();
@@ -50,7 +50,7 @@ namespace Part2
                 objcommand.Parameters.AddWithValue("@username", username);
                 objcommand.Parameters.AddWithValue("@password", password);
 
-                ds = newUserConnection.GetDataSetUsingCmdObj(objcommand);
+                ds = db.GetDataSetUsingCmdObj(objcommand);
 
                 if (ds.Tables[0].Rows.Count == 0)
                 {
@@ -85,7 +85,7 @@ namespace Part2
                 objcommand.Parameters.AddWithValue("@username", username);
                 objcommand.Parameters.AddWithValue("@password", password);
 
-                ds = newUserConnection.GetDataSetUsingCmdObj(objcommand);
+                ds = db.GetDataSetUsingCmdObj(objcommand);
 
                 if (ds.Tables[0].Rows.Count == 0)
                 {
