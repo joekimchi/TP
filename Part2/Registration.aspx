@@ -12,7 +12,7 @@
         <img src="img/amazon.png" alt="amazon.com" style="width: 200px; height: 55px;" />
         <br />
         <br />
-        <fieldset style="width: 0">
+        <fieldset style="width: 20%">
             <h3>Create account </h3>
             <div>
                 <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>

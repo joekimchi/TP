@@ -11,8 +11,9 @@
     <form id="form1" runat="server">
         <img src="img/amazon.png" alt="amazon.com" style="width: 200px; height: 55px;" />
         <br />
+        <br />
         <fieldset style="width: 0">
-            <h3>Merchant Registration </h3>
+            <h2>Merchant Registration</h2>
             <br />
             <div>
                 Site ID (integers only)<br />
@@ -23,31 +24,39 @@
                 Site Name<br />
                 <asp:TextBox ID="txtSiteName" runat="server"></asp:TextBox>
                 <br />
+                <br />
                 Site URL<br />
                 <asp:TextBox ID="txtSiteURL" runat="server"></asp:TextBox>
                 <br />
-                Merchant
-            Name
+                <br />
+                Merchant Name
             <br />
                 <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                <br />
                 <br />
                 Address<br />
                 <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
                 <br />
+                <br />
                 City<br />
                 <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
+                <br />
                 <br />
                 State<br />
                 <asp:TextBox ID="txtState" runat="server"></asp:TextBox>
                 <br />
+                <br />
                 Zip Code<br />
                 <asp:TextBox ID="txtZipCode" runat="server"></asp:TextBox>
+                <br />
                 <br />
                 Email (This will be your Login)<br />
                 <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
                 <br />
+                <br />
                 Password<br />
                 <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                <br />
                 <br />
                 Phone Number<br />
                 <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>

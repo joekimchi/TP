@@ -12,9 +12,9 @@
         <img src="img/amazon.png" alt="amazon.com" style="width: 200px; height: 55px;"/>
         <br />
         <br />
-        <fieldset style="width:250px", text-align:"center">
+        <fieldset style="width: 20%", text-align:"center">
             <div>
-                <h3>Sign in</h3>
+                <h2>Sign in</h2>
                 <!--Username input-->
                 <div>
                     <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
