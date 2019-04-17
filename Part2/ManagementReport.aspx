@@ -13,7 +13,7 @@
             Management Report<br />
             <br />
             Customer Sales Report<br />
-            <asp:GridView ID="gvCustomer" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+            <asp:GridView ID="gvCustomer" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" HorizontalAlign="Center">
                 <Columns>
                     <asp:BoundField DataField="LoginID" HeaderText="Login ID" />
                     <asp:BoundField DataField="Name" HeaderText="Customer Name" />
@@ -30,7 +30,7 @@
                 <SortedDescendingHeaderStyle BackColor="#275353" />
             </asp:GridView>
             <br />
-            Inventory Report<asp:GridView ID="gvInventory" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+            Inventory Report<asp:GridView ID="gvInventory" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" HorizontalAlign="Center">
                 <Columns>
                     <asp:BoundField DataField="Name" HeaderText="Department" />
                     <asp:BoundField DataField="Title" HeaderText="Product" />
@@ -49,7 +49,7 @@
                 <SortedDescendingHeaderStyle BackColor="#275353" />
             </asp:GridView>
             <br />
-            Sales Report<asp:GridView ID="gvSales" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+            Sales Report<asp:GridView ID="gvSales" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" HorizontalAlign="Center">
                 <Columns>
                     <asp:BoundField DataField="Date" HeaderText="Date of Sale" />
                     <asp:BoundField DataField="Time" HeaderText="Time" />

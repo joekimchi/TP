@@ -1,6 +1,7 @@
 ﻿body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 30px;
+    text-align: center;
 }
 
 fieldset {
@@ -11,17 +12,18 @@ fieldset {
 }
 
 .button {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
     background-color: #efd086;
-    border: none;
     color: black;
     padding: 20px;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
     padding: 10px 24px;
     border-radius: 4px;
-    height: 30px;
+    margin-left: 0px;
 }
     .button:hover {
         background-color: #bf9934;

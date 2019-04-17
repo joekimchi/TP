@@ -12,7 +12,7 @@
         <div>
             Change Password<br />
             <br />
-            <asp:Button ID="btnBack" runat="server" OnClick="btnBack_Click" Text="Back to Home" />
+            <asp:Button ID="btnBack" runat="server" OnClick="btnBack_Click" Text="Back to Home" CssClass="button" Height="39px" Width="300px" />
             <br />
             <br />
             Enter your current password<br />
@@ -29,7 +29,7 @@
             <asp:Label ID="lblNotMatched" runat="server"></asp:Label>
             <br />
             <br />
-            <asp:Button ID="btnUpdatePassword" runat="server" OnClick="btnUpdatePassword_Click" Text="Update Password" />
+            <asp:Button ID="btnUpdatePassword" runat="server" OnClick="btnUpdatePassword_Click" Text="Update Password" CssClass="button" Height="39px" Width="300px" />
             <br />
             <asp:Label ID="lblResult" runat="server"></asp:Label>
         </div>

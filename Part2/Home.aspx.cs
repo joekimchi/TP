@@ -13,11 +13,11 @@ namespace Part2
         int accountType;
         protected void Page_Load(object sender, EventArgs e)
         {
+            loginID = Session["Username"].ToString();
+            password = Session["Password"].ToString();
+            accountType = int.Parse(Session["AccountType"].ToString());
             if (!IsPostBack)
             {
-                loginID = Session["Username"].ToString();
-                password = Session["Password"].ToString();
-                accountType = int.Parse(Session["AccountType"].ToString());
 
                 if (accountType == 0)
                 {
@@ -47,6 +47,8 @@ namespace Part2
 
         protected void btnRetrieveAPIKey_Click(object sender, EventArgs e)
         {
+            lblAPIKey.Text = "";
+
             SqlCommand objCommand = new SqlCommand();
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "TP_GetAPIKey";
@@ -76,6 +78,12 @@ namespace Part2
         protected void btnManagementReport_Click(object sender, EventArgs e)
         {
             Response.Redirect("ManagementReport.aspx", false);
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
         }
     }
 }
