@@ -50,7 +50,9 @@ namespace Part2
                 }
                 else
                 {
-                    Session["CustomerUsername"] = username;
+                    Session["AccountType"] = 0;
+                    Session["Username"] = username;
+                    Session["Password"] = password;
                     Response.Redirect("Home.aspx");
                 }
             }
@@ -70,8 +72,10 @@ namespace Part2
                 }
                 else
                 {
-                    Session["MerchantUsername"] = username;
-                    Response.Redirect("Home.aspx");
+                    Session["AccountType"] = 1;
+                    Session["Username"] = username;
+                    Session["Password"] = password;
+                    Response.Redirect("Home.aspx", false);
                 }
             }
         }

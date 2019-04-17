@@ -4,8 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Amazon Password Assistance</title>
-    <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
+    <title></title>
 </head>
 <body style="text-align: center">
     <form id="form1" runat="server">
