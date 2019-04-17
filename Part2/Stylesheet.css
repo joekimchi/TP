@@ -12,7 +12,7 @@ fieldset {
 
 .button {
     background-color: #efd086;
-    border: none;
+    border: 1px solid grey;
     color: black;
     padding: 20px;
     text-align: center;
@@ -30,7 +30,7 @@ fieldset {
 
 .button1 {
     background-color: #e7e7e7;
-    border: none;
+    border: 1px solid grey;
     color: black;
     padding: 20px;
     text-align: center;

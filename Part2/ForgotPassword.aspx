@@ -15,7 +15,7 @@
         <fieldset style="width: 20%">
             <h2>Password assistance</h2>
             <p>Enter the email address associated with your Amazon account.</p>
-            <asp:TextBox ID="txtEmailAddress" runat="server" Width="85%"></asp:TextBox>
+            <asp:TextBox ID="txtEmailAddress" runat="server" Width="85%" placeholder="example@email.com"></asp:TextBox>
             <br />
             <asp:Label ID="lblError" runat="server" Visible="False"></asp:Label>
             <br />
