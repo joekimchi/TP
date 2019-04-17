@@ -12,10 +12,25 @@ namespace Part2
         int accountType;
         protected void Page_Load(object sender, EventArgs e)
         {
+            loginID = Session["Username"].ToString();
+            accountType = int.Parse(Session["AccountType"].ToString());
+
             if (!IsPostBack)
             {
-                loginID = Session["Username"].ToString();
-                accountType = int.Parse(Session["AccountType"].ToString());
+
+                SqlCommand objCommand = new SqlCommand();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "TP_GetAccountInfo";
+                objCommand.Parameters.AddWithValue("@AccountType", accountType);
+                objCommand.Parameters.AddWithValue("@Email", loginID);
+
+                DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+                txtName.Text = myDS.Tables[0].Rows[0][0].ToString();
+                txtPhoneNumber.Text = myDS.Tables[0].Rows[0][1].ToString();
+                txtAddress.Text = myDS.Tables[0].Rows[0][2].ToString();
+                txtCity.Text = myDS.Tables[0].Rows[0][3].ToString();
+                txtState.Text = myDS.Tables[0].Rows[0][4].ToString();
+                txtZipCode.Text = myDS.Tables[0].Rows[0][5].ToString();
             }
         }
 

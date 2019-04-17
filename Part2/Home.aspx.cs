@@ -18,30 +18,30 @@ namespace Part2
                 loginID = Session["Username"].ToString();
                 password = Session["Password"].ToString();
                 accountType = int.Parse(Session["AccountType"].ToString());
-            }
 
-            if (accountType == 0)
-            {
-                Merchant.Visible = false;
+                if (accountType == 0)
+                {
+                    Merchant.Visible = false;
 
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_CustomerPurchases";
+                    SqlCommand objCommand = new SqlCommand();
+                    objCommand.CommandType = CommandType.StoredProcedure;
+                    objCommand.CommandText = "TP_CustomerPurchases";
 
-                objCommand.Parameters.AddWithValue("@LoginID", loginID);
-                gvCustomer.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
-                gvCustomer.DataBind();
-            }
-            else //accountType == "Merchant"
-            {
-                Customer.Visible = false;
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_MerchantSales";
+                    objCommand.Parameters.AddWithValue("@LoginID", loginID);
+                    gvCustomer.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
+                    gvCustomer.DataBind();
+                }
+                else //accountType == "Merchant"
+                {
+                    Customer.Visible = false;
+                    SqlCommand objCommand = new SqlCommand();
+                    objCommand.CommandType = CommandType.StoredProcedure;
+                    objCommand.CommandText = "TP_MerchantSales";
 
-                objCommand.Parameters.AddWithValue("@Email", loginID);
-                gvMerchant.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
-                gvMerchant.DataBind();
+                    objCommand.Parameters.AddWithValue("@Email", loginID);
+                    gvMerchant.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
+                    gvMerchant.DataBind();
+                }
             }
         }
 
@@ -60,7 +60,7 @@ namespace Part2
 
         protected void btnChangePassword_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ChangePassword.apsx", false);
+            Response.Redirect("ChangePassword.aspx", false);
         }
 
         protected void btnUpdateAccountInformation_Click(object sender, EventArgs e)

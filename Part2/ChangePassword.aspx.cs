@@ -12,11 +12,8 @@ namespace Part2
         int accountType;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                loginID = Session["Username"].ToString();
-                accountType = int.Parse(Session["AccountType"].ToString());
-            }
+            loginID = Session["Username"].ToString();
+            accountType = int.Parse(Session["AccountType"].ToString());
         }
 
         protected void btnUpdatePassword_Click(object sender, EventArgs e)
@@ -38,10 +35,10 @@ namespace Part2
 
                 int result = objDB.DoUpdateUsingCmdObj(objCommand);
 
-                if (result != -1)
-                    lblResult.Text = "Password successfully updated.";
-                else
+                if (result == -1)
                     lblResult.Text = "Oops. There was an error updating your password.";
+                else
+                    lblResult.Text = "Password successfully updated.";
             }
             else
             {
