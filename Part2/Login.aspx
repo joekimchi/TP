@@ -12,9 +12,9 @@
         <img src="img/amazon.png" alt="amazon.com" style="width: 200px; height: 55px;"/>
         <br />
         <br />
-        <fieldset style="width:250px", text-align:"center">
+        <fieldset style="width: 20%", text-align:"center">
             <div>
-                <h3>Sign in</h3>
+                <h2>Sign in</h2>
                 <!--Username input-->
                 <div>
                     <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
@@ -42,17 +42,17 @@
                     <asp:Label ID="lblLoginErrorMessage" runat="server"></asp:Label>
                 </div>
                 <br />
-                <!--Buttons-->
-                <asp:Button ID="btnLogin" runat="server" Text="Sign in" OnClick="btnLogin_Click" Width="225px" />
-                <br />
                 <asp:CheckBox ID="chkbxRememberMe" runat="server" Text="Keep me signed in" />
                 <br />
                 <br />
+                <!--Buttons-->
+                <asp:Button ID="btnLogin" runat="server" Text="Sign in" OnClick="btnLogin_Click" Width="225px" CssClass="button" />
+                <br />
+                <br />
                 New to Amazon?<br />
-                <asp:Button ID="btnNewUser" runat="server" Text="Create your Amazon account" OnClick="btnNewUser_Click" Width="225px" />
+                <asp:Button ID="btnNewUser" runat="server" Text="Create your Amazon account" OnClick="btnNewUser_Click" Width="225px" CssClass="button1" />
                 <br />
                 <br />
-                <asp:Button ID="btnBack" runat="server" Text="Back to Amazon" OnClick="btnBack_Click" />
             </div>
         </fieldset>
     </form>

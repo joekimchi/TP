@@ -85,15 +85,6 @@ namespace Part2 {
         protected global::System.Web.UI.WebControls.Label lblLoginErrorMessage;
         
         /// <summary>
-        /// btnLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
-        
-        /// <summary>
         /// chkbxRememberMe control.
         /// </summary>
         /// <remarks>
@@ -103,6 +94,15 @@ namespace Part2 {
         protected global::System.Web.UI.WebControls.CheckBox chkbxRememberMe;
         
         /// <summary>
+        /// btnLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogin;
+        
+        /// <summary>
         /// btnNewUser control.
         /// </summary>
         /// <remarks>
@@ -110,14 +110,5 @@ namespace Part2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNewUser;
-        
-        /// <summary>
-        /// btnBack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBack;
     }
 }

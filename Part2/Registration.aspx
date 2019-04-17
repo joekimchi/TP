@@ -12,8 +12,8 @@
         <img src="img/amazon.png" alt="amazon.com" style="width: 200px; height: 55px;" />
         <br />
         <br />
-        <fieldset style="width: 0">
-            <h3>Create account </h3>
+        <fieldset style="width: 20%">
+            <h2>Create account </h2>
             <div>
                 <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
                 <br />
@@ -137,7 +137,7 @@
             <br />
             <br />
             <div>
-                <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Create your Amazon account" Width="225px" />
+                <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Create your Amazon account" Width="225px" CssClass="button" />
                 <br />
                 <br />
                 Already have an account?
@@ -146,7 +146,7 @@
             </div>
             <br />
             <div>
-                <asp:Button ID="btnRegisterforMerchantAccount" runat="server" Text="Register new Merchant" OnClick="btnRegisterforMerchantAccount_Click" />
+                <asp:Button ID="btnRegisterforMerchantAccount" runat="server" Text="Register new Merchant" OnClick="btnRegisterforMerchantAccount_Click" CssClass="button1" />
             </div>
         </fieldset>
     </form>
