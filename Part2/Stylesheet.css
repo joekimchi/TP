@@ -45,3 +45,8 @@ fieldset {
         background-color: #555555;
         color: white;
     }
+
+Hyperlink {
+    text-decoration: none;
+    color: lightblue;
+}

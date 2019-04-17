@@ -23,16 +23,20 @@ namespace Part2
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string email;
-
-            email = txtEmailAddress.Text;
+            string email = txtEmailAddress.Text;
 
             DBConnect db = new DBConnect();
             DataSet ds = new DataSet();
 
             SqlCommand objcommand = new SqlCommand();
 
-            if (email.Length != 0)
+            if (email.Length == 0)
+            {
+                lblError.Visible = true;
+                lblError.Text = "Enter your email";
+                txtEmailAddress.Focus();
+            }
+            else
             {
                 //if dropdown selection is Customer
                 if (ddlLoginType.Text == "Customer")
@@ -43,15 +47,18 @@ namespace Part2
 
                     ds = db.GetDataSetUsingCmdObj(objcommand);
 
-                    if (ds.Tables[0].Rows.Count == 0)
-                    {
-                        lblError.Text = "We're sorry. We weren't able to identify you given the information provided.";
-                    }
-                    else
+                    if (ds.Tables[0].Rows.Count == 1)
                     {
                         lblError.Text = "";
                         txtEmailAddress.ReadOnly = true;
+                        ddlLoginType.Enabled = false;
                         txtEmailAddress.BackColor = System.Drawing.SystemColors.Window;
+                        
+                    }
+                    else
+                    {
+                        lblError.Text = "We're sorry. We weren't able to identify you given the information provided.";
+                        txtEmailAddress.Focus();
                     }
                 }
                 //if dropdown selection is Merchant
@@ -63,23 +70,20 @@ namespace Part2
 
                     ds = db.GetDataSetUsingCmdObj(objcommand);
 
-                    if (ds.Tables[0].Rows.Count == 0)
-                    {
-                        lblError.Text = "We're sorry. We weren't able to identify you given the information provided.";
-                    }
-                    else
+                    if (ds.Tables[0].Rows.Count == 1)
                     {
                         lblError.Text = "";
                         txtEmailAddress.ReadOnly = true;
+                        ddlLoginType.Enabled = false;
                         txtEmailAddress.BackColor = System.Drawing.SystemColors.Window;
+
+                    }
+                    else
+                    {
+                        lblError.Text = "We're sorry. We weren't able to identify you given the information provided.";
+                        txtEmailAddress.Focus();
                     }
                 }
-            }
-
-            else
-            {
-                lblError.Visible = true;
-                lblError.Text = "Enter your email";
             }
         }
     }

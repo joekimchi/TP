@@ -28,7 +28,7 @@
             <asp:Button ID="btnSubmit" runat="server" Text="Continue" Width="85%" CssClass="button" OnClick="btnSubmit_Click"/>
             <br />
             <br />
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Login.aspx">Return to login</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Login.aspx" style="text-decoration: none; color: #146EB4">Return to login</asp:HyperLink>
         </fieldset>
     </form>
 </body>

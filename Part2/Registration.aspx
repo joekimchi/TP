@@ -141,7 +141,7 @@
                 <br />
                 <br />
                 Already have an account?
-                    <asp:HyperLink ID="hyperSignIn" runat="server" NavigateUrl="Login.aspx">Sign in</asp:HyperLink>
+                    <asp:HyperLink ID="hyperSignIn" runat="server" NavigateUrl="Login.aspx" style="text-decoration: none; color: #146EB4">Sign in</asp:HyperLink>
                 <br />
             </div>
             <br />
