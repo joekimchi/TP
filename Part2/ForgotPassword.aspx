@@ -17,8 +17,15 @@
             <p>Enter the email address associated with your Amazon account.</p>
             <asp:TextBox ID="txtEmailAddress" runat="server" Width="85%"></asp:TextBox>
             <br />
+            <asp:Label ID="lblError" runat="server" Visible="False"></asp:Label>
             <br />
-            <asp:Button ID="btnSubmit" runat="server" Text="Continue" Width="85%"/>
+            <asp:DropDownList ID="ddlLoginType" runat="server">
+                <asp:ListItem Selected="True" Value="Customer">Customer</asp:ListItem>
+                <asp:ListItem Value="Merchant">Merchant</asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <br />
+            <asp:Button ID="btnSubmit" runat="server" Text="Continue" Width="85%" CssClass="button" OnClick="btnSubmit_Click"/>
             <br />
             <br />
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Login.aspx">Return to login</asp:HyperLink>

@@ -12,7 +12,7 @@
         <img src="img/amazon.png" alt="amazon.com" style="width: 200px; height: 55px;" />
         <br />
         <br />
-        <fieldset style="width: 0">
+        <fieldset style="width: 20%">
             <h2>Merchant Registration</h2>
             <br />
             <div>
@@ -62,7 +62,7 @@
                 <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
                 <br />
                 <br />
-                <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Create your Amazon Merchant account" />
+                <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Create your Amazon Merchant account" CssClass="button" />
                 <br />
                 <asp:Label ID="lblResult" runat="server"></asp:Label>
                 <br />
@@ -71,7 +71,7 @@
                     <asp:HyperLink ID="hyperSignIn" runat="server" NavigateUrl="Login.aspx">Sign in</asp:HyperLink>
                 <br />
                 <br />
-                <asp:Button ID="btnRegisterNewCustomer" runat="server" OnClick="btnRegisterNewCustomer_Click" Text="Register New Customer" />
+                <asp:Button ID="btnRegisterNewCustomer" runat="server" OnClick="btnRegisterNewCustomer_Click" Text="Register New Customer" CssClass="button1" />
                 <br />
             </div>
         </fieldset>
