@@ -14,8 +14,8 @@ namespace Part2
         {
             if (!IsPostBack)
             {
-                loginID = Request.QueryString["LoginID"];
-                accountType = int.Parse(Request.QueryString["AccountType"]);
+                loginID = Session["Username"].ToString();
+                accountType = int.Parse(Session["AccountType"].ToString());
             }
         }
 

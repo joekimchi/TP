@@ -15,9 +15,9 @@ namespace Part2
         {
             if (!IsPostBack)
             {
-                loginID = "";
-                password = "";
-                accountType = 0;
+                loginID = Session["Username"].ToString();
+                password = Session["Password"].ToString();
+                accountType = int.Parse(Session["AccountType"].ToString());
             }
 
             if (accountType == 0)
@@ -60,12 +60,12 @@ namespace Part2
 
         protected void btnChangePassword_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ChangePassword.apsx?LoginID=" + loginID + "&AccountType=" + accountType, false);
+            Response.Redirect("ChangePassword.apsx", false);
         }
 
         protected void btnUpdateAccountInformation_Click(object sender, EventArgs e)
         {
-            Response.Redirect("UpdateAccountInformation.aspx?LoginID=" + loginID + "&AccountType=" + accountType, false);
+            Response.Redirect("UpdateAccountInformation.aspx", false);
         }
 
         protected void btnChangeCreditInformation_Click(object sender, EventArgs e)
