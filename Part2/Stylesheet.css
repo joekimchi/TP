@@ -31,8 +31,10 @@ fieldset {
     }
 
 .button1 {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
     background-color: #e7e7e7;
-    border: none;
     color: black;
     padding: 20px;
     text-align: center;
@@ -41,8 +43,7 @@ fieldset {
     cursor: pointer;
     padding: 10px 24px;
     border-radius: 4px;
-    height: 30px;
-}
+    }
     .button1:hover {
         background-color: #555555;
         color: white;

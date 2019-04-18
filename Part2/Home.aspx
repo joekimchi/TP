@@ -60,7 +60,7 @@
                 <Columns>
                     <asp:BoundField DataField="Date" HeaderText="Date" ReadOnly="True" SortExpression="Date" />
                     <asp:BoundField DataField="Time" HeaderText="Time" />
-                    <asp:BoundField DataField="TotalDollarSales" HeaderText="Total Dollar Sales" />
+                    <asp:BoundField DataField="TotalDollarSales" HeaderText="Total Sales ($)" />
                 </Columns>
                 <FooterStyle BackColor="White" ForeColor="#333333" />
                 <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />

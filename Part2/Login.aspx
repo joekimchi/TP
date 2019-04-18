@@ -50,7 +50,7 @@
                 <br />
                 <br />
                 New to Amazon?<br />
-                <asp:Button ID="btnNewUser" runat="server" Text="Create your Amazon account" OnClick="btnNewUser_Click" Width="225px" CssClass="button1" />
+                <asp:Button ID="btnNewUser" runat="server" Text="Create your Amazon account" OnClick="btnNewUser_Click" Width="225px" CssClass="button1" Height="39px" />
                 <br />
                 <br />
             </div>
