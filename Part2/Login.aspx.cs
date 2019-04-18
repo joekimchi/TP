@@ -18,7 +18,15 @@ namespace Part2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Request.Cookies["Username"] != null)
+                    txtEmail.Text = Request.Cookies["Username"].Value;
+                if (Request.Cookies["Password"] != null)
+                    txtPassword.Attributes.Add("value", Request.Cookies["Password"].Value);
+                if (Request.Cookies["Username"] != null && Request.Cookies["Password"] != null)
+                    chkbxRememberMe.Checked = true;
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -29,7 +37,7 @@ namespace Part2
             username = txtEmail.Text;
             password = txtPassword.Text;
 
-            DBConnect newUserConnection = new DBConnect();
+            DBConnect db = new DBConnect();
             DataSet ds = new DataSet();
 
             SqlCommand objcommand = new SqlCommand();
@@ -42,7 +50,7 @@ namespace Part2
                 objcommand.Parameters.AddWithValue("@username", username);
                 objcommand.Parameters.AddWithValue("@password", password);
 
-                ds = newUserConnection.GetDataSetUsingCmdObj(objcommand);
+                ds = db.GetDataSetUsingCmdObj(objcommand);
 
                 if (ds.Tables[0].Rows.Count == 0)
                 {
@@ -50,6 +58,19 @@ namespace Part2
                 }
                 else
                 {
+                    if(chkbxRememberMe.Checked == true)
+                    {
+                        Response.Cookies["Username"].Value = txtEmail.Text;
+                        Response.Cookies["Password"].Value = txtPassword.Text;
+                        Response.Cookies["Username"].Expires = DateTime.Now.AddDays(15);
+                        Response.Cookies["Password"].Expires = DateTime.Now.AddDays(15);
+                    }
+                    else
+                    {
+                        Response.Cookies["Username"].Expires = DateTime.Now.AddDays(-1);
+                        Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
+                    }
+
                     Session["AccountType"] = 0;
                     Session["Username"] = username;
                     Session["Password"] = password;
@@ -64,7 +85,7 @@ namespace Part2
                 objcommand.Parameters.AddWithValue("@username", username);
                 objcommand.Parameters.AddWithValue("@password", password);
 
-                ds = newUserConnection.GetDataSetUsingCmdObj(objcommand);
+                ds = db.GetDataSetUsingCmdObj(objcommand);
 
                 if (ds.Tables[0].Rows.Count == 0)
                 {
@@ -72,6 +93,19 @@ namespace Part2
                 }
                 else
                 {
+                    if (chkbxRememberMe.Checked == true)
+                    {
+                        Response.Cookies["Username"].Value = txtEmail.Text;
+                        Response.Cookies["Password"].Value = txtPassword.Text;
+                        Response.Cookies["Username"].Expires = DateTime.Now.AddDays(15);
+                        Response.Cookies["Password"].Expires = DateTime.Now.AddDays(15);
+                    }
+                    else
+                    {
+                        Response.Cookies["Username"].Expires = DateTime.Now.AddDays(-1);
+                        Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
+                    }
+
                     Session["AccountType"] = 1;
                     Session["Username"] = username;
                     Session["Password"] = password;
@@ -87,7 +121,7 @@ namespace Part2
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Home.aspx", false);
         }
     }
 }

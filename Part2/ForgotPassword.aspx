@@ -4,9 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <title>Amazon Password Assistance</title>
     <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
-    <title>Forgot Password</title>
-
 </head>
 <body style="text-align: center">
     <form id="form1" runat="server">
@@ -16,7 +15,7 @@
         <fieldset style="width: 20%">
             <h2>Password assistance</h2>
             <p>Enter the email address associated with your Amazon account.</p>
-            <asp:TextBox ID="txtEmailAddress" runat="server" Width="85%"></asp:TextBox>
+            <asp:TextBox ID="txtEmailAddress" runat="server" Width="85%" placeholder="example@email.com"></asp:TextBox>
             <br />
             <asp:Label ID="lblError" runat="server" Visible="False"></asp:Label>
             <br />
@@ -29,7 +28,7 @@
             <asp:Button ID="btnSubmit" runat="server" Text="Continue" Width="85%" CssClass="button" OnClick="btnSubmit_Click"/>
             <br />
             <br />
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Login.aspx">Return to login</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Login.aspx" style="text-decoration: none; color: #146EB4">Return to login</asp:HyperLink>
         </fieldset>
     </form>
 </body>
