@@ -14,11 +14,16 @@ namespace Part2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string email = Session["Username"].ToString();
-            customerID = spc.GetCustomerIDByEmail(email);
-
             if (!IsPostBack)
             {
+                if (Session["Username"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                    return;
+                }
+
+                string email = Session["Username"].ToString();
+                customerID = spc.GetCustomerIDByEmail(email);
                 ddlMonth.SelectedValue = currMonth;
                 ddlYear.SelectedValue = currYear;
             }

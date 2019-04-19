@@ -119,7 +119,7 @@
                 <asp:TextBox ID="txtZipcode" runat="server" MaxLength="5" Width="225px"></asp:TextBox>
             </div>
             <br />
-            <div id="questions" runat="server" visible="false">
+            <div id="questions" runat="server">
                 <div>
                     <asp:Label ID="lblSecurityQuestion1" runat="server" Text="Security Question 1"></asp:Label>
                     <br />
@@ -137,7 +137,7 @@
                 <asp:Label ID="lblError" runat="server"></asp:Label>
             </div>
             <br />
-            <asp:CheckBox ID="chkbxRememberMe" runat="server" OnCheckedChanged="chkbxRememberMe_CheckedChanged" Text="Keep me signed in" />
+            <asp:CheckBox ID="chkbxRememberMe" runat="server" Text="Keep me signed in" />
             <br />
             <br />
             <div>

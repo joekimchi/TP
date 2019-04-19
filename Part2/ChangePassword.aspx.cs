@@ -12,6 +12,12 @@ namespace Part2
         int accountType;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Username"] == null)
+            {
+                Response.Redirect("Login.aspx");
+                return;
+            }
+
             loginID = Session["Username"].ToString();
             accountType = int.Parse(Session["AccountType"].ToString());
         }

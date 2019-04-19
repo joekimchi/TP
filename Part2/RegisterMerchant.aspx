@@ -114,7 +114,7 @@
                 <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
                 <br />
                 <br />
-                <asp:CheckBox ID="chkbxRememberMe" runat="server" OnCheckedChanged="chkbxRememberMe_CheckedChanged" Text="Keep me signed in" />
+                <asp:CheckBox ID="chkbxRememberMe" runat="server" Text="Keep me signed in" />
                 <br />
                 <br />
                 <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Create your Amazon Merchant account" CssClass="button" />

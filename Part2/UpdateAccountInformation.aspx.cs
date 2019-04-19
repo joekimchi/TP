@@ -11,12 +11,17 @@ namespace Part2
         string loginID;
         int accountType;
         protected void Page_Load(object sender, EventArgs e)
-        {
-            loginID = Session["Username"].ToString();
-            accountType = int.Parse(Session["AccountType"].ToString());
-
+        { 
             if (!IsPostBack)
             {
+                if (Session["Username"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                    return;
+                }
+
+                loginID = Session["Username"].ToString();
+                accountType = int.Parse(Session["AccountType"].ToString());
 
                 SqlCommand objCommand = new SqlCommand();
                 objCommand.CommandType = CommandType.StoredProcedure;
