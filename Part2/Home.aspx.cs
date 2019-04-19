@@ -7,39 +7,33 @@ namespace Part2
 {
     public partial class Home : System.Web.UI.Page
     {
-        DBConnect objDB = new DBConnect();
+        DataSet myDS;
+        SPCaller spc = new SPCaller();
+
         string loginID;
         string password;
         int accountType;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             loginID = Session["Username"].ToString();
             password = Session["Password"].ToString();
             accountType = int.Parse(Session["AccountType"].ToString());
+
             if (!IsPostBack)
             {
-
                 if (accountType == 0)
                 {
                     Merchant.Visible = false;
 
-                    SqlCommand objCommand = new SqlCommand();
-                    objCommand.CommandType = CommandType.StoredProcedure;
-                    objCommand.CommandText = "TP_CustomerPurchases";
-
-                    objCommand.Parameters.AddWithValue("@LoginID", loginID);
-                    gvCustomer.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
+                    gvCustomer.DataSource = spc.GetCustomerPurchases(loginID);
                     gvCustomer.DataBind();
                 }
                 else //accountType == "Merchant"
                 {
                     Customer.Visible = false;
-                    SqlCommand objCommand = new SqlCommand();
-                    objCommand.CommandType = CommandType.StoredProcedure;
-                    objCommand.CommandText = "TP_MerchantSales";
-
-                    objCommand.Parameters.AddWithValue("@Email", loginID);
-                    gvMerchant.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
+                    gvMerchant.DataSource = spc.GetMerchantSales(loginID);
                     gvMerchant.DataBind();
                 }
             }
@@ -49,14 +43,7 @@ namespace Part2
         {
             lblAPIKey.Text = "";
 
-            SqlCommand objCommand = new SqlCommand();
-            objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "TP_GetAPIKey";
-
-            objCommand.Parameters.AddWithValue("@Email", loginID);
-            objCommand.Parameters.AddWithValue("@Password", password);
-
-            string apiKey = objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows[0][0].ToString();
+            string apiKey = spc.RetrieveAPIKey(loginID, password);
             lblAPIKey.Text = "Your API Key is " + apiKey + ".";
         }
 

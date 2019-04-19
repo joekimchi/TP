@@ -75,7 +75,7 @@ namespace Utilities
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "TP_UpdateCC";
 
-            objCommand.Parameters.AddWithValue("@CustomerID", cardID);
+            objCommand.Parameters.AddWithValue("@CardID", cardID);
             objCommand.Parameters.AddWithValue("@CardNumber", cardNumber);
             objCommand.Parameters.AddWithValue("@Expiration", expiration);
 
@@ -84,6 +84,44 @@ namespace Utilities
             if (result != -1)
                 return true;
             return false;
+        }
+
+        public DataSet GetCustomerPurchases(string loginID)
+        {
+            DBConnect objDB = new DBConnect();
+
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_CustomerPurchases";
+
+            objCommand.Parameters.AddWithValue("@LoginID", loginID);
+            return objDB.GetDataSetUsingCmdObj(objCommand);
+        }
+
+        public DataSet GetMerchantSales(string loginID)
+        {
+            DBConnect objDB = new DBConnect();
+
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_MerchantSales";
+
+            objCommand.Parameters.AddWithValue("@Email", loginID);
+            return objDB.GetDataSetUsingCmdObj(objCommand);
+        }
+
+        public string RetrieveAPIKey(string loginID, string password)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetAPIKey";
+
+            objCommand.Parameters.AddWithValue("@Email", loginID);
+            objCommand.Parameters.AddWithValue("@Password", password);
+
+            return objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows[0][0].ToString();
         }
     }
 }

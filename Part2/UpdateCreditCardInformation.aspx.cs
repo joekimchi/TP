@@ -65,5 +65,10 @@ namespace Part2
             else
                 lblResult.Text = "Card was not updated. Please try again later.";
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx", false);
+        }
     }
 }

@@ -12,13 +12,15 @@
     <body>
     <form id="form1" runat="server">
         <div>
-            Add a Credit Card<br />
+            <h1>Add a Credit Card</h1>
             <br />
             <asp:Button ID="btnBack" runat="server" CssClass="button" Height="39px" OnClick="btnBack_Click" Text="Back to Home" Width="300px" />
             <br />
             <br />
+            <br />
             Card Number<br />
             <asp:TextBox ID="txtCardNumber" runat="server"></asp:TextBox>
+            <br />
             <br />
             Expiration Date<br />
             <asp:DropDownList ID="ddlMonth" runat="server">
@@ -49,6 +51,7 @@
                 <asp:ListItem>29</asp:ListItem>
                 <asp:ListItem>30</asp:ListItem>
             </asp:DropDownList>
+            <br />
             <br />
             <br />
             <asp:Button ID="btnAddCard" runat="server" OnClick="btnSubmitChanges_Click" Text="Add Card" CssClass="button" Height="43px" Width="300px" />

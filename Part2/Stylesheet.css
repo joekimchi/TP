@@ -11,6 +11,10 @@ fieldset {
     margin: auto;
 }
 
+div{
+    text-align: center;
+}
+
 .mgmt{
     border: 2px solid rgb(215, 215, 215);
 }
@@ -33,7 +37,6 @@ fieldset {
 
 .button1 {
     background-color: #e7e7e7;
-    border: 1px solid grey;
     color: black;
     padding: 20px;
     text-align: center;
@@ -42,8 +45,7 @@ fieldset {
     cursor: pointer;
     padding: 10px 24px;
     border-radius: 4px;
-    height: 30px;
-}
+    }
     .button1:hover {
         background-color: #555555;
         color: white;

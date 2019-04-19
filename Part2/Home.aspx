@@ -11,6 +11,10 @@
     <form id="form1" runat="server">
         <h1>Home</h1>    
         <div id="Default">
+            <asp:Button ID="btnLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" CssClass="button" Height="43px" Width="300px" />
+            <br />
+            <br />
+            <br />
             <asp:Button ID="btnUpdateAccountInformation" runat="server" Text="Update Account Information" OnClick="btnUpdateAccountInformation_Click" CssClass="button" Height="43px" Width="300px" />
             <br />
             <br />
@@ -59,7 +63,7 @@
             </h2>
             <br />
             <br />
-            <asp:GridView ID="gvMerchant" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" HorizontalAlign="Center">
+            <asp:GridView ID="gvMerchant" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" HorizontalAlign="Center" EmptyDataText="You have not sold anything yet.">
                 <Columns>
                     <asp:BoundField DataField="Date" HeaderText="Date" ReadOnly="True" SortExpression="Date" />
                     <asp:BoundField DataField="Time" HeaderText="Time" />

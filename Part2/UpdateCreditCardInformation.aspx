@@ -10,7 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Update Credit Card Information<br />
+            <h1>Update Credit Card Information</h1>
+            <br />
+            <asp:Button ID="btnBack" runat="server" CssClass="button" Height="39px" OnClick="btnBack_Click" Text="Back to Home" Width="300px" />
+            <br />
+            <br />
             <br />
             Select Card to Update<br />
             <asp:DropDownList ID="ddlCard" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCard_SelectedIndexChanged">
@@ -49,6 +53,7 @@
                 <asp:ListItem>29</asp:ListItem>
                 <asp:ListItem>30</asp:ListItem>
             </asp:DropDownList>
+            <br />
             <br />
             <br />
             <asp:Button ID="btnSubmitChanges" runat="server" OnClick="btnSubmitChanges_Click" Text="Submit Changes" CssClass="button" Height="43px" Width="300px" />
