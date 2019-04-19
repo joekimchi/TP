@@ -9,8 +9,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1>Home</h1>    
+        <h1>Home</h1>
         <div id="Default">
+            <br />
             <asp:Button ID="btnLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" CssClass="button" Height="43px" Width="300px" />
             <br />
             <br />
@@ -34,7 +35,7 @@
             <br />
             <h2>
                 Your Purchases
-            </h2>
+                </h2>
             <br />
             <br />
             <asp:GridView ID="gvCustomer" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" EmptyDataText="No purchases to display." HorizontalAlign="Center">

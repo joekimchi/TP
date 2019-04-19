@@ -6,6 +6,20 @@ namespace Utilities
 {
     public class Validation
     {
+        public bool isValidCC(string cardNumber)
+        {
+            if (cardNumber.Length == 16)
+            {
+                foreach(char c in cardNumber)
+                {
+                    if (c < '0' || c > '9')
+                        return false;     
+                }
+                return true;
+            }
+            return false;
+        }
+
         //return true if a string is blank
         public bool isBlank(string s)
         {
@@ -14,10 +28,12 @@ namespace Utilities
             return false;
         }
 
-        //return true if string is a number
-        public bool isNum(string s)
+        public bool isValidNumber(char c)
         {
-            return s.All(char.IsDigit);
+            int i;
+            if (int.TryParse(c.ToString(), out i))
+                return true;
+            return false;
         }
 
         public bool isValidNumber(string s)
@@ -25,6 +41,16 @@ namespace Utilities
             int i;
             if (int.TryParse(s, out i))
                 return true;
+            return false;
+        }
+
+        public bool isValidNumberOverZero(string s)
+        {
+            if (isValidNumber(s))
+            {
+                if (int.Parse(s) > 0)
+                    return true;
+            }
             return false;
         }
 
@@ -44,16 +70,6 @@ namespace Utilities
             if (isValidDouble(s))
             {
                 if (double.Parse(s) > 0)
-                    return true;
-            }
-            return false;
-        }
-
-        public bool isValidNumOverZero(string s)
-        {
-            if (isValidNumber(s))
-            {
-                if (int.Parse(s) > 0)
                     return true;
             }
             return false;
@@ -79,25 +95,6 @@ namespace Utilities
             return s.All(x => char.IsLetter(x) || x == ' ' || x == '@' || x == '.') || s.All(char.IsDigit);
         }
 
-        public bool isValidAge(string s)
-        {
-            if (isValidDouble(s))
-            {
-                if (double.Parse(s) <= 122.0)
-                    return true;
-            }
-            return false;
-        }
-
-        public bool isValidPct(string s)
-        {
-            if (isValidDouble(s))
-            {
-                if (double.Parse(s) <= 100)
-                    return true;
-            }
-            return false;
-        }
         public string APIKeyGen(int length)
         {
             const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";

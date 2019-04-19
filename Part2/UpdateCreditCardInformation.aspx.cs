@@ -9,6 +9,12 @@ namespace Part2
         SPCaller spc = new SPCaller();
         int customerID;
         DataSet myDS;
+
+        Validation val = new Validation();
+
+        string currMonth = DateTime.Now.ToString("MM");
+        string currYear = DateTime.Now.ToString("yy");
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string username = Session["Username"].ToString();
@@ -60,15 +66,34 @@ namespace Part2
         {
             string cardNumber = txtCardNumber.Text;
             string expiration = ddlMonth.SelectedValue + "/" + ddlYear.SelectedValue;
-            if (spc.UpdateCC(int.Parse(ddlCard.SelectedValue), cardNumber, expiration))
-                lblResult.Text = "Card successfully updated.";
+
+            if (!val.isBlank(cardNumber) && val.isValidCC(cardNumber))
+            {
+
+                if (spc.UpdateCC(int.Parse(ddlCard.SelectedValue), cardNumber, expiration))
+                    lblResult.Text = "Card successfully updated.";
+                else
+                    lblResult.Text = "Card was not updated. Please try again later.";
+            }
             else
-                lblResult.Text = "Card was not updated. Please try again later.";
+                lblResult.Text = "Invalid credit card number.";
         }
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("Home.aspx", false);
+        }
+
+        protected void ddlMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlMonth.SelectedIndex <= int.Parse(currMonth))
+                ddlYear.SelectedValue = (int.Parse(currYear) + 1).ToString();
+        }
+
+        protected void ddlYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlYear.SelectedIndex <= int.Parse(currYear))
+                ddlYear.SelectedValue = currYear;
         }
     }
 }
