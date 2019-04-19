@@ -25,7 +25,7 @@
             <asp:TextBox ID="txtCardNumber" runat="server"></asp:TextBox>
             <br />
             Expiration Date<br />
-            <asp:DropDownList ID="ddlMonth" runat="server">
+            <asp:DropDownList ID="ddlMonth" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlMonth_SelectedIndexChanged">
                 <asp:ListItem>01</asp:ListItem>
                 <asp:ListItem>02</asp:ListItem>
                 <asp:ListItem>03</asp:ListItem>
@@ -39,7 +39,7 @@
                 <asp:ListItem>11</asp:ListItem>
                 <asp:ListItem>12</asp:ListItem>
             </asp:DropDownList>
-            /<asp:DropDownList ID="ddlYear" runat="server">
+            /<asp:DropDownList ID="ddlYear" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlYear_SelectedIndexChanged">
                 <asp:ListItem>19</asp:ListItem>
                 <asp:ListItem>20</asp:ListItem>
                 <asp:ListItem>21</asp:ListItem>
