@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APICalls.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="ContactInformation.cs" />
     <Compile Include="Customer.cs" />

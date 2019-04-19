@@ -69,13 +69,15 @@
   <ItemGroup>
     <Content Include="AddCreditCard.aspx" />
     <Content Include="ChangePassword.aspx" />
-    <Content Include="ForgotPassword.aspx" />
+    <Content Include="LoginAndRegstration\ForgotPassword.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="img\amazon.png" />
-    <Content Include="Login.aspx" />
+    <Content Include="LoginAndRegstration\Login.aspx" />
     <Content Include="ManagementReport.aspx" />
-    <Content Include="RegisterMerchant.aspx" />
-    <Content Include="Registration.aspx" />
+    <Content Include="Pt1Description\MerchantStoreDescription.aspx" />
+    <Content Include="Pt1Description\TestPage.aspx" />
+    <Content Include="LoginAndRegstration\RegisterMerchant.aspx" />
+    <Content Include="LoginAndRegstration\Registration.aspx" />
     <Content Include="Stylesheet.css" />
     <Content Include="UpdateAccountInformation.aspx" />
     <Content Include="UpdateCreditCardInformation.aspx" />
@@ -96,11 +98,11 @@
     <Compile Include="ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ForgotPassword.aspx.cs">
+    <Compile Include="LoginAndRegstration\ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ForgotPassword.aspx.designer.cs">
+    <Compile Include="LoginAndRegstration\ForgotPassword.aspx.designer.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
@@ -110,11 +112,11 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="LoginAndRegstration\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="LoginAndRegstration\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManagementReport.aspx.cs">
@@ -125,18 +127,32 @@
       <DependentUpon>ManagementReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterMerchant.aspx.cs">
+    <Compile Include="Pt1Description\MerchantStoreDescription.aspx.cs">
+      <DependentUpon>MerchantStoreDescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pt1Description\MerchantStoreDescription.aspx.designer.cs">
+      <DependentUpon>MerchantStoreDescription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pt1Description\TestPage.aspx.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pt1Description\TestPage.aspx.designer.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAndRegstration\RegisterMerchant.aspx.cs">
       <DependentUpon>RegisterMerchant.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RegisterMerchant.aspx.designer.cs">
+    <Compile Include="LoginAndRegstration\RegisterMerchant.aspx.designer.cs">
       <DependentUpon>RegisterMerchant.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registration.aspx.cs">
+    <Compile Include="LoginAndRegstration\Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registration.aspx.designer.cs">
+    <Compile Include="LoginAndRegstration\Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateAccountInformation.aspx.cs">

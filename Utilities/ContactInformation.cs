@@ -8,6 +8,7 @@ namespace Utilities
 {
     public class ContactInformation
     {
+        private int id;
         private String name;
         private String address;
         private String city;
@@ -22,6 +23,11 @@ namespace Utilities
         public ContactInformation()
         {
 
+        }
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
         }
 
         public String Name
