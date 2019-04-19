@@ -1,20 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateCreditCardInformation.aspx.cs" Inherits="Part2.UpdateCreditCardInformation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddCreditCard.aspx.cs" Inherits="Part2.AddCreditCard" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <title></title>
     <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
-    <title>Update Credit Card Information</title>
+
+
 </head>
-<body>
+    <body>
     <form id="form1" runat="server">
         <div>
-            Update Credit Card Information<br />
+            Add a Credit Card<br />
             <br />
-            Select Card to Update<br />
-            <asp:DropDownList ID="ddlCard" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCard_SelectedIndexChanged">
-            </asp:DropDownList>
+            <asp:Button ID="btnBack" runat="server" CssClass="button" Height="39px" OnClick="btnBack_Click" Text="Back to Home" Width="300px" />
             <br />
             <br />
             Card Number<br />
@@ -51,7 +51,7 @@
             </asp:DropDownList>
             <br />
             <br />
-            <asp:Button ID="btnSubmitChanges" runat="server" OnClick="btnSubmitChanges_Click" Text="Submit Changes" CssClass="button" Height="43px" Width="300px" />
+            <asp:Button ID="btnAddCard" runat="server" OnClick="btnSubmitChanges_Click" Text="Add Card" CssClass="button" Height="43px" Width="300px" />
             <br />
             <asp:Label ID="lblResult" runat="server"></asp:Label>
         </div>

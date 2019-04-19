@@ -21,6 +21,10 @@
             <br />
         </div>
         <div id="Customer" runat="server">
+            <asp:Button ID="btnAddCC" runat="server" CssClass="button" Height="43px" OnClick="btnAddCC_Click" Text="Add New Credit Card" Width="300px" />
+            <br />
+            <br />
+            <br />
             <asp:Button ID="btnChangeCreditInformation" runat="server" Text="Change Credit Card Information" OnClick="btnChangeCreditInformation_Click" CssClass="button" Height="43px" Width="300px" />
             <br />
             <br />

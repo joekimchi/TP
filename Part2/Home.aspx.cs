@@ -85,5 +85,10 @@ namespace Part2
             Session.Abandon();
             Response.Redirect("Login.aspx");
         }
+
+        protected void btnAddCC_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddCreditCard.aspx", false);
+        }
     }
 }
