@@ -18,11 +18,15 @@ namespace Part2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            Session.Add("Username", "");
+            Session.Add("SecurityQuestion1", "");
+            Session.Add("SecurityQuestion2", "");
+
             string email = txtEmailAddress.Text;
 
             DBConnect db = new DBConnect();
@@ -30,7 +34,7 @@ namespace Part2
 
             SqlCommand objcommand = new SqlCommand();
 
-            if (email.Length == 0)
+            if (email == "")
             {
                 lblError.Visible = true;
                 lblError.Text = "Enter your email";
@@ -39,7 +43,7 @@ namespace Part2
             else
             {
                 //if dropdown selection is Customer
-                if (ddlLoginType.Text == "Customer")
+                if (ddlLoginType.SelectedItem.Value == "0")
                 {
                     objcommand.CommandType = CommandType.StoredProcedure;
                     objcommand.CommandText = "TP_GetCustomerByEmail";
@@ -52,8 +56,14 @@ namespace Part2
                         lblError.Text = "";
                         txtEmailAddress.ReadOnly = true;
                         ddlLoginType.Enabled = false;
+                        btnSubmit.Visible = false;
                         txtEmailAddress.BackColor = System.Drawing.SystemColors.Window;
-                        
+
+                        questions.Visible = true;
+                        Session.Clear();
+                        Session["Username"] = ds.Tables[0].Rows[0]["LoginID"].ToString();
+                        Session["SecurityQuestion1"] = ds.Tables[0].Rows[0]["SecurityAnswer1"].ToString();
+                        Session["SecurityQuestion2"] = ds.Tables[0].Rows[0]["SecurityAnswer2"].ToString();
                     }
                     else
                     {
@@ -62,7 +72,7 @@ namespace Part2
                     }
                 }
                 //if dropdown selection is Merchant
-                if (ddlLoginType.Text == "Merchant")
+                if (ddlLoginType.SelectedItem.Value == "1")
                 {
                     objcommand.CommandType = CommandType.StoredProcedure;
                     objcommand.CommandText = "TP_GetMerchantByEmail";
@@ -75,8 +85,14 @@ namespace Part2
                         lblError.Text = "";
                         txtEmailAddress.ReadOnly = true;
                         ddlLoginType.Enabled = false;
+                        btnSubmit.Visible = false;
                         txtEmailAddress.BackColor = System.Drawing.SystemColors.Window;
 
+                        questions.Visible = true;
+                        Session.Clear();
+                        Session["Username"] = ds.Tables[0].Rows[0]["LoginID"].ToString();
+                        Session["SecurityQuestion1"] = ds.Tables[0].Rows[0]["SecurityAnswer1"].ToString();
+                        Session["SecurityQuestion2"] = ds.Tables[0].Rows[0]["SecurityAnswer2"].ToString();
                     }
                     else
                     {
@@ -84,6 +100,63 @@ namespace Part2
                         txtEmailAddress.Focus();
                     }
                 }
+            }
+        }
+
+        protected void btnAnswer_Click(object sender, EventArgs e)
+        {
+            //if answers are equal to session answer
+            if (txtSecurity1.Text == Session["SecurityQuestion1"].ToString() && txtSecurity2.Text == Session["SecurityQuestion2"].ToString())
+            {
+                lblError1.Text = "";
+                passwordReset.Visible = true;
+                txtSecurity1.ReadOnly = true;
+                txtSecurity2.ReadOnly = true;
+                questions.Visible = true;
+                txtSecurity1.ReadOnly = true;
+                txtSecurity2.ReadOnly = true;
+                btnAnswer.Visible = false;
+            }
+            else
+            {
+                lblError1.Text = "Error. Please try again.";
+            }
+        }
+
+        protected void btnConfirmPassword_Click(object sender, EventArgs e)
+        {
+            string username = txtEmailAddress.Text;
+            string userType = ddlLoginType.SelectedItem.Value;
+            string password1 = txtNewPassword.Text;
+            string password2 = txtReenterPassword.Text;
+
+            DBConnect db = new DBConnect();
+
+            if (password1 == password2)
+            {
+                SqlCommand objCommand = new SqlCommand();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "TP_NewPWFromForgot";
+
+                objCommand.Parameters.AddWithValue("@LoginID", username);
+                objCommand.Parameters.AddWithValue("@AccountType", userType);
+                objCommand.Parameters.AddWithValue("@OldPassword", password1);
+                objCommand.Parameters.AddWithValue("@NewPassword", password2);
+
+                int result = objDB.DoUpdateUsingCmdObj(objCommand);
+
+                if (result == -1)
+                    lblError2.Text = "Oops. There was an error updating your password.";
+                else
+                {
+                    lblError2.Text = "Password successfully updated.";
+                    Response.AddHeader("REFRESH", "5;URL=Login.aspx");
+                    lblError2.Text += "<br>Redirecting to Login...";
+                }
+            }
+            else
+            {
+                lblError2.Text = "Check that your new passwords match.";
             }
         }
     }
