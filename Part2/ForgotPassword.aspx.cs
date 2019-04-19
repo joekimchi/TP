@@ -110,8 +110,6 @@ namespace Part2
             {
                 lblError1.Text = "";
                 passwordReset.Visible = true;
-                txtSecurity1.ReadOnly = true;
-                txtSecurity2.ReadOnly = true;
                 questions.Visible = false;
                 btnAnswer.Visible = false;
             }
