@@ -119,21 +119,25 @@
                 <asp:TextBox ID="txtZipcode" runat="server" MaxLength="5" Width="225px"></asp:TextBox>
             </div>
             <br />
-            <div>
-                <asp:Label ID="lblSecurityQuestion1" runat="server" Text="Security Question 1"></asp:Label>
+            <div id="questions" runat="server" visible="false">
+                <div>
+                    <asp:Label ID="lblSecurityQuestion1" runat="server" Text="Security Question 1"></asp:Label>
+                    <br />
+                    What was your High School mascot?<br />
+                    <asp:TextBox ID="txtSecurityAnswer1" runat="server" Width="225px"></asp:TextBox>
+                </div>
                 <br />
-                What was your High School mascot?<br />
-                <asp:TextBox ID="txtSecurityAnswer1" runat="server" Width="225px"></asp:TextBox>
+                <div>
+                    <asp:Label ID="lblSecurityQuestion2" runat="server" Text="Security Question 2"></asp:Label>
+                    <br />
+                    What is the make of your first car?<br />
+                    <asp:TextBox ID="txtSecurityAnswer2" runat="server" Width="225px"></asp:TextBox>
+                    <br />
+                </div>
+                <asp:Label ID="lblError" runat="server"></asp:Label>
             </div>
             <br />
-            <div>
-                <asp:Label ID="lblSecurityQuestion2" runat="server" Text="Security Question 2"></asp:Label>
-                <br />
-                What is the make of your first car?<br />
-                <asp:TextBox ID="txtSecurityAnswer2" runat="server" Width="225px"></asp:TextBox>
-                <br />
-            </div>
-            <asp:Label ID="lblError" runat="server"></asp:Label>
+            <asp:CheckBox ID="chkbxRememberMe" runat="server" OnCheckedChanged="chkbxRememberMe_CheckedChanged" Text="Keep me signed in" />
             <br />
             <br />
             <div>
@@ -141,7 +145,7 @@
                 <br />
                 <br />
                 Already have an account?
-                    <asp:HyperLink ID="hyperSignIn" runat="server" NavigateUrl="Login.aspx" style="text-decoration: none; color: #146EB4">Sign in</asp:HyperLink>
+                    <asp:HyperLink ID="hyperSignIn" runat="server" NavigateUrl="Login.aspx" Style="text-decoration: none; color: #146EB4">Sign in</asp:HyperLink>
                 <br />
             </div>
             <br />

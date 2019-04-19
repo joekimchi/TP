@@ -20,15 +20,58 @@
             <asp:Label ID="lblError" runat="server" Visible="False"></asp:Label>
             <br />
             <asp:DropDownList ID="ddlLoginType" runat="server">
-                <asp:ListItem Selected="True" Value="Customer">Customer</asp:ListItem>
-                <asp:ListItem Value="Merchant">Merchant</asp:ListItem>
+                <asp:ListItem Selected="True" Value="0">Customer</asp:ListItem>
+                <asp:ListItem Value="1">Merchant</asp:ListItem>
             </asp:DropDownList>
             <br />
             <br />
-            <asp:Button ID="btnSubmit" runat="server" Text="Continue" Width="85%" CssClass="button" OnClick="btnSubmit_Click"/>
+            <asp:Button ID="btnSubmit" runat="server" Text="Continue" Width="85%" CssClass="button" OnClick="btnSubmit_Click" />
             <br />
             <br />
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Login.aspx" style="text-decoration: none; color: #146EB4">Return to login</asp:HyperLink>
+            <div id="questions" runat="server" visible="false">
+                <hr />
+                <h2>Security Questions</h2>
+                <h5>(case sensitive)</h5>
+                <div>
+                    <label>1. What was your High School mascot?</label>
+                    <asp:TextBox ID="txtSecurity1" runat="server" type="text" Width="85%" TextMode="Password"/>
+                </div>
+                <br />
+                <div>
+                    <label>2. What is the make of your first car?</label>
+                    <asp:TextBox ID="txtSecurity2" runat="server" type="text" Width="85%" TextMode="Password"/>
+                </div>
+                <div>
+                    <asp:Label ID="lblError1" runat="server"></asp:Label>
+                    <br />
+                </div>
+                <div>
+                    <asp:Button ID="btnAnswer" runat="server" Text="Continue" Width="85%" CssClass="button" OnClick="btnAnswer_Click" />
+                </div>
+            </div>
+            <br />
+            <div id="passwordReset" runat="server" visible="false">
+                <hr />
+                <h2>Password Reset</h2>
+                <div>
+                    <label>New password</label>
+                    <asp:TextBox ID="txtNewPassword" runat="server" type="text" Width="85%" TextMode="Password"/>
+                </div>
+                <br />
+                <div>
+                    <label>Re-enter password</label>
+                    <asp:TextBox ID="txtReenterPassword" runat="server" type="text" Width="85%" TextMode="Password"/>
+                </div>
+                <div>
+                    <asp:Label ID="lblError2" runat="server"></asp:Label>
+                    <br />
+                </div>
+                <div>
+                    <asp:Button ID="btnConfirmPassword" runat="server" Text="Continue" Width="85%" CssClass="button" OnClick="btnConfirmPassword_Click" />
+                </div>
+            </div>
+            <br />
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Login.aspx" Style="text-decoration: none; color: #146EB4">Return to login</asp:HyperLink>
         </fieldset>
     </form>
 </body>
