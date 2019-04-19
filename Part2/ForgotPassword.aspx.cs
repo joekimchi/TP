@@ -112,7 +112,7 @@ namespace Part2
                 passwordReset.Visible = true;
                 txtSecurity1.ReadOnly = true;
                 txtSecurity2.ReadOnly = true;
-                questions.Visible = true;
+                questions.Visible = false;
                 btnAnswer.Visible = false;
             }
             else
