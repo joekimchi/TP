@@ -113,8 +113,6 @@ namespace Part2
                 txtSecurity1.ReadOnly = true;
                 txtSecurity2.ReadOnly = true;
                 questions.Visible = true;
-                txtSecurity1.ReadOnly = true;
-                txtSecurity2.ReadOnly = true;
                 btnAnswer.Visible = false;
             }
             else
@@ -131,32 +129,38 @@ namespace Part2
             string password2 = txtReenterPassword.Text;
 
             DBConnect db = new DBConnect();
-
-            if (password1 == password2)
+            if (password1 != "" && password2 != "")
             {
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_NewPWFromForgot";
+                if (password1 == password2)
+                {
+                    SqlCommand objCommand = new SqlCommand();
+                    objCommand.CommandType = CommandType.StoredProcedure;
+                    objCommand.CommandText = "TP_NewPWFromForgot";
 
-                objCommand.Parameters.AddWithValue("@LoginID", username);
-                objCommand.Parameters.AddWithValue("@AccountType", userType);
-                objCommand.Parameters.AddWithValue("@OldPassword", password1);
-                objCommand.Parameters.AddWithValue("@NewPassword", password2);
+                    objCommand.Parameters.AddWithValue("@LoginID", username);
+                    objCommand.Parameters.AddWithValue("@AccountType", userType);
+                    objCommand.Parameters.AddWithValue("@OldPassword", password1);
+                    objCommand.Parameters.AddWithValue("@NewPassword", password2);
 
-                int result = objDB.DoUpdateUsingCmdObj(objCommand);
+                    int result = objDB.DoUpdateUsingCmdObj(objCommand);
 
-                if (result == -1)
-                    lblError2.Text = "Oops. There was an error updating your password.";
+                    if (result == -1)
+                        lblError2.Text = "Oops. There was an error updating your password.";
+                    else
+                    {
+                        lblError2.Text = "Password successfully updated.";
+                        Response.AddHeader("REFRESH", "5;URL=Login.aspx");
+                        lblError2.Text += "<br>Redirecting to Login...";
+                    }
+                }
                 else
                 {
-                    lblError2.Text = "Password successfully updated.";
-                    Response.AddHeader("REFRESH", "5;URL=Login.aspx");
-                    lblError2.Text += "<br>Redirecting to Login...";
+                    lblError2.Text = "Check that your new passwords match.";
                 }
             }
             else
             {
-                lblError2.Text = "Check that your new passwords match.";
+                lblError2.Text = "Do not leave values blank";
             }
         }
     }

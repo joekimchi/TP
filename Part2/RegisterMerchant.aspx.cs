@@ -73,7 +73,22 @@ namespace Part2
                 response.Close();
 
                 if (result == true)
+                {
                     lblResult.Text = "Merchant Account successfully added.<br>Your APIKey is: " + apikey;
+
+                    if (chkbxRememberMe.Checked == true)
+                    {
+                        Response.Cookies["Username"].Value = txtEmail.Text;
+                        Response.Cookies["Password"].Value = txtPassword.Text;
+                        Response.Cookies["Username"].Expires = DateTime.Now.AddDays(15);
+                        Response.Cookies["Password"].Expires = DateTime.Now.AddDays(15);
+                    }
+                    else
+                    {
+                        Response.Cookies["Username"].Expires = DateTime.Now.AddDays(-1);
+                        Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
+                    }
+                }
                 else
                     lblResult.Text = "Something went wrong. Merchant Account was not added.";
             }

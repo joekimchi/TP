@@ -79,6 +79,19 @@ namespace Part2
                         }
                         else
                         {
+                            if (chkbxRememberMe.Checked == true)
+                            {
+                                Response.Cookies["Username"].Value = txtEmail.Text;
+                                Response.Cookies["Password"].Value = txtPassword.Text;
+                                Response.Cookies["Username"].Expires = DateTime.Now.AddDays(15);
+                                Response.Cookies["Password"].Expires = DateTime.Now.AddDays(15);
+                            }
+                            else
+                            {
+                                Response.Cookies["Username"].Expires = DateTime.Now.AddDays(-1);
+                                Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
+                            }
+
                             lblError.Text = "Account Successfully Created";
                             Response.AddHeader("REFRESH", "5;URL=Login.aspx");
                             lblError.Text += "<br>Redirecting to Login...";

@@ -137,6 +137,8 @@
                 <asp:Label ID="lblError" runat="server"></asp:Label>
             </div>
             <br />
+            <asp:CheckBox ID="chkbxRememberMe" runat="server" OnCheckedChanged="chkbxRememberMe_CheckedChanged" Text="Keep me signed in" />
+            <br />
             <br />
             <div>
                 <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Create your Amazon account" Width="276px" CssClass="button" />
