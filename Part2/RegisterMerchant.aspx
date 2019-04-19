@@ -114,6 +114,25 @@
                 <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
                 <br />
                 <br />
+                <div id="questions" runat="server">
+                    <div>
+                        <asp:Label ID="lblSecurityQuestion1" runat="server" Text="Security Question 1"></asp:Label>
+                        <br />
+                        What was your High School mascot?<br />
+                        <asp:TextBox ID="txtSecurityAnswer1" runat="server" Width="225px"></asp:TextBox>
+                    </div>
+                    <br />
+                    <div>
+                        <asp:Label ID="lblSecurityQuestion2" runat="server" Text="Security Question 2"></asp:Label>
+                        <br />
+                        What is the make of your first car?<br />
+                        <asp:TextBox ID="txtSecurityAnswer2" runat="server" Width="225px"></asp:TextBox>
+                        <br />
+                    </div>
+                    <asp:Label ID="lblError" runat="server"></asp:Label>
+                </div>
+                <br />
+                <br />
                 <asp:CheckBox ID="chkbxRememberMe" runat="server" Text="Keep me signed in" />
                 <br />
                 <br />

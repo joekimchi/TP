@@ -40,6 +40,8 @@ namespace Part2
             ci.Email = txtEmail.Text;
             ci.Password = txtPassword.Text;
             ci.Phone = txtPhone.Text;
+            ci.SecurityAnswer1 = txtSecurityAnswer1.Text;
+            ci.SecurityAnswer2 = txtSecurityAnswer2.Text;
 
             SqlCommand objCommand = new SqlCommand();
             objCommand.CommandType = CommandType.StoredProcedure;
@@ -47,7 +49,6 @@ namespace Part2
             objCommand.Parameters.AddWithValue("@SiteID", siteID);
             if (objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows.Count > 0)
                 lblDuplicateID.Text = "Sorry that Site ID already exists. Try another one.";
-
             else
             {
                 lblDuplicateID.Text = "";
