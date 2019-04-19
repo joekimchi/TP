@@ -22,6 +22,15 @@ namespace Part2 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// btnLogOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogOut;
+        
+        /// <summary>
         /// btnUpdateAccountInformation control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace Part2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Customer;
+        
+        /// <summary>
+        /// btnAddCC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddCC;
         
         /// <summary>
         /// btnChangeCreditInformation control.
@@ -76,13 +94,13 @@ namespace Part2 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Merchant;
         
         /// <summary>
-        /// btnRetrieveAPIKey control.
+        /// gvMerchant control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRetrieveAPIKey;
+        protected global::System.Web.UI.WebControls.GridView gvMerchant;
         
         /// <summary>
         /// lblAPIKey control.
@@ -94,13 +112,13 @@ namespace Part2 {
         protected global::System.Web.UI.WebControls.Label lblAPIKey;
         
         /// <summary>
-        /// gvMerchant control.
+        /// btnRetrieveAPIKey control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvMerchant;
+        protected global::System.Web.UI.WebControls.Button btnRetrieveAPIKey;
         
         /// <summary>
         /// Manager control.

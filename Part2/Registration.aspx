@@ -139,7 +139,7 @@
             <br />
             <br />
             <div>
-                <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Create your Amazon account" Width="225px" CssClass="button" />
+                <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Create your Amazon account" Width="276px" CssClass="button" />
                 <br />
                 <br />
                 Already have an account?
@@ -148,7 +148,7 @@
             </div>
             <br />
             <div>
-                <asp:Button ID="btnRegisterforMerchantAccount" runat="server" Text="Register new Merchant" OnClick="btnRegisterforMerchantAccount_Click" CssClass="button1" />
+                <asp:Button ID="btnRegisterforMerchantAccount" runat="server" Text="Register new Merchant" OnClick="btnRegisterforMerchantAccount_Click" CssClass="button1" Height="43px" />
             </div>
         </fieldset>
     </form>

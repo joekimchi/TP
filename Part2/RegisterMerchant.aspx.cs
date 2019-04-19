@@ -35,7 +35,7 @@ namespace Part2
             ci.Name = txtName.Text;
             ci.Address = txtAddress.Text;
             ci.City = txtCity.Text;
-            ci.State = txtState.Text;
+            ci.State = ddlState.SelectedValue;
             ci.ZipCode = int.Parse(txtZipCode.Text);
             ci.Email = txtEmail.Text;
             ci.Password = txtPassword.Text;

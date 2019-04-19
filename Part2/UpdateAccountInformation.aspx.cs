@@ -29,7 +29,7 @@ namespace Part2
                 txtPhoneNumber.Text = myDS.Tables[0].Rows[0][1].ToString();
                 txtAddress.Text = myDS.Tables[0].Rows[0][2].ToString();
                 txtCity.Text = myDS.Tables[0].Rows[0][3].ToString();
-                txtState.Text = myDS.Tables[0].Rows[0][4].ToString();
+                ddlState.SelectedValue = myDS.Tables[0].Rows[0][4].ToString();
                 txtZipCode.Text = myDS.Tables[0].Rows[0][5].ToString();
             }
         }
@@ -40,7 +40,7 @@ namespace Part2
             string phone = txtPhoneNumber.Text;
             string address = txtAddress.Text;
             string city = txtCity.Text;
-            string state = txtState.Text;
+            string state = ddlState.SelectedValue;
             int zipCode = int.Parse(txtZipCode.Text);
 
             SqlCommand objCommand = new SqlCommand();
