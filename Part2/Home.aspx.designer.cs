@@ -22,15 +22,6 @@ namespace Part2 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnLogOut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogOut;
-        
-        /// <summary>
         /// btnUpdateAccountInformation control.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace Part2 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Merchant;
         
         /// <summary>
+        /// gvMerchant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvMerchant;
+        
+        /// <summary>
         /// lblAPIKey control.
         /// </summary>
         /// <remarks>
@@ -101,15 +101,6 @@ namespace Part2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRetrieveAPIKey;
-        
-        /// <summary>
-        /// gvMerchant control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvMerchant;
         
         /// <summary>
         /// Manager control.

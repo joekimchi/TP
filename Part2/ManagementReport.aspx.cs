@@ -20,15 +20,37 @@ namespace Part2
 
                 objCommand = new SqlCommand();
                 objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_InventoryReport";
-                gvInventory.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
-                gvInventory.DataBind();
-
-                objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "TP_SalesReport";
                 gvSales.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
                 gvSales.DataBind();
+            }
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx", false);
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            lblError.Text = "";
+
+            int i;
+            if (int.TryParse(txtQuantity.Text, out i))
+            {
+                int quantity = int.Parse(txtQuantity.Text);
+
+                SqlCommand objCommand = new SqlCommand();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "TP_InventoryReport";
+                objCommand.Parameters.AddWithValue("@Quantity", quantity);
+
+                gvInventory.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
+                gvInventory.DataBind();
+            }
+            else
+            {
+                lblError.Text = "You did not enter a valid integer in the textbox.";
             }
         }
     }
