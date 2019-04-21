@@ -69,15 +69,15 @@
   <ItemGroup>
     <Content Include="AddCreditCard.aspx" />
     <Content Include="ChangePassword.aspx" />
-    <Content Include="LoginAndRegstration\ForgotPassword.aspx" />
+    <Content Include="ForgotPassword.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="img\amazon.png" />
-    <Content Include="LoginAndRegstration\Login.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="ManagementReport.aspx" />
     <Content Include="Pt1Description\MerchantStoreDescription.aspx" />
     <Content Include="Pt1Description\TestPage.aspx" />
-    <Content Include="LoginAndRegstration\RegisterMerchant.aspx" />
-    <Content Include="LoginAndRegstration\Registration.aspx" />
+    <Content Include="RegisterMerchant.aspx" />
+    <Content Include="Registration.aspx" />
     <Content Include="Stylesheet.css" />
     <Content Include="UpdateAccountInformation.aspx" />
     <Content Include="UpdateCreditCardInformation.aspx" />
@@ -91,6 +91,13 @@
     <Compile Include="AddCreditCard.aspx.designer.cs">
       <DependentUpon>AddCreditCard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AmazonMaster.Master.cs">
+      <DependentUpon>AmazonMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AmazonMaster.Master.designer.cs">
+      <DependentUpon>AmazonMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -98,11 +105,11 @@
     <Compile Include="ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LoginAndRegstration\ForgotPassword.aspx.cs">
+    <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LoginAndRegstration\ForgotPassword.aspx.designer.cs">
+    <Compile Include="ForgotPassword.aspx.designer.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
@@ -112,11 +119,11 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LoginAndRegstration\Login.aspx.cs">
+    <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LoginAndRegstration\Login.aspx.designer.cs">
+    <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManagementReport.aspx.cs">
@@ -141,18 +148,18 @@
     <Compile Include="Pt1Description\TestPage.aspx.designer.cs">
       <DependentUpon>TestPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LoginAndRegstration\RegisterMerchant.aspx.cs">
+    <Compile Include="RegisterMerchant.aspx.cs">
       <DependentUpon>RegisterMerchant.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LoginAndRegstration\RegisterMerchant.aspx.designer.cs">
+    <Compile Include="RegisterMerchant.aspx.designer.cs">
       <DependentUpon>RegisterMerchant.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LoginAndRegstration\Registration.aspx.cs">
+    <Compile Include="Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LoginAndRegstration\Registration.aspx.designer.cs">
+    <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateAccountInformation.aspx.cs">
@@ -171,6 +178,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AmazonMaster.Master" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">

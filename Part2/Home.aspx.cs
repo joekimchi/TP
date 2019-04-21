@@ -16,13 +16,18 @@ namespace Part2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            loginID = Session["Username"].ToString();
-            password = Session["Password"].ToString();
-            accountType = int.Parse(Session["AccountType"].ToString());
-
             if (!IsPostBack)
             {
+                if (Session["Username"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                    return;
+                }
+
+                loginID = Session["Username"].ToString();
+                password = Session["Password"].ToString();
+                accountType = int.Parse(Session["AccountType"].ToString());
+
                 if (accountType == 0)
                 {
                     Merchant.Visible = false;
