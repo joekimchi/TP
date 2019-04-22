@@ -10,6 +10,9 @@ namespace Part2
         DBConnect objDB = new DBConnect();
         string loginID;
         int accountType;
+
+        static string prevPage = String.Empty;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Username"] == null)
@@ -54,7 +57,7 @@ namespace Part2
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Home.aspx", false);
+            Response.Redirect(prevPage);
         }
     }
 }

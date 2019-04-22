@@ -5,9 +5,8 @@ using System.Data;
 
 namespace Part2
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class WebForm3 : System.Web.UI.Page
     {
-        DataSet myDS;
         SPCaller spc = new SPCaller();
 
         string loginID;
@@ -27,20 +26,8 @@ namespace Part2
                     Response.Redirect("Login.aspx");
                     return;
                 }
-
-                if (accountType == 0)
-                {
-                    Merchant.Visible = false;
-
-                    gvCustomer.DataSource = spc.GetCustomerPurchases(loginID);
-                    gvCustomer.DataBind();
-                }
-                else //accountType == "Merchant"
-                {
-                    Customer.Visible = false;
-                    gvMerchant.DataSource = spc.GetMerchantSales(loginID);
-                    gvMerchant.DataBind();
-                }
+                gvMerchant.DataSource = spc.GetMerchantSales(loginID);
+                gvMerchant.DataBind();
             }
         }
 
@@ -52,24 +39,9 @@ namespace Part2
             lblAPIKey.Text = "Your API Key is " + apiKey + ".";
         }
 
-        protected void btnUpdateAccountInformation_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("UpdateAccountInformation.aspx", false);
-        }
-
-        protected void btnChangeCreditInformation_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("UpdateCreditCardInformation.aspx", false);
-        }
-
         protected void btnManagementReport_Click(object sender, EventArgs e)
         {
             Response.Redirect("ManagementReport.aspx", false);
-        }
-
-        protected void btnAddCC_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AddCreditCard.aspx", false);
         }
     }
 }

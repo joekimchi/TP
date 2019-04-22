@@ -74,7 +74,7 @@ namespace Part2
                     Session["AccountType"] = 0;
                     Session["Username"] = username;
                     Session["Password"] = password;
-                    Response.Redirect("Home1.aspx");
+                    Response.Redirect("CustomerHome.aspx");
                 }
             }
             //if dropdown selection is Merchant
@@ -109,7 +109,7 @@ namespace Part2
                     Session["AccountType"] = 1;
                     Session["Username"] = username;
                     Session["Password"] = password;
-                    Response.Redirect("Home1.aspx", false);
+                    Response.Redirect("MerchantHome.aspx", false);
                 }
             }
         }
