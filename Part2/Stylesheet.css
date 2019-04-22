@@ -61,3 +61,7 @@ HeaderHyperlink {
     text-decoration: none;
     color: whitesmoke;
 }
+
+    HeaderHyperlink:hover {
+        color: #efd086;
+    }

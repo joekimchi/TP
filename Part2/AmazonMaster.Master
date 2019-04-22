@@ -8,42 +8,41 @@
     <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
     <style type="text/css">
         .auto-style1 {
-            width: 239px;
-            height: 86px;
+            width: 229px;
+            height: 76px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="background-color:#242e3c; color:white;">
+        <div style="background-color: #242e3c; color: white;">
             <div class="row">
                 <div style="height: 38px; margin-right: 3px; margin-bottom: 11px;">
-                    <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click" Font-Underline="False" ForeColor="WhiteSmoke">Account</asp:LinkButton>&nbsp;
-                    <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click" Font-Underline="False" ForeColor="WhiteSmoke">View Cart</asp:LinkButton>&nbsp;
-                    <asp:LinkButton ID="lnkbtnCheckOut" runat="server" OnClick="lnkbtnCheckOut_Click" Font-Underline="False" ForeColor="WhiteSmoke">Check Out</asp:LinkButton>&nbsp;
-                    <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click" Font-Underline="False" ForeColor="WhiteSmoke">Logout</asp:LinkButton>
-                </div>
-                <div class="Welcome" style="text-align: center">
-                    <asp:Label ID="lblWelcomeUser" runat="server" Font-Size="Large"></asp:Label>
+                    <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Account</asp:LinkButton>&nbsp;
+                    <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Shopping Cart</asp:LinkButton>&nbsp;
+                    <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Logout</asp:LinkButton>
                 </div>
             </div>
             <br />
             <div class="header">
                 <img src="img/amazonwhite.png" alt="amazon.com" class="auto-style1" />
             </div>
-
+            <div class="Welcome" style="text-align: center">
+                <asp:Label ID="lblWelcomeUser" runat="server" Font-Size="Large"></asp:Label>
+            </div>
+            <br />
             <nav>
                 <div>
-                 <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True">Home</asp:LinkButton>&nbsp;
-                <asp:LinkButton ID="lnkbtn1" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True">placeholder</asp:LinkButton>&nbsp;
-                <asp:LinkButton ID="lnkbtn2" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True">placeholder</asp:LinkButton>&nbsp;
-                <asp:LinkButton ID="lnkbtn3" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True">placeholder</asp:LinkButton>
+                    <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="Large" CssClass="Hyperlink">Home</asp:LinkButton>&nbsp;
+                <asp:LinkButton ID="lnkbtn1" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="Large" CssClass="HeaderHyperlink">Merchant1</asp:LinkButton>&nbsp;
+                <asp:LinkButton ID="lnkbtn2" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="Large" CssClass="HeaderHyperlink">Merchant2</asp:LinkButton>&nbsp;
+                <asp:LinkButton ID="lnkbtn3" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="Large" CssClass="HeaderHyperlink">Merchant3</asp:LinkButton>
                 </div>
             </nav>
-
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
         </div>
+        <br />
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
     </form>
 </body>
 </html>

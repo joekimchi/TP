@@ -16,13 +16,19 @@
             <div>
                 <h2>Sign in</h2>
                 <div>
+                    Account Type<br />
+                    <asp:DropDownList ID="ddlLoginType" runat="server">
+                        <asp:ListItem Selected="True" Value="Customer">Customer</asp:ListItem>
+                        <asp:ListItem Value="Merchant">Merchant</asp:ListItem>
+                    </asp:DropDownList>
+                    <br />
+                    <br />
                     <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
                     <br />
                     <asp:TextBox ID="txtEmail" runat="server" Width="225px"></asp:TextBox>
                     <br />
+                    <br />
                 </div>
-                <br />
-                <!--Password input -->
                 <div>
                     <asp:Label ID="lblPassowrd" runat="server" Text="Password"></asp:Label>
                     <br />
@@ -31,15 +37,7 @@
                     <asp:HyperLink ID="hyperPassword" runat="server" NavigateUrl="ForgotPassword.aspx" style="text-decoration: none; color: #146EB4">Forgot your password?</asp:HyperLink>
                     <br />
                 </div>
-                <br />
-                <div>
-                    <asp:DropDownList ID="ddlLoginType" runat="server">
-                        <asp:ListItem Selected="True" Value="Customer">Customer</asp:ListItem>
-                        <asp:ListItem Value="Merchant">Merchant</asp:ListItem>
-                    </asp:DropDownList>
-                    <br />
                     <asp:Label ID="lblLoginErrorMessage" runat="server"></asp:Label>
-                </div>
                 <br />
                 <asp:CheckBox ID="chkbxRememberMe" runat="server" Text="Keep me signed in" />
                 <br />

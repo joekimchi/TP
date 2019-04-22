@@ -48,7 +48,7 @@ namespace Part2
 
         protected void lnkbtnViewCart_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Cart.aspx", false);
         }
 
         protected void lnkbtnCheckOut_Click(object sender, EventArgs e)
