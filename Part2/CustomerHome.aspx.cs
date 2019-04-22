@@ -5,7 +5,7 @@ using System.Data;
 
 namespace Part2
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class CustomerHome : System.Web.UI.Page
     {
         SPCaller spc = new SPCaller();
 

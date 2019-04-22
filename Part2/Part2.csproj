@@ -83,6 +83,9 @@
     <Content Include="UpdateCreditCardInformation.aspx" />
     <Content Include="Web.config" />
     <Content Include="Cart.aspx" />
+    <Content Include="CustomerHome.aspx" />
+    <Content Include="MerchantHome.aspx" />
+    <Content Include="UpdateMerchantAccountInformation.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddCreditCard.aspx.cs">
@@ -91,6 +94,13 @@
     </Compile>
     <Compile Include="AddCreditCard.aspx.designer.cs">
       <DependentUpon>AddCreditCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AmazonMerchantMaster.Master.cs">
+      <DependentUpon>AmazonMerchantMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AmazonMerchantMaster.Master.designer.cs">
+      <DependentUpon>AmazonMerchantMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
@@ -177,9 +187,31 @@
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CustomerHome.aspx.cs">
+      <DependentUpon>CustomerHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerHome.aspx.designer.cs">
+      <DependentUpon>CustomerHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MerchantHome.aspx.cs">
+      <DependentUpon>MerchantHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MerchantHome.aspx.designer.cs">
+      <DependentUpon>MerchantHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateMerchantAccountInformation.aspx.cs">
+      <DependentUpon>UpdateMerchantAccountInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateMerchantAccountInformation.aspx.designer.cs">
+      <DependentUpon>UpdateMerchantAccountInformation.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="AmazonMaster.Master" />
+    <Content Include="AmazonMerchantMaster.Master" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">

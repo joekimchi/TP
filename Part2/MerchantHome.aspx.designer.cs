@@ -10,7 +10,7 @@
 namespace Part2 {
     
     
-    public partial class WebForm3 {
+    public partial class MerchantHome {
         
         /// <summary>
         /// Merchant control.

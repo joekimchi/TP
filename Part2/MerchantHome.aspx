@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonMerchantMaster.Master" AutoEventWireup="true" CodeBehind="MerchantHome.aspx.cs" Inherits="Part2.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonMerchantMaster.Master" AutoEventWireup="true" CodeBehind="MerchantHome.aspx.cs" Inherits="Part2.MerchantHome" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="Merchant" runat="server">
         <h2>Your Sales</h2>

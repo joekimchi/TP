@@ -10,7 +10,7 @@
 namespace Part2 {
     
     
-    public partial class WebForm1 {
+    public partial class CustomerHome {
         
         /// <summary>
         /// gvCustomer control.
