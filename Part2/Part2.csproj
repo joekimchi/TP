@@ -82,7 +82,6 @@
     <Content Include="UpdateAccountInformation.aspx" />
     <Content Include="UpdateCreditCardInformation.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Home.aspx" />
     <Content Include="Cart.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -170,13 +169,6 @@
     </Compile>
     <Compile Include="UpdateCreditCardInformation.aspx.designer.cs">
       <DependentUpon>UpdateCreditCardInformation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
