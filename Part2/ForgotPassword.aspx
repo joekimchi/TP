@@ -12,6 +12,9 @@
         <img src="img/amazon.png" alt="amazon.com" style="width: 200px; height: 55px;" />
         <br />
         <br />
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Login.aspx" Style="text-decoration: none; color: #146EB4">Return to login</asp:HyperLink>
+        <br />
+        <br />
         <fieldset style="width: 20%">
             <h2>Password assistance</h2>
             <p>Enter the email address associated with your Amazon account.</p>
@@ -70,8 +73,6 @@
                     <asp:Button ID="btnConfirmPassword" runat="server" Text="Continue" Width="85%" CssClass="button" OnClick="btnConfirmPassword_Click" />
                 </div>
             </div>
-            <br />
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Login.aspx" Style="text-decoration: none; color: #146EB4">Return to login</asp:HyperLink>
         </fieldset>
     </form>
 </body>

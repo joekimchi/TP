@@ -9,12 +9,10 @@ using Utilities;
 
 namespace Part2
 {
-    public partial class Main : System.Web.UI.MasterPage
+    public partial class AmazonMerchantMaster : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Cart cart = (Cart)Session["Cart"];
-            //lnkbtnViewCart.Text = "Cart(" + cart.TotalQuantity + ")";
             if (!IsPostBack)
             {
                 if (!(Session["Username"] == null))
@@ -36,24 +34,9 @@ namespace Part2
             Response.Redirect("Login.aspx");
         }
 
-        protected void lnkbtnHome_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("CustomerHome.aspx", false);
-        }
-
         protected void btnAccount_Click(object sender, EventArgs e)
         {
-            Response.Redirect("UpdateAccountInformation.aspx", false);
-        }
-
-        protected void lnkbtnViewCart_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Cart.aspx", false);
-        }
-
-        protected void lnkbtnCheckOut_Click(object sender, EventArgs e)
-        {
-
+            Response.Redirect("UpdateMerchantAccountInformation.aspx", false);
         }
     }
 }

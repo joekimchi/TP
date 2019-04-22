@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AmazonMaster.Master.cs" Inherits="Part2.Main" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AmazonMerchantMaster.Master.cs" Inherits="Part2.AmazonMerchantMaster" %>
 
 <!DOCTYPE html>
 
@@ -19,7 +19,6 @@
             <div class="row">
                 <div style="height: 38px; margin-right: 3px; margin-bottom: 11px;">
                     <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Account</asp:LinkButton>&nbsp;|
-                    <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Shopping Cart</asp:LinkButton>&nbsp;|
                     <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Logout</asp:LinkButton>
                 </div>
             </div>
@@ -31,12 +30,6 @@
                 <asp:Label ID="lblWelcomeUser" runat="server" Font-Size="Large"></asp:Label>
             </div>
             <br />
-            <nav>
-                <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="Hyperlink">Home</asp:LinkButton>&nbsp;|
-                <asp:LinkButton ID="lnkbtn1" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink">Electronics</asp:LinkButton>&nbsp;|
-                <asp:LinkButton ID="lnkbtn2" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink">Office</asp:LinkButton>&nbsp;|
-                <asp:LinkButton ID="lnkbtn3" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink">Video Games</asp:LinkButton>
-            </nav>
         </div>
         <br />
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

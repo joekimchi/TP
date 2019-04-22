@@ -1,6 +1,19 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonMaster.Master" AutoEventWireup="true" CodeBehind="UpdateAccountInformation.aspx.cs" Inherits="Part2.UpdateAccountInformation" %>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-            <div id="AccountInformation" runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateMerchantAccountInformation.aspx.cs" Inherits="Part2.UpdateMerchantAccountInformation" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
+    <title>Update Merchant Account Information</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <h1>Update Account Information</h1>
+        <div id="AccountInformation" runat="server">
+            <asp:HyperLink ID="hyperBackHome" runat="server" NavigateUrl="MerchantHome.aspx" style="text-decoration: none; color: #146EB4">Return to Home</asp:HyperLink>
+            <br />
+            <br />
             Full Name<br />
             <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
             <br />
@@ -85,9 +98,9 @@
             <br />
             <div id="Default">
         <asp:Button ID="btnChangePassword" runat="server" Text="Change Password" OnClick="btnChangePassword_Click" CssClass="button1" Height="43px" Width="300px" />
-    &nbsp;<asp:Button ID="btnAddCC" runat="server" CssClass="button1" Height="43px" OnClick="btnAddCC_Click" Text="Add New Credit Card" Width="300px" />
-        &nbsp;<asp:Button ID="btnChangeCreditInformation" runat="server" Text="Change Credit Card Information" OnClick="btnChangeCreditInformation_Click" CssClass="button1" Height="43px" Width="300px" />
     </div>
             <br />
         </div>
-</asp:Content>
+    </form>
+</body>
+</html>

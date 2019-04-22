@@ -5,13 +5,13 @@ using System.Data.SqlClient;
 
 namespace Part2
 {
-    public partial class UpdateAccountInformation : System.Web.UI.Page
+    public partial class UpdateMerchantAccountInformation : System.Web.UI.Page
     {
         DBConnect objDB = new DBConnect();
         string loginID;
         int accountType;
         protected void Page_Load(object sender, EventArgs e)
-        {
+        { 
             if (!IsPostBack)
             {
                 if (Session["Username"] == null)
@@ -73,14 +73,9 @@ namespace Part2
             Response.Redirect("ChangePassword.aspx", false);
         }
 
-        protected void btnChangeCreditInformation_Click(object sender, EventArgs e)
+        protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("UpdateCreditCardInformation.aspx", false);
-        }
-
-        protected void btnAddCC_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AddCreditCard.aspx", false);
+            Response.Redirect("Home.aspx", false);
         }
     }
 }
