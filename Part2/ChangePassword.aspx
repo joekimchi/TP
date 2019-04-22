@@ -12,8 +12,7 @@
         <div>
             <h1>Change Password</h1>
             <br />
-            <asp:Button ID="btnBack" runat="server" OnClick="btnBack_Click" Text="Back to Home" CssClass="button" Height="39px" Width="300px" />
-            <br />
+            <asp:HyperLink ID="hyperBackHome" runat="server" NavigateUrl="Home1.aspx" style="text-decoration: none; color: #146EB4">Return to Home</asp:HyperLink>
             <br />
             <br />
             Enter your current password<br />

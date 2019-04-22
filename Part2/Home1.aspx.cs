@@ -52,11 +52,6 @@ namespace Part2
             lblAPIKey.Text = "Your API Key is " + apiKey + ".";
         }
 
-        protected void btnChangePassword_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ChangePassword.aspx", false);
-        }
-
         protected void btnUpdateAccountInformation_Click(object sender, EventArgs e)
         {
             Response.Redirect("UpdateAccountInformation.aspx", false);

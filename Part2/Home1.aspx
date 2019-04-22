@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonMaster.Master" AutoEventWireup="true" CodeBehind="Home1.aspx.cs" Inherits="Part2.WebForm1" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="Default">
         <br />
@@ -8,13 +7,11 @@
         <asp:Button ID="btnAddCC" runat="server" CssClass="button" Height="43px" OnClick="btnAddCC_Click" Text="Add New Credit Card" Width="300px" />
         <br />
         <br />
-        <br />
         <asp:Button ID="btnChangeCreditInformation" runat="server" Text="Change Credit Card Information" OnClick="btnChangeCreditInformation_Click" CssClass="button" Height="43px" Width="300px" />
         <br />
         <br />
         <h2>Your Purchases
         </h2>
-        <br />
         <br />
         <asp:GridView ID="gvCustomer" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" EmptyDataText="No purchases to display." HorizontalAlign="Center">
             <Columns>
@@ -37,9 +34,7 @@
     </div>
     <div id="Merchant" runat="server">
         <br />
-        <h2>Your Sales
-        </h2>
-        <br />
+        <h2>Your Sales</h2>
         <br />
         <asp:GridView ID="gvMerchant" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" HorizontalAlign="Center" EmptyDataText="You have not sold anything yet.">
             <Columns>
@@ -64,9 +59,7 @@
         <br />
     </div>
     <div id="Manager" runat="server">
-
         <br />
         <asp:Button ID="btnManagementReport" runat="server" OnClick="btnManagementReport_Click" Text="View Management Report" CssClass="button" Height="43px" Width="300px" />
-
     </div>
 </asp:Content>

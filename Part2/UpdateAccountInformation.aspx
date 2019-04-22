@@ -11,9 +11,7 @@
     <form id="form1" runat="server">
         <h1>Update Account Information</h1>
         <div id="AccountInformation" runat="server">
-
-            <asp:Button ID="btnBack" runat="server" OnClick="btnBack_Click" Text="Back to Home" CssClass="button" Height="43px" Width="300px" />
-            <br />
+            <asp:HyperLink ID="hyperBackHome" runat="server" NavigateUrl="Home1.aspx" style="text-decoration: none; color: #146EB4">Return to Home</asp:HyperLink>
             <br />
             <br />
 

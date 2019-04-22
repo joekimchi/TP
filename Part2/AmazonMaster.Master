@@ -31,14 +31,12 @@
                 <asp:Label ID="lblWelcomeUser" runat="server" Font-Size="Large"></asp:Label>
             </div>
             <br />
-            <nav>
-                <div>
-                    <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="Hyperlink">Home</asp:LinkButton>&nbsp;|&nbsp;
+            <asp:ContentPlaceHolder ID="nav" runat="server">
+                <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="Hyperlink">Home</asp:LinkButton>&nbsp;|&nbsp;
                 <asp:LinkButton ID="lnkbtn1" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink">Electronics</asp:LinkButton>&nbsp;|&nbsp;
                 <asp:LinkButton ID="lnkbtn2" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink">Office</asp:LinkButton>&nbsp;|&nbsp;
                 <asp:LinkButton ID="lnkbtn3" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink">Video Games</asp:LinkButton>
-                </div>
-            </nav>
+            </asp:ContentPlaceHolder>
         </div>
         <br />
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
