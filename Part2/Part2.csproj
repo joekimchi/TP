@@ -70,7 +70,6 @@
     <Content Include="AddCreditCard.aspx" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="ForgotPassword.aspx" />
-    <Content Include="Home.aspx" />
     <Content Include="img\amazon.png" />
     <Content Include="img\amazonwhite.png" />
     <Content Include="Login.aspx" />
@@ -83,7 +82,7 @@
     <Content Include="UpdateAccountInformation.aspx" />
     <Content Include="UpdateCreditCardInformation.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Home1.aspx" />
+    <Content Include="Home.aspx" />
     <Content Include="Cart.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -107,13 +106,6 @@
     </Compile>
     <Compile Include="ForgotPassword.aspx.designer.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -179,12 +171,12 @@
     <Compile Include="UpdateCreditCardInformation.aspx.designer.cs">
       <DependentUpon>UpdateCreditCardInformation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Home1.aspx.cs">
-      <DependentUpon>Home1.aspx</DependentUpon>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home1.aspx.designer.cs">
-      <DependentUpon>Home1.aspx</DependentUpon>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>

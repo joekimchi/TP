@@ -1,24 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
 using Utilities;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace Part2
 {
     public partial class ForgotPassword : System.Web.UI.Page
     {
-        DBConnect objDB = new DBConnect();
-        SqlCommand objCommand = new SqlCommand();
+        SPCaller spc = new SPCaller();
+        DataSet ds;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -28,11 +20,6 @@ namespace Part2
             Session.Add("SecurityQuestion2", "");
 
             string email = txtEmailAddress.Text;
-
-            DBConnect db = new DBConnect();
-            DataSet ds = new DataSet();
-
-            SqlCommand objcommand = new SqlCommand();
 
             if (email == "")
             {
@@ -45,11 +32,7 @@ namespace Part2
                 //if dropdown selection is Customer
                 if (ddlLoginType.SelectedItem.Value == "0")
                 {
-                    objcommand.CommandType = CommandType.StoredProcedure;
-                    objcommand.CommandText = "TP_GetCustomerByEmail";
-                    objcommand.Parameters.AddWithValue("@email", email);
-
-                    ds = db.GetDataSetUsingCmdObj(objcommand);
+                    ds = spc.GetCustomerByEmail(email);
 
                     if (ds.Tables[0].Rows.Count == 1)
                     {
@@ -74,11 +57,8 @@ namespace Part2
                 //if dropdown selection is Merchant
                 if (ddlLoginType.SelectedItem.Value == "1")
                 {
-                    objcommand.CommandType = CommandType.StoredProcedure;
-                    objcommand.CommandText = "TP_GetMerchantByEmail";
-                    objcommand.Parameters.AddWithValue("@email", email);
 
-                    ds = db.GetDataSetUsingCmdObj(objcommand);
+                    ds = spc.GetMerchantByEmail(email);
 
                     if (ds.Tables[0].Rows.Count == 1)
                     {
@@ -126,30 +106,21 @@ namespace Part2
             string password1 = txtNewPassword.Text;
             string password2 = txtReenterPassword.Text;
 
-            DBConnect db = new DBConnect();
+            DBConnect objDB = new DBConnect();
             if (password1 != "" && password2 != "")
             {
                 if (password1 == password2)
                 {
-                    SqlCommand objCommand = new SqlCommand();
-                    objCommand.CommandType = CommandType.StoredProcedure;
-                    objCommand.CommandText = "TP_NewPWFromForgot";
+                    bool result = spc.NewPasswordFromForgot(username, userType, password1, password2);
 
-                    objCommand.Parameters.AddWithValue("@LoginID", username);
-                    objCommand.Parameters.AddWithValue("@AccountType", userType);
-                    objCommand.Parameters.AddWithValue("@OldPassword", password1);
-                    objCommand.Parameters.AddWithValue("@NewPassword", password2);
-
-                    int result = objDB.DoUpdateUsingCmdObj(objCommand);
-
-                    if (result == -1)
-                        lblError2.Text = "Oops. There was an error updating your password.";
-                    else
+                    if (result)
                     {
                         lblError2.Text = "Password successfully updated.";
                         Response.AddHeader("REFRESH", "5;URL=Login.aspx");
                         lblError2.Text += "<br>Redirecting to Login...";
                     }
+                    else
+                        lblError2.Text = "Oops. There was an error updating your password.";
                 }
                 else
                 {

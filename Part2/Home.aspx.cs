@@ -5,7 +5,7 @@ using System.Data;
 
 namespace Part2
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class WebForm1 : System.Web.UI.Page
     {
         DataSet myDS;
         SPCaller spc = new SPCaller();
@@ -70,12 +70,6 @@ namespace Part2
         protected void btnManagementReport_Click(object sender, EventArgs e)
         {
             Response.Redirect("ManagementReport.aspx", false);
-        }
-
-        protected void btnLogOut_Click(object sender, EventArgs e)
-        {
-            Session.Abandon();
-            Response.Redirect("Login.aspx");
         }
 
         protected void btnAddCC_Click(object sender, EventArgs e)

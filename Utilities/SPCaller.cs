@@ -123,5 +123,72 @@ namespace Utilities
 
             return objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows[0][0].ToString();
         }
+
+        public bool ChangePassword(int accountType, string loginID, string oldPassword, 
+        string newPassword)
+        {
+            DBConnect objDB = new DBConnect();
+
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_ChangePassword";
+
+            objCommand.Parameters.AddWithValue("@AccountType", accountType);
+            objCommand.Parameters.AddWithValue("@LoginID", loginID);
+            objCommand.Parameters.AddWithValue("@OldPassword", oldPassword);
+            objCommand.Parameters.AddWithValue("@NewPassword", newPassword);
+
+            int result = objDB.DoUpdateUsingCmdObj(objCommand);
+
+            if (result != -1)
+                return true;
+            return false;
+        }
+
+        public DataSet GetCustomerByEmail(string email)
+        {
+            DBConnect db = new DBConnect();
+            DataSet ds = new DataSet();
+
+            SqlCommand objcommand = new SqlCommand();
+
+            objcommand.CommandType = CommandType.StoredProcedure;
+            objcommand.CommandText = "TP_GetCustomerByEmail";
+            objcommand.Parameters.AddWithValue("@email", email);
+
+            return db.GetDataSetUsingCmdObj(objcommand);
+        }
+
+        public DataSet GetMerchantByEmail(string email)
+        {
+            DBConnect db = new DBConnect();
+            DataSet ds = new DataSet();
+
+            SqlCommand objcommand = new SqlCommand();
+
+            objcommand.CommandType = CommandType.StoredProcedure;
+            objcommand.CommandText = "TP_GetMerchantByEmail";
+            objcommand.Parameters.AddWithValue("@email", email);
+
+            return db.GetDataSetUsingCmdObj(objcommand);
+        }
+
+        public bool NewPasswordFromForgot(string username, string userType, string password, string password2)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_NewPWFromForgot";
+
+            objCommand.Parameters.AddWithValue("@LoginID", username);
+            objCommand.Parameters.AddWithValue("@AccountType", userType);
+            objCommand.Parameters.AddWithValue("@OldPassword", password);
+            objCommand.Parameters.AddWithValue("@NewPassword", password2);
+
+            int result = objDB.DoUpdateUsingCmdObj(objCommand);
+            if (result != -1)
+                return true;
+            return false;
+        }
     }
 }

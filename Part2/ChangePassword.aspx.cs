@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Data;
-using System.Data.SqlClient;
 using Utilities;
 
 namespace Part2
 {
     public partial class ChangePassword : System.Web.UI.Page
     {
-        DBConnect objDB = new DBConnect();
+        SPCaller spc = new SPCaller();
         string loginID;
         int accountType;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Username"] == null)
@@ -17,7 +16,6 @@ namespace Part2
                 Response.Redirect("Login.aspx");
                 return;
             }
-
             loginID = Session["Username"].ToString();
             accountType = int.Parse(Session["AccountType"].ToString());
         }
@@ -29,27 +27,15 @@ namespace Part2
             string newPW2 = txtConfirmPassword.Text;
 
             if (newPW == newPW2) {
+                bool result = spc.ChangePassword(accountType, loginID, oldPW, newPW);
 
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_ChangePassword";
-
-                objCommand.Parameters.AddWithValue("@AccountType", accountType);
-                objCommand.Parameters.AddWithValue("@LoginID", loginID);
-                objCommand.Parameters.AddWithValue("@OldPassword", oldPW);
-                objCommand.Parameters.AddWithValue("@NewPassword", newPW);
-
-                int result = objDB.DoUpdateUsingCmdObj(objCommand);
-
-                if (result == -1)
-                    lblResult.Text = "Oops. There was an error updating your password.";
-                else
+                if (result)
                     lblResult.Text = "Password successfully updated.";
+                else
+                    lblResult.Text = "Oops. There was an error updating your password.";
             }
             else
-            {
                 lblNotMatched.Text = "Check that your new passwords match.";
-            }
         }
 
         protected void btnBack_Click(object sender, EventArgs e)
