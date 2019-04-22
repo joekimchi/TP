@@ -6,12 +6,6 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
-    <style type="text/css">
-        .auto-style1 {
-            width: 229px;
-            height: 76px;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -24,7 +18,9 @@
                 </div>
             </div>
             <div class="header">
-                <img src="img/amazonwhite.png" alt="amazon.com" class="auto-style1" />
+                <a href="CustomerHome.aspx">
+                    <img src="img/amazonwhite.png" alt="amazon.com" class="auto-style1" />
+                </a>
             </div>
             <div class="Welcome" style="text-align: center">
                 <asp:Label ID="lblWelcomeUser" runat="server" Font-Size="Large"></asp:Label>

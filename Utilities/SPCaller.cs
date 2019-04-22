@@ -124,7 +124,7 @@ namespace Utilities
             return objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows[0][0].ToString();
         }
 
-        public bool ChangePassword(int accountType, string loginID, string oldPassword, 
+        public bool ChangePassword(int accountType, string loginID, string oldPassword,
         string newPassword)
         {
             DBConnect objDB = new DBConnect();
@@ -212,7 +212,7 @@ namespace Utilities
 
             objCommand.CommandText = "TP_UpdateAccount";
 
-            objCommand.Parameters.AddWithValue("@AccountType", accountType);
+            objCommand.Parameters.AddWithValue("@AccountType", accType);
             objCommand.Parameters.AddWithValue("@Email", loginID);
             objCommand.Parameters.AddWithValue("@Name", name);
             objCommand.Parameters.AddWithValue("@Phone", phone);

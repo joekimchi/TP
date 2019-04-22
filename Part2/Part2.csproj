@@ -67,7 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddCreditCard.aspx" />
     <Content Include="bin\roslyn\csc.exe" />
     <Content Include="bin\roslyn\csi.exe" />
     <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
@@ -146,21 +145,15 @@
     <Content Include="Registration.aspx" />
     <Content Include="Stylesheet.css" />
     <Content Include="UpdateAccountInformation.aspx" />
-    <Content Include="UpdateCreditCardInformation.aspx" />
     <Content Include="Web.config" />
     <Content Include="Cart.aspx" />
     <Content Include="CustomerHome.aspx" />
     <Content Include="MerchantHome.aspx" />
     <Content Include="UpdateMerchantAccountInformation.aspx" />
+    <Content Include="UpdateCreditCardInformation.aspx" />
+    <Content Include="AddCreditCard.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCreditCard.aspx.cs">
-      <DependentUpon>AddCreditCard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddCreditCard.aspx.designer.cs">
-      <DependentUpon>AddCreditCard.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AmazonMerchantMaster.Master.cs">
       <DependentUpon>AmazonMerchantMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,13 +238,6 @@
     <Compile Include="UpdateAccountInformation.aspx.designer.cs">
       <DependentUpon>UpdateAccountInformation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UpdateCreditCardInformation.aspx.cs">
-      <DependentUpon>UpdateCreditCardInformation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UpdateCreditCardInformation.aspx.designer.cs">
-      <DependentUpon>UpdateCreditCardInformation.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -279,6 +265,20 @@
     </Compile>
     <Compile Include="UpdateMerchantAccountInformation.aspx.designer.cs">
       <DependentUpon>UpdateMerchantAccountInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCreditCardInformation.aspx.cs">
+      <DependentUpon>UpdateCreditCardInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateCreditCardInformation.aspx.designer.cs">
+      <DependentUpon>UpdateCreditCardInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddCreditCard.aspx.cs">
+      <DependentUpon>AddCreditCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCreditCard.aspx.designer.cs">
+      <DependentUpon>AddCreditCard.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
