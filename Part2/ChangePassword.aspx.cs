@@ -40,7 +40,7 @@ namespace Part2
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Home.aspx", false);
+            Response.Redirect("CustomerHome.aspx", false);
         }
     }
 }

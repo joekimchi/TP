@@ -1,17 +1,20 @@
 ﻿using System;
 using Utilities;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace Part2
 {
     public partial class UpdateAccountInformation : System.Web.UI.Page
     {
-        DBConnect objDB = new DBConnect();
         string loginID;
         int accountType;
+        SPCaller spc = new SPCaller();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            loginID = Session["Username"].ToString();
+            accountType = int.Parse(Session["AccountType"].ToString());
+
             if (!IsPostBack)
             {
                 if (Session["Username"] == null)
@@ -20,14 +23,7 @@ namespace Part2
                     return;
                 }
 
-
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_GetAccountInfo";
-                objCommand.Parameters.AddWithValue("@AccountType", accountType);
-                objCommand.Parameters.AddWithValue("@Email", loginID);
-
-                DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+                DataSet myDS = spc.GetAccountInfoByTypeAndLogin(accountType, loginID);
                 txtName.Text = myDS.Tables[0].Rows[0][0].ToString();
                 txtPhoneNumber.Text = myDS.Tables[0].Rows[0][1].ToString();
                 txtAddress.Text = myDS.Tables[0].Rows[0][2].ToString();
@@ -46,21 +42,8 @@ namespace Part2
             string state = ddlState.SelectedValue;
             int zipCode = int.Parse(txtZipCode.Text);
 
-            SqlCommand objCommand = new SqlCommand();
-            objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "TP_UpdateAccount";
-
-            objCommand.Parameters.AddWithValue("@AccountType", accountType);
-            objCommand.Parameters.AddWithValue("@Email", loginID);
-            objCommand.Parameters.AddWithValue("@Name", name);
-            objCommand.Parameters.AddWithValue("@Phone", phone);
-            objCommand.Parameters.AddWithValue("@Address", address);
-            objCommand.Parameters.AddWithValue("@City", city);
-            objCommand.Parameters.AddWithValue("@State", state);
-            objCommand.Parameters.AddWithValue("@ZipCode", zipCode);
-
-            int result = objDB.DoUpdateUsingCmdObj(objCommand);
-            if (result != -1)
+            bool result = spc.UpdateAccountInfo(accountType, loginID, name, phone, address, city, state, zipCode);
+            if (result)
                 lblResult.Text = "Account information successfully updated.";
             else
                 lblResult.Text = "Something went wrong. Your account information was not updated.";

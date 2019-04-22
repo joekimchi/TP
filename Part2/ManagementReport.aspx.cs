@@ -28,7 +28,10 @@ namespace Part2
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Home.aspx", false);
+            if (int.Parse(Session["AccountType"].ToString()) == 0)
+                Response.Redirect("CustomerHome.aspx", false);
+            else
+                Response.Redirect("MerchantHome.aspx", false);
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
