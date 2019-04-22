@@ -11,7 +11,7 @@ namespace Part2
         string loginID;
         int accountType;
         protected void Page_Load(object sender, EventArgs e)
-        { 
+        {
             if (!IsPostBack)
             {
                 if (Session["Username"] == null)

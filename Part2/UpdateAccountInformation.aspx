@@ -1,20 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateAccountInformation.aspx.cs" Inherits="Part2.UpdateAccountInformation" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
-    <title>Update Account Information</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <h1>Update Account Information</h1>
-        <div id="AccountInformation" runat="server">
-            <asp:HyperLink ID="hyperBackHome" runat="server" NavigateUrl="CustomerHome.aspx" style="text-decoration: none; color: #146EB4">Return to Home</asp:HyperLink>
-            <br />
-            <br />
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonMaster.Master" AutoEventWireup="true" CodeBehind="UpdateAccountInformation.aspx.cs" Inherits="Part2.UpdateAccountInformation" %>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+            <div id="AccountInformation" runat="server">
             Full Name<br />
             <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
             <br />
@@ -104,6 +90,4 @@
     </div>
             <br />
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

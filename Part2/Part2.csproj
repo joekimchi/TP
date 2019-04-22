@@ -80,12 +80,12 @@
     <Content Include="Registration.aspx" />
     <Content Include="Stylesheet.css" />
     <Content Include="UpdateMerchantAccountInformation.aspx" />
-    <Content Include="UpdateAccountInformation.aspx" />
     <Content Include="UpdateCreditCardInformation.aspx" />
     <Content Include="Web.config" />
     <Content Include="CustomerHome.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="MerchantHome.aspx" />
+    <Content Include="UpdateAccountInformation.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddCreditCard.aspx.cs">
@@ -173,13 +173,6 @@
     <Compile Include="UpdateMerchantAccountInformation.aspx.designer.cs">
       <DependentUpon>UpdateMerchantAccountInformation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UpdateAccountInformation.aspx.cs">
-      <DependentUpon>UpdateAccountInformation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UpdateAccountInformation.aspx.designer.cs">
-      <DependentUpon>UpdateAccountInformation.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UpdateCreditCardInformation.aspx.cs">
       <DependentUpon>UpdateCreditCardInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -207,6 +200,13 @@
     </Compile>
     <Compile Include="MerchantHome.aspx.designer.cs">
       <DependentUpon>MerchantHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAccountInformation.aspx.cs">
+      <DependentUpon>UpdateAccountInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAccountInformation.aspx.designer.cs">
+      <DependentUpon>UpdateAccountInformation.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

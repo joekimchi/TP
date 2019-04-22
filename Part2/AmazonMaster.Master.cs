@@ -38,7 +38,7 @@ namespace Part2
 
         protected void lnkbtnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Home.aspx", false);
+            Response.Redirect("CustomerHome.aspx", false);
         }
 
         protected void btnAccount_Click(object sender, EventArgs e)
