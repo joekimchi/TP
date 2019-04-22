@@ -23,7 +23,6 @@
                     <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Logout</asp:LinkButton>
                 </div>
             </div>
-            <br />
             <div class="header">
                 <img src="img/amazonwhite.png" alt="amazon.com" class="auto-style1" />
             </div>

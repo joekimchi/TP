@@ -20,8 +20,6 @@ namespace Part2
                     return;
                 }
 
-                loginID = Session["Username"].ToString();
-                accountType = int.Parse(Session["AccountType"].ToString());
 
                 SqlCommand objCommand = new SqlCommand();
                 objCommand.CommandType = CommandType.StoredProcedure;
