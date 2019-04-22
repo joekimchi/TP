@@ -82,6 +82,7 @@
     <Content Include="UpdateAccountInformation.aspx" />
     <Content Include="UpdateCreditCardInformation.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Home1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddCreditCard.aspx.cs">
@@ -90,13 +91,6 @@
     </Compile>
     <Compile Include="AddCreditCard.aspx.designer.cs">
       <DependentUpon>AddCreditCard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AmazonMaster.Master.cs">
-      <DependentUpon>AmazonMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AmazonMaster.Master.designer.cs">
-      <DependentUpon>AmazonMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
@@ -125,6 +119,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AmazonMaster.Master.cs">
+      <DependentUpon>AmazonMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AmazonMaster.Master.designer.cs">
+      <DependentUpon>AmazonMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="ManagementReport.aspx.cs">
       <DependentUpon>ManagementReport.aspx</DependentUpon>
@@ -175,6 +176,13 @@
     </Compile>
     <Compile Include="UpdateCreditCardInformation.aspx.designer.cs">
       <DependentUpon>UpdateCreditCardInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home1.aspx.cs">
+      <DependentUpon>Home1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home1.aspx.designer.cs">
+      <DependentUpon>Home1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

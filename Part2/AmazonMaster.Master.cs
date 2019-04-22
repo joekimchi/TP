@@ -9,19 +9,19 @@ using Utilities;
 
 namespace Part2
 {
-    public partial class AmazonMaster : System.Web.UI.MasterPage
+    public partial class Main : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Cart cart = (Cart)Session["Cart"];
-            lnkbtnViewCart.Text = "Cart(" + cart.TotalQuantity + ")";
+            //Cart cart = (Cart)Session["Cart"];
+            //lnkbtnViewCart.Text = "Cart(" + cart.TotalQuantity + ")";
             if (!IsPostBack)
             {
                 if (!(Session["Username"] == null))
                 {
                     string email = Session["Username"].ToString();
 
-                    lblWelcomeUser.Text = "Welcome " + email;
+                    lblWelcomeUser.Text = "Welcome " + email + "!";
                 }
                 else
                 {
@@ -39,6 +39,21 @@ namespace Part2
         protected void lnkbtnHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("Home.aspx", false);
+        }
+
+        protected void btnAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lnkbtnViewCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lnkbtnCheckOut_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

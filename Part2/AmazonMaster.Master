@@ -1,42 +1,40 @@
-﻿<%@  Page Language="C#" AutoEventWireup="true" CodeBehind="AmazonMaster.Master.cs" Inherits="Part2.AmazonMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AmazonMaster.Master.cs" Inherits="Part2.Main" %>
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
     <title></title>
     <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
 </head>
-<body style="height: 1213px; margin-left: 14px; width: 1231px; margin-right: 88px;">
+<body>
     <form id="form1" runat="server">
-        <div class="row">
-            <div style="height: 38px; margin-right: 3px; margin-bottom: 11px;">
-                <ul>
+        <div>
+            <div class="row">
+                <div style="height: 38px; margin-right: 3px; margin-bottom: 11px;">
                     <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click">Account</asp:LinkButton>&nbsp;
                     <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click">View Cart</asp:LinkButton>&nbsp;
                     <asp:LinkButton ID="lnkbtnCheckOut" runat="server" OnClick="lnkbtnCheckOut_Click">Check Out</asp:LinkButton>&nbsp;
                     <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click">Logout</asp:LinkButton>
-                </ul>
+                </div>
+                <div class="Welcome" style="text-align: center">
+                    <asp:Label ID="lblWelcomeUser" runat="server" Font-Size="Large"></asp:Label>
+                </div>
             </div>
-            <div class="Welcome" style="width: 273px; height: 29px; margin-left: 24px;">
-                <asp:Label ID="lblWelcomeUser" runat="server" Font-Size="Large"></asp:Label>
+            <br />
+            <div class="header">
+                <img src="img/amazon.png" alt="amazon.com" style="width: 200px; height: 55px;" />
             </div>
-        </div>
 
-        <div class="header">
-            <img src="img/amazon.png" alt="amazon.com" style="width: 200px; height: 55px;"/>
-        </div>
-
-        <nav>
-            <div>
-                <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click">Home</asp:LinkButton>&nbsp;
+            <nav>
+                <div>
+                    <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click">Home</asp:LinkButton>&nbsp;
                 <asp:LinkButton ID="lnkbtn1" runat="server">placeholder</asp:LinkButton>&nbsp;
                 <asp:LinkButton ID="lnkbtn2" runat="server">placeholder</asp:LinkButton>&nbsp;
                 <asp:LinkButton ID="lnkbtn3" runat="server">placeholder</asp:LinkButton>
-            </div>
-        </nav>
+                </div>
+            </nav>
 
-        <div class="contentHolder">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

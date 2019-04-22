@@ -17,9 +17,7 @@
             <br />
             <br />
 
-            Full
-
-            Name<br />
+            Full Name<br />
             <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
             <br />
             <br />

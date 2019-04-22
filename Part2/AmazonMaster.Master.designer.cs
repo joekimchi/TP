@@ -10,7 +10,7 @@
 namespace Part2 {
     
     
-    public partial class AmazonMaster {
+    public partial class Main {
         
         /// <summary>
         /// form1 control.
