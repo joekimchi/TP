@@ -190,5 +190,44 @@ namespace Utilities
                 return true;
             return false;
         }
+
+        public DataSet GetAccountInfoByTypeAndLogin(int accType, string loginID)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetAccountInfo";
+            objCommand.Parameters.AddWithValue("@AccountType", accType);
+            objCommand.Parameters.AddWithValue("@Email", loginID);
+
+            return objDB.GetDataSetUsingCmdObj(objCommand);
+        }
+
+        public bool UpdateAccountInfo(int accType, string loginID, string name, string phone, string address,
+            string city, string state, int zipCode)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+
+            objCommand.CommandText = "TP_UpdateAccount";
+
+            objCommand.Parameters.AddWithValue("@AccountType", accountType);
+            objCommand.Parameters.AddWithValue("@Email", loginID);
+            objCommand.Parameters.AddWithValue("@Name", name);
+            objCommand.Parameters.AddWithValue("@Phone", phone);
+            objCommand.Parameters.AddWithValue("@Address", address);
+            objCommand.Parameters.AddWithValue("@City", city);
+            objCommand.Parameters.AddWithValue("@State", state);
+            objCommand.Parameters.AddWithValue("@ZipCode", zipCode);
+
+            int result = objDB.DoUpdateUsingCmdObj(objCommand);
+
+            if (result != -1)
+                return true;
+            return false;
+        }
+
+
     }
 }
