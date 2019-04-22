@@ -109,7 +109,7 @@ namespace Part2
                     Session["AccountType"] = 1;
                     Session["Username"] = username;
                     Session["Password"] = password;
-                    Response.Redirect("Home.aspx", false);
+                    Response.Redirect("Home1.aspx", false);
                 }
             }
         }

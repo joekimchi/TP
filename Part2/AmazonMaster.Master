@@ -18,8 +18,8 @@
         <div style="background-color: #242e3c; color: white;">
             <div class="row">
                 <div style="height: 38px; margin-right: 3px; margin-bottom: 11px;">
-                    <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Account</asp:LinkButton>&nbsp;
-                    <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Shopping Cart</asp:LinkButton>&nbsp;
+                    <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Account</asp:LinkButton>&nbsp;|&nbsp;
+                    <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Shopping Cart</asp:LinkButton>&nbsp;|&nbsp;
                     <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Logout</asp:LinkButton>
                 </div>
             </div>
@@ -33,10 +33,10 @@
             <br />
             <nav>
                 <div>
-                    <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="Large" CssClass="Hyperlink">Home</asp:LinkButton>&nbsp;
-                <asp:LinkButton ID="lnkbtn1" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="Large" CssClass="HeaderHyperlink">Merchant1</asp:LinkButton>&nbsp;
-                <asp:LinkButton ID="lnkbtn2" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="Large" CssClass="HeaderHyperlink">Merchant2</asp:LinkButton>&nbsp;
-                <asp:LinkButton ID="lnkbtn3" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="Large" CssClass="HeaderHyperlink">Merchant3</asp:LinkButton>
+                    <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="Hyperlink">Home</asp:LinkButton>&nbsp;|&nbsp;
+                <asp:LinkButton ID="lnkbtn1" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink">Electronics</asp:LinkButton>&nbsp;|&nbsp;
+                <asp:LinkButton ID="lnkbtn2" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink">Office</asp:LinkButton>&nbsp;|&nbsp;
+                <asp:LinkButton ID="lnkbtn3" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink">Video Games</asp:LinkButton>
                 </div>
             </nav>
         </div>
