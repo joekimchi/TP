@@ -150,7 +150,7 @@
             </div>
             <br />
             <div>
-                <asp:Button ID="btnRegisterforMerchantAccount" runat="server" Text="Register new Merchant" OnClick="btnRegisterforMerchantAccount_Click" CssClass="button1" Height="43px" />
+                <asp:Button ID="btnRegisterforMerchantAccount" runat="server" Text="Register new Merchant" OnClick="btnRegisterforMerchantAccount_Click" CssClass="button1"/>
             </div>
         </fieldset>
     </form>

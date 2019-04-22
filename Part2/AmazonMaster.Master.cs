@@ -21,7 +21,7 @@ namespace Part2
                 {
                     string email = Session["Username"].ToString();
 
-                    lblWelcomeUser.Text = "Welcome " + email + "!";
+                    lblWelcomeUser.Text = "Hello, " + email;
                 }
                 else
                 {

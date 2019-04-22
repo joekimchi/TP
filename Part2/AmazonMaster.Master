@@ -6,16 +6,22 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 239px;
+            height: 86px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div style="background-color:#242e3c; color:white;">
             <div class="row">
                 <div style="height: 38px; margin-right: 3px; margin-bottom: 11px;">
-                    <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click">Account</asp:LinkButton>&nbsp;
-                    <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click">View Cart</asp:LinkButton>&nbsp;
-                    <asp:LinkButton ID="lnkbtnCheckOut" runat="server" OnClick="lnkbtnCheckOut_Click">Check Out</asp:LinkButton>&nbsp;
-                    <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click">Logout</asp:LinkButton>
+                    <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click" Font-Underline="False" ForeColor="WhiteSmoke">Account</asp:LinkButton>&nbsp;
+                    <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click" Font-Underline="False" ForeColor="WhiteSmoke">View Cart</asp:LinkButton>&nbsp;
+                    <asp:LinkButton ID="lnkbtnCheckOut" runat="server" OnClick="lnkbtnCheckOut_Click" Font-Underline="False" ForeColor="WhiteSmoke">Check Out</asp:LinkButton>&nbsp;
+                    <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click" Font-Underline="False" ForeColor="WhiteSmoke">Logout</asp:LinkButton>
                 </div>
                 <div class="Welcome" style="text-align: center">
                     <asp:Label ID="lblWelcomeUser" runat="server" Font-Size="Large"></asp:Label>
@@ -23,15 +29,15 @@
             </div>
             <br />
             <div class="header">
-                <img src="img/amazon.png" alt="amazon.com" style="width: 200px; height: 55px;" />
+                <img src="img/amazonwhite.png" alt="amazon.com" class="auto-style1" />
             </div>
 
             <nav>
                 <div>
-                    <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click">Home</asp:LinkButton>&nbsp;
-                <asp:LinkButton ID="lnkbtn1" runat="server">placeholder</asp:LinkButton>&nbsp;
-                <asp:LinkButton ID="lnkbtn2" runat="server">placeholder</asp:LinkButton>&nbsp;
-                <asp:LinkButton ID="lnkbtn3" runat="server">placeholder</asp:LinkButton>
+                 <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True">Home</asp:LinkButton>&nbsp;
+                <asp:LinkButton ID="lnkbtn1" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True">placeholder</asp:LinkButton>&nbsp;
+                <asp:LinkButton ID="lnkbtn2" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True">placeholder</asp:LinkButton>&nbsp;
+                <asp:LinkButton ID="lnkbtn3" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True">placeholder</asp:LinkButton>
                 </div>
             </nav>
 

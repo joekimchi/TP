@@ -15,7 +15,6 @@
         <fieldset style="width: 20%", text-align:"center">
             <div>
                 <h2>Sign in</h2>
-                <!--Username input-->
                 <div>
                     <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
                     <br />
