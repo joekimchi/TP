@@ -3,14 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="Default">
         <br />
-        <asp:Button ID="btnUpdateAccountInformation" runat="server" Text="Update Account Information" OnClick="btnUpdateAccountInformation_Click" CssClass="button" Height="43px" Width="300px" />
-        <br />
-        <br />
-        <br />
-        <asp:Button ID="btnChangePassword" runat="server" Text="Change Password" OnClick="btnChangePassword_Click" CssClass="button" Height="43px" Width="300px" />
-        <br />
-        <br />
-        <br />
     </div>
     <div id="Customer" runat="server">
         <asp:Button ID="btnAddCC" runat="server" CssClass="button" Height="43px" OnClick="btnAddCC_Click" Text="Add New Credit Card" Width="300px" />

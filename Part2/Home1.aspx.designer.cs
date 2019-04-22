@@ -13,24 +13,6 @@ namespace Part2 {
     public partial class WebForm1 {
         
         /// <summary>
-        /// btnUpdateAccountInformation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdateAccountInformation;
-        
-        /// <summary>
-        /// btnChangePassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnChangePassword;
-        
-        /// <summary>
         /// Customer control.
         /// </summary>
         /// <remarks>

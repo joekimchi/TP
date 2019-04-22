@@ -43,7 +43,7 @@ namespace Part2
 
         protected void btnAccount_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("UpdateAccountInformation.aspx", false);
         }
 
         protected void lnkbtnViewCart_Click(object sender, EventArgs e)

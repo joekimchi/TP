@@ -98,6 +98,11 @@
             <br />
             <asp:Label ID="lblResult" runat="server"></asp:Label>
             <br />
+            <br />
+            <div id="Default">
+        <asp:Button ID="btnChangePassword" runat="server" Text="Change Password" OnClick="btnChangePassword_Click" CssClass="button1" Height="43px" Width="300px" />
+    </div>
+            <br />
         </div>
     </form>
 </body>
