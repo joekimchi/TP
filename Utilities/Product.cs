@@ -62,5 +62,12 @@ namespace Utilities
             get { return departmentID; }
             set { departmentID = value; }
         }
+
+        public double TotalPrice(double price, int quantity)
+        {
+            double totalCost = 0.0;
+            totalCost = price * quantity;
+            return totalCost;
+        }
     }
 }
