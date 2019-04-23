@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Part2 {
+namespace AmazonTermProject {
     
     
     public partial class Registration {

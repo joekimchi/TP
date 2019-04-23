@@ -11,7 +11,7 @@ using System.Web.Script.Serialization;
 using System.Net;
 using System.IO;
 
-namespace Part2
+namespace AmazonTermProject
 {
     public partial class RegisterMerchant : System.Web.UI.Page
     {

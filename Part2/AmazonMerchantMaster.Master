@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AmazonMerchantMaster.Master.cs" Inherits="Part2.AmazonMerchantMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AmazonMerchantMaster.Master.cs" Inherits="AmazonTermProject.AmazonMerchantMaster" %>
 
 <!DOCTYPE html>
 

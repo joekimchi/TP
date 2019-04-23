@@ -3,7 +3,7 @@ using Utilities;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace Part2
+namespace AmazonTermProject
 {
     public partial class MerchantHome : System.Web.UI.Page
     {

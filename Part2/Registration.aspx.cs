@@ -8,7 +8,7 @@ using Utilities;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Part2
+namespace AmazonTermProject
 {
     public partial class Registration : System.Web.UI.Page
     {

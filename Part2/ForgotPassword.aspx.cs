@@ -2,7 +2,7 @@
 using Utilities;
 using System.Data;
 
-namespace Part2
+namespace AmazonTermProject
 {
     public partial class ForgotPassword : System.Web.UI.Page
     {

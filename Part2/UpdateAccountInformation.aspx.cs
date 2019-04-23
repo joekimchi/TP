@@ -2,7 +2,7 @@
 using Utilities;
 using System.Data;
 
-namespace Part2
+namespace AmazonTermProject
 {
     public partial class UpdateAccountInformation : System.Web.UI.Page
     {
@@ -12,24 +12,27 @@ namespace Part2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            loginID = Session["Username"].ToString();
-            accountType = int.Parse(Session["AccountType"].ToString());
-
-            if (!IsPostBack)
+            if (Session["Username"] == null)
             {
-                if (Session["Username"] == null)
-                {
-                    Response.Redirect("Login.aspx");
-                    return;
-                }
+                Response.Redirect("Login.aspx");
+                return;
+            }
 
-                DataSet myDS = spc.GetAccountInfoByTypeAndLogin(accountType, loginID);
-                txtName.Text = myDS.Tables[0].Rows[0][0].ToString();
-                txtPhoneNumber.Text = myDS.Tables[0].Rows[0][1].ToString();
-                txtAddress.Text = myDS.Tables[0].Rows[0][2].ToString();
-                txtCity.Text = myDS.Tables[0].Rows[0][3].ToString();
-                ddlState.SelectedValue = myDS.Tables[0].Rows[0][4].ToString();
-                txtZipCode.Text = myDS.Tables[0].Rows[0][5].ToString();
+            else
+            {
+                loginID = Session["Username"].ToString();
+                accountType = int.Parse(Session["AccountType"].ToString());
+
+                if (!IsPostBack)
+                {
+                    DataSet myDS = spc.GetAccountInfoByTypeAndLogin(accountType, loginID);
+                    txtName.Text = myDS.Tables[0].Rows[0][0].ToString();
+                    txtPhoneNumber.Text = myDS.Tables[0].Rows[0][1].ToString();
+                    txtAddress.Text = myDS.Tables[0].Rows[0][2].ToString();
+                    txtCity.Text = myDS.Tables[0].Rows[0][3].ToString();
+                    ddlState.SelectedValue = myDS.Tables[0].Rows[0][4].ToString();
+                    txtZipCode.Text = myDS.Tables[0].Rows[0][5].ToString();
+                }
             }
         }
 

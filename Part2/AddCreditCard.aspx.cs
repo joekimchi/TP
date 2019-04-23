@@ -1,7 +1,7 @@
 ﻿using System;
 using Utilities;
 
-namespace Part2
+namespace AmazonTermProject
 {
     public partial class AddCreditCard : System.Web.UI.Page
     {

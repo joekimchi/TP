@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 using Utilities;
 
-namespace Part2
+namespace AmazonTermProject
 {
     public partial class AmazonMerchantMaster : System.Web.UI.MasterPage
     {

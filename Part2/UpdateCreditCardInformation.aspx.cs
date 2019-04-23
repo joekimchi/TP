@@ -2,7 +2,7 @@
 using Utilities;
 using System.Data;
 
-namespace Part2
+namespace AmazonTermProject
 {
     public partial class UpdateCreditCardInformation : System.Web.UI.Page
     {
@@ -17,30 +17,38 @@ namespace Part2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string username = Session["Username"].ToString();
-            customerID = spc.GetCustomerIDByEmail(username);
-
-            if (!IsPostBack)
+            if (Session["Username"] == null)
             {
-                myDS = spc.GetCCByCustomerID(customerID);
-                if (myDS.Tables[0].Rows.Count > 0)
+                Response.Redirect("Login.aspx");
+                return;
+            }
+            else
+            {
+                string username = Session["Username"].ToString();
+                customerID = spc.GetCustomerIDByEmail(username);
+
+                if (!IsPostBack)
                 {
-                    for (int i = 0; i < myDS.Tables[0].Rows.Count; i++)
-                    {
-                        ddlCard.Items.Add(myDS.Tables[0].Rows[i][1].ToString());
-                    }
-
-                    int cardID = int.Parse(ddlCard.SelectedValue);
-                    myDS = spc.GetCCInfoByCardID(cardID);
-
+                    myDS = spc.GetCCByCustomerID(customerID);
                     if (myDS.Tables[0].Rows.Count > 0)
                     {
-                        txtCardNumber.Text = myDS.Tables[0].Rows[0][0].ToString();
-                        string expiration = myDS.Tables[0].Rows[0][1].ToString();
-                        string[] arrExpiration = expiration.Split('/');
+                        for (int i = 0; i < myDS.Tables[0].Rows.Count; i++)
+                        {
+                            ddlCard.Items.Add(myDS.Tables[0].Rows[i][1].ToString());
+                        }
 
-                        ddlMonth.SelectedValue = arrExpiration[0].Trim();
-                        ddlYear.SelectedValue = arrExpiration[1].Trim();
+                        int cardID = int.Parse(ddlCard.SelectedValue);
+                        myDS = spc.GetCCInfoByCardID(cardID);
+
+                        if (myDS.Tables[0].Rows.Count > 0)
+                        {
+                            txtCardNumber.Text = myDS.Tables[0].Rows[0][0].ToString();
+                            string expiration = myDS.Tables[0].Rows[0][1].ToString();
+                            string[] arrExpiration = expiration.Split('/');
+
+                            ddlMonth.SelectedValue = arrExpiration[0].Trim();
+                            ddlYear.SelectedValue = arrExpiration[1].Trim();
+                        }
                     }
                 }
             }

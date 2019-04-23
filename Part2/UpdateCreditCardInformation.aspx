@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonMaster.Master" AutoEventWireup="true" CodeBehind="UpdateCreditCardInformation.aspx.cs" Inherits="Part2.UpdateCreditCardInformation" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonMaster.Master" AutoEventWireup="true" CodeBehind="UpdateCreditCardInformation.aspx.cs" Inherits="AmazonTermProject.UpdateCreditCardInformation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>

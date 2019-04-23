@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonMerchantMaster.Master" AutoEventWireup="true" CodeBehind="UpdateMerchantAccountInformation.aspx.cs" Inherits="Part2.UpdateMerchantAccountInformation" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonMerchantMaster.Master" AutoEventWireup="true" CodeBehind="UpdateMerchantAccountInformation.aspx.cs" Inherits="AmazonTermProject.UpdateMerchantAccountInformation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="AccountInformation" runat="server">
