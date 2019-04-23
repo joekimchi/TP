@@ -149,9 +149,9 @@
     <Content Include="Cart.aspx" />
     <Content Include="CustomerHome.aspx" />
     <Content Include="MerchantHome.aspx" />
-    <Content Include="UpdateMerchantAccountInformation.aspx" />
     <Content Include="UpdateCreditCardInformation.aspx" />
     <Content Include="AddCreditCard.aspx" />
+    <Content Include="UpdateMerchantAccountInformation.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AmazonMerchantMaster.Master.cs">
@@ -259,13 +259,6 @@
     <Compile Include="MerchantHome.aspx.designer.cs">
       <DependentUpon>MerchantHome.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UpdateMerchantAccountInformation.aspx.cs">
-      <DependentUpon>UpdateMerchantAccountInformation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UpdateMerchantAccountInformation.aspx.designer.cs">
-      <DependentUpon>UpdateMerchantAccountInformation.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UpdateCreditCardInformation.aspx.cs">
       <DependentUpon>UpdateCreditCardInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -279,6 +272,13 @@
     </Compile>
     <Compile Include="AddCreditCard.aspx.designer.cs">
       <DependentUpon>AddCreditCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateMerchantAccountInformation.aspx.cs">
+      <DependentUpon>UpdateMerchantAccountInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateMerchantAccountInformation.aspx.designer.cs">
+      <DependentUpon>UpdateMerchantAccountInformation.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
