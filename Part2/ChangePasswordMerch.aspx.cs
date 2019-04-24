@@ -3,7 +3,7 @@ using Utilities;
 
 namespace Part2
 {
-    public partial class ChangePassword : System.Web.UI.Page
+    public partial class ChangePasswordMerch : System.Web.UI.Page
     {
         SPCaller spc = new SPCaller();
         string loginID;
@@ -26,7 +26,8 @@ namespace Part2
             string newPW = txtNewPassword.Text;
             string newPW2 = txtConfirmPassword.Text;
 
-            if (newPW == newPW2) {
+            if (newPW == newPW2)
+            {
                 bool result = spc.ChangePassword(accountType, loginID, oldPW, newPW);
 
                 if (result)
@@ -36,11 +37,6 @@ namespace Part2
             }
             else
                 lblNotMatched.Text = "Check that your new passwords match.";
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("CustomerHome.aspx", false);
         }
     }
 }

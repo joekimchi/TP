@@ -60,7 +60,7 @@ namespace Part2
 
         protected void btnChangePassword_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ChangePassword.aspx", false);
+            Response.Redirect("ChangePasswordCust.aspx", false);
         }
 
         protected void btnChangeCreditInformation_Click(object sender, EventArgs e)

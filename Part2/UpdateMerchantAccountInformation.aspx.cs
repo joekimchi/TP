@@ -55,7 +55,7 @@ namespace Part2
 
         protected void btnChangePassword_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ChangePassword.aspx", false);
+            Response.Redirect("ChangePasswordMerch.aspx", false);
         }
 
         protected void btnBack_Click(object sender, EventArgs e)

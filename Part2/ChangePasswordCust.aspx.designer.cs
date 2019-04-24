@@ -10,25 +10,16 @@
 namespace Part2 {
     
     
-    public partial class ChangePassword {
+    public partial class ChangePasswordCust {
         
         /// <summary>
-        /// form1 control.
+        /// hyperBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// hyperBackHome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperBackHome;
+        protected global::System.Web.UI.WebControls.HyperLink hyperBack;
         
         /// <summary>
         /// txtOldPassword control.
