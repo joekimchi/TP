@@ -25,6 +25,12 @@ namespace AmazonTermProject
 
                 if (!IsPostBack)
                 {
+                    if (!IsPostBack)
+                    {
+                        gvCustomer.DataSource = spc.GetCustomerPurchases(loginID);
+                        gvCustomer.DataBind();
+                    }
+
                     DataSet myDS = spc.GetAccountInfoByTypeAndLogin(accountType, loginID);
                     txtName.Text = myDS.Tables[0].Rows[0][0].ToString();
                     txtPhoneNumber.Text = myDS.Tables[0].Rows[0][1].ToString();

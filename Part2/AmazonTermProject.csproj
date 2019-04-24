@@ -79,6 +79,7 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="ForgotPassword.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="img\amazon.png" />
     <Content Include="img\amazonwhite.png" />
     <Content Include="Login.aspx" />
@@ -174,6 +175,9 @@
     </Compile>
     <Compile Include="ForgotPassword.aspx.designer.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

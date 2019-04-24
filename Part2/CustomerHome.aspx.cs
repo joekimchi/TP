@@ -1,13 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Collections;
+using System.Web.Script.Serialization;
+using System.IO;
+using System.Net;
 using Utilities;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace AmazonTermProject
 {
     public partial class CustomerHome : System.Web.UI.Page
     {
+        DBConnect objDB = new DBConnect();
+        SqlCommand objcomm = new SqlCommand();
+        ArrayList shoppingCart = new ArrayList();
         SPCaller spc = new SPCaller();
+
+        string url = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug46231/TermProjectWS/api/service/Merchants/";
 
         string loginID;
         string password;
@@ -29,8 +43,7 @@ namespace AmazonTermProject
 
                 if (!IsPostBack)
                 {
-                    gvCustomer.DataSource = spc.GetCustomerPurchases(loginID);
-                    gvCustomer.DataBind();
+                    
                 }
             }
         }

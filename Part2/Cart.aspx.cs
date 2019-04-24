@@ -104,6 +104,7 @@ namespace AmazonTermProject
             displayCart(TotalPriceFooter());
         }
 
+        //Checkout Button (only visible if gridview has data)
         protected void btnCheckout_Click(object sender, EventArgs e)
         {
 

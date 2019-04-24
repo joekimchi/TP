@@ -57,7 +57,6 @@ namespace AmazonTermProject
                 //if dropdown selection is Merchant
                 if (ddlLoginType.SelectedItem.Value == "1")
                 {
-
                     ds = spc.GetMerchantByEmail(email);
 
                     if (ds.Tables[0].Rows.Count == 1)
