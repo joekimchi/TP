@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManagementReport.aspx.cs" Inherits="AmazonTermProject.ManagementReport" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManagementReport.aspx.cs" Inherits="Part2.ManagementReport" %>
 
 <!DOCTYPE html>
 

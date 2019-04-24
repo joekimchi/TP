@@ -1,7 +1,7 @@
 ﻿using System;
 using Utilities;
 
-namespace AmazonTermProject
+namespace Part2
 {
     public partial class ChangePassword : System.Web.UI.Page
     {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonMaster.Master" AutoEventWireup="true" CodeBehind="UpdateAccountInformation.aspx.cs" Inherits="AmazonTermProject.UpdateAccountInformation" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonMaster.Master" AutoEventWireup="true" CodeBehind="UpdateAccountInformation.aspx.cs" Inherits="Part2.UpdateAccountInformation" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="orderList">

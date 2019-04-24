@@ -7,7 +7,7 @@ using System.Web.SessionState;
 
 using Utilities;
 
-namespace AmazonTermProject
+namespace Part2
 {
     public class Global : System.Web.HttpApplication
     {

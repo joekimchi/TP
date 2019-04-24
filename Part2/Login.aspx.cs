@@ -9,7 +9,7 @@ using Utilities;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace AmazonTermProject
+namespace Part2
 {
     public partial class Login : System.Web.UI.Page
     {

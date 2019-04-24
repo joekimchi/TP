@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AmazonTermProject {
+namespace Part2 {
     
     
     public partial class CustomerHome {

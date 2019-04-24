@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 using Utilities;
 
-namespace AmazonTermProject
+namespace Part2
 {
     public partial class Main : System.Web.UI.MasterPage
     {

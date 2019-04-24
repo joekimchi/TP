@@ -2,7 +2,7 @@
 using Utilities;
 using System.Data;
 
-namespace AmazonTermProject
+namespace Part2
 {
     public partial class UpdateMerchantAccountInformation : System.Web.UI.Page
     {

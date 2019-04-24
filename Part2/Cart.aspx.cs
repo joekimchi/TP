@@ -10,7 +10,7 @@ using System.IO;
 using System.Net;
 using Utilities;
 
-namespace AmazonTermProject
+namespace Part2
 {
     public partial class Cart : System.Web.UI.Page
     {
