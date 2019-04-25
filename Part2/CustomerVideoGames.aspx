@@ -14,7 +14,11 @@
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                 </asp:TemplateField>
-                <asp:BoundField DataField="imageUrl" HeaderText="Image" />
+                <asp:TemplateField HeaderText="">
+                    <ItemTemplate>
+                        <img src='<%# Eval("ImageURL") %>' height="150" width="150" />
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:CommandField ButtonType="Button" ShowSelectButton="true" SelectText="Add to cart">
                     <ControlStyle CssClass="button1" />
                     <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />

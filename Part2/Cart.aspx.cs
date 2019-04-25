@@ -106,9 +106,10 @@ namespace Part2
 
         //Checkout Button (only visible if gridview has data)
         protected void btnCheckout_Click(object sender, EventArgs e)
-        {//Retrieve the products in the cart
+        {
             shoppingCart = (ArrayList)Session["ShoppingCart"];
             JavaScriptSerializer js = new JavaScriptSerializer();
+
             //Adding each product into the database
             foreach (Product p in shoppingCart)
             {
@@ -116,18 +117,16 @@ namespace Part2
                 String jsonCheckout = js.Serialize(p);
                 try
                 {
-                    // Send the City object to the Web API that will be used to store a new city record in the database.
-                    // Setup an HTTP POST Web Request and get the HTTP Web Response from the server.
                     WebRequest request = WebRequest.Create(url);
                     request.Method = "POST";
                     request.ContentLength = jsonCheckout.Length;
                     request.ContentType = "application/json";
-                    // Write the JSON data to the Web Request
+
                     StreamWriter writer = new StreamWriter(request.GetRequestStream());
                     writer.Write(jsonCheckout);
                     writer.Flush();
                     writer.Close();
-                    // Read the data from the Web Response, which requires working with streams.
+                    
                     WebResponse response = request.GetResponse();
                     Stream theDataStream = response.GetResponseStream();
                     StreamReader reader = new StreamReader(theDataStream);
@@ -140,7 +139,7 @@ namespace Part2
                     }
                     else
                     {
-                        lblMessage.Text = "A problem occurred while adding the city to the database.";
+                        lblMessage.Text = "A problem occurred while checking out.";
                     }
                 }
                 catch (Exception ex)
