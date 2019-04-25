@@ -7,7 +7,7 @@
             <Columns>
                 <asp:BoundField DataField="title" HeaderText="Title" />
                 <asp:BoundField DataField="description" HeaderText="Description" />
-                <asp:BoundField DataField="price" HeaderText="Price" />
+                <asp:BoundField DataField="price" HeaderText="Price" DataFormatString="${0:###,###,###.00}"/>
                 <asp:TemplateField HeaderText="Quantity">
                     <ItemTemplate>
                         <asp:TextBox ID="txtQuantity" runat="server" type="number" />

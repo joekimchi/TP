@@ -42,10 +42,6 @@
         <br />
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
-        <div id="footer" style="background-color: #242e3c; color: white; text-align: center">
-            <div class="row">
-                <img src="img/amazonwhite.png" alt="amazon.com" class="auto-style2" /> Brandon Tran | Joseph Kim</div>
-        </div>
     </form>
 </body>
 </html>

@@ -13,7 +13,7 @@
                     <asp:BoundField DataField="Title" HeaderText="Title" ReadOnly="True">
                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:BoundField>
-                    <asp:BoundField DataField="Desc" HeaderText="Description" ReadOnly="True">
+                    <asp:BoundField DataField="Description" HeaderText="Description" ReadOnly="True">
                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:BoundField>
                     <asp:BoundField DataField="Quantity" HeaderText="Quantity">

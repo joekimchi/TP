@@ -27,6 +27,7 @@ namespace Part2
 
             else if (!IsPostBack)
             {
+                displayCart(TotalPriceFooter());
                 if (gvCart.Rows.Count != 0)
                 {
                     displayCart(TotalPriceFooter());

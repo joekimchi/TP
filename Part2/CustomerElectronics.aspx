@@ -5,9 +5,9 @@
         <asp:Label ID="lblProducts" runat="server" Text="Electronics" Font-Bold="True" Font-Size="X-Large"></asp:Label>
         <asp:GridView ID="gvProducts" runat="server" AutoGenerateColumns="False" Width="100%" OnSelectedIndexChanged="gvProducts_SelectedIndexChanged">
             <Columns>
-                <asp:BoundField DataField="title" HeaderText="Title" />
-                <asp:BoundField DataField="description" HeaderText="Description" />
-                <asp:BoundField DataField="price" HeaderText="Price" />
+                <asp:BoundField DataField="Title" HeaderText="Title" />
+                <asp:BoundField DataField="Description" HeaderText="Description" />
+                <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="${0:###,###,###.00}"/>
                 <asp:TemplateField HeaderText="Quantity">
                     <ItemTemplate>
                         <asp:TextBox ID="txtQuantity" runat="server" type="number" />

@@ -76,7 +76,7 @@ namespace Part2
             Product p = new Product();
             p.Title = gvProducts.SelectedRow.Cells[0].Text;
             p.Description = gvProducts.SelectedRow.Cells[1].Text;
-            p.Price = Convert.ToDouble(gvProducts.SelectedRow.Cells[2].Text);
+            p.Price = Double.Parse(gvProducts.SelectedRow.Cells[2].Text, System.Globalization.NumberStyles.Currency);
             TextBox Quantity = (TextBox)gvProducts.SelectedRow.FindControl("txtQuantity");
             p.ImageUrl = gvProducts.SelectedRow.Cells[3].Text;
             p.Quantity = Convert.ToInt32(Quantity.Text);
