@@ -14,7 +14,7 @@ using System.Data.SqlClient;
 
 namespace Part2
 {
-    public partial class CustomerHome : System.Web.UI.Page
+    public partial class CustomerOffice : System.Web.UI.Page
     {
         DBConnect objDB = new DBConnect();
         SqlCommand objcomm = new SqlCommand();
@@ -51,7 +51,7 @@ namespace Part2
         public void DisplayProduct()
         {
             // Create an HTTP Web Request and get the HTTP Web Response from the server.
-            WebRequest request = WebRequest.Create("http://cis-iis2.temple.edu/Spring2019/CIS3342_tug46231/TermProjectWS/api/service/Merchants/1");
+            WebRequest request = WebRequest.Create(url + "2/");
             WebResponse response = request.GetResponse();
 
             // Read the data from the Web Response, which requires working with streams.

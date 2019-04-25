@@ -1,13 +1,14 @@
-﻿using Utilities;
+﻿using System;
+using Utilities;
 
 namespace Utilities
 {
-    public class Site
+    [Serializable()]
+    public class Site: Customer
     {
         public string SiteID { get; set; }
         public string Description { get; set; }
         public string APIKey { get; set; }
-        public string Email { get; set; }
         public string PhoneNumber { get; set; }
 
         public string SiteURL { get; set; }

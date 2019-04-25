@@ -28,9 +28,9 @@
             <br />
             <nav>
                 <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="Hyperlink">Home</asp:LinkButton>&nbsp;|
-                <asp:LinkButton ID="lnkbtn1" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink">Electronics</asp:LinkButton>&nbsp;|
-                <asp:LinkButton ID="lnkbtn2" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink">Office</asp:LinkButton>&nbsp;|
-                <asp:LinkButton ID="lnkbtn3" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink">Video Games</asp:LinkButton>
+                <asp:LinkButton ID="lnkbtn1" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink" OnClick="lnkbtn1_Click">Electronics</asp:LinkButton>&nbsp;|
+                <asp:LinkButton ID="lnkbtn2" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink" OnClick="lnkbtn2_Click">Office</asp:LinkButton>&nbsp;|
+                <asp:LinkButton ID="lnkbtn3" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink" OnClick="lnkbtn3_Click">Video Games</asp:LinkButton>
             </nav>
         </div>
         <br />

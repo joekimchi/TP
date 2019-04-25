@@ -36,5 +36,8 @@
         <br />
         <asp:Button ID="btnCheckout" runat="server" Text="Checkout" CssClass="button" OnClick="btnCheckout_Click" />
         <br />
+        <br />
+        <asp:Label ID="lblMessage" runat="server"></asp:Label>
+        <br />
     </div>
 </asp:Content>

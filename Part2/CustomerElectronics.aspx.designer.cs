@@ -10,7 +10,7 @@
 namespace Part2 {
     
     
-    public partial class CustomerHome {
+    public partial class CustomerElectronics {
         
         /// <summary>
         /// lblProducts control.

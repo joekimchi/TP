@@ -77,6 +77,9 @@
     <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
     <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="CustomerVideoGames.aspx" />
+    <Content Include="CustomerOffice.aspx" />
+    <Content Include="CustomerElectronics.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\amazon.png" />
@@ -162,6 +165,27 @@
     </Compile>
     <Compile Include="AmazonMerchantMaster.Master.designer.cs">
       <DependentUpon>AmazonMerchantMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerVideoGames.aspx.cs">
+      <DependentUpon>CustomerVideoGames.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerVideoGames.aspx.designer.cs">
+      <DependentUpon>CustomerVideoGames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerOffice.aspx.cs">
+      <DependentUpon>CustomerOffice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerOffice.aspx.designer.cs">
+      <DependentUpon>CustomerOffice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerElectronics.aspx.cs">
+      <DependentUpon>CustomerElectronics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerElectronics.aspx.designer.cs">
+      <DependentUpon>CustomerElectronics.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>

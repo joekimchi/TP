@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Utilities
 {
-    public class Product
+    [Serializable()]
+    public class Product : Site
     {
         private String productID;
         private String title;

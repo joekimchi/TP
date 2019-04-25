@@ -51,9 +51,19 @@ namespace Part2
             Response.Redirect("Cart.aspx", false);
         }
 
-        protected void lnkbtnCheckOut_Click(object sender, EventArgs e)
+        protected void lnkbtn1_Click(object sender, EventArgs e)
         {
+            Response.Redirect("CustomerElectronics.aspx", false);
+        }
 
+        protected void lnkbtn2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CustomerOffice.aspx", false);
+        }
+
+        protected void lnkbtn3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CustomerVideoGames.aspx", false);
         }
     }
 }

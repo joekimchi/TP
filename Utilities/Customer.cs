@@ -8,9 +8,9 @@ namespace Utilities
 {
     public class Customer : ContactInformation
     {
-        private String customerID;
+        private int customerID;
         
-        public String CustomerID
+        public int CustomerID
         {
             get { return customerID; }
             set { customerID = value; }
