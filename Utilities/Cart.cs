@@ -32,7 +32,7 @@ namespace Utilities
         {
             get
             {
-                return cartItems.FirstOrDefault(c => c.Product.ProductID == id);
+                return cartItems.FirstOrDefault(c => c.Product.ProductID.ToString() == id.ToString());
             }
         }
 

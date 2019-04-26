@@ -9,7 +9,7 @@ namespace Utilities
     [Serializable()]
     public class Product : Site
     {
-        private String productID;
+        private int productID;
         private String title;
         private String description;
         private double price;
@@ -22,7 +22,7 @@ namespace Utilities
 
         }
 
-        public String ProductID
+        public int ProductID
         {
             get { return productID; }
             set { productID = value; }

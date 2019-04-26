@@ -38,5 +38,15 @@ namespace Part2
         {
             Response.Redirect("UpdateMerchantAccountInformation.aspx", false);
         }
+
+        protected void lnkbtnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MerchantHome.aspx", false);
+        }
+
+        protected void lnkbtn1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManagementReport.aspx", false);
+        }
     }
 }

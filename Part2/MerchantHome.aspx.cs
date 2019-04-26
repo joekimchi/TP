@@ -15,19 +15,22 @@ namespace Part2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            loginID = Session["Username"].ToString();
-            password = Session["Password"].ToString();
-            accountType = int.Parse(Session["AccountType"].ToString());
-
-            if (!IsPostBack)
+            if (Session["Username"] == null)
             {
-                if (Session["Username"] == null)
+                Response.Redirect("Login.aspx");
+                return;
+            }
+            else
+            {
+                loginID = Session["Username"].ToString();
+                password = Session["Password"].ToString();
+                accountType = int.Parse(Session["AccountType"].ToString());
+
+                if (!IsPostBack)
                 {
-                    Response.Redirect("Login.aspx");
-                    return;
+                    gvMerchant.DataSource = spc.GetMerchantSales(loginID);
+                    gvMerchant.DataBind();
                 }
-                gvMerchant.DataSource = spc.GetMerchantSales(loginID);
-                gvMerchant.DataBind();
             }
         }
 

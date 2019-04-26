@@ -26,8 +26,6 @@
         <br />
         <asp:Button ID="btnRetrieveAPIKey" runat="server" Text="Retrieve API Key" OnClick="btnRetrieveAPIKey_Click" CssClass="button" Height="43px" Width="300px" />
         <br />
-        <div id="Manager" runat="server">
-            <asp:Button ID="btnManagementReport" runat="server" OnClick="btnManagementReport_Click" Text="View Management Report" CssClass="button" Height="43px" Width="300px" />
-        </div>
     </div>
+    <br />
 </asp:Content>

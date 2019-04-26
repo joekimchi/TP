@@ -85,7 +85,6 @@
     <Content Include="img\amazon.png" />
     <Content Include="img\amazonwhite.png" />
     <Content Include="Login.aspx" />
-    <Content Include="ManagementReport.aspx" />
     <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="obj\Release\Package\PackageTmp\bin\Part2.dll" />
     <Content Include="obj\Release\Package\PackageTmp\bin\Part2.pdb" />
@@ -157,6 +156,7 @@
     <Content Include="UpdateMerchantAccountInformation.aspx" />
     <Content Include="ChangePasswordCust.aspx" />
     <Content Include="ChangePasswordMerch.aspx" />
+    <Content Include="ManagementReport.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AmazonMerchantMaster.Master.cs">
@@ -210,13 +210,6 @@
     </Compile>
     <Compile Include="AmazonMaster.Master.designer.cs">
       <DependentUpon>AmazonMaster.Master</DependentUpon>
-    </Compile>
-    <Compile Include="ManagementReport.aspx.cs">
-      <DependentUpon>ManagementReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManagementReport.aspx.designer.cs">
-      <DependentUpon>ManagementReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -315,6 +308,13 @@
     </Compile>
     <Compile Include="ChangePasswordMerch.aspx.designer.cs">
       <DependentUpon>ChangePasswordMerch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementReport.aspx.cs">
+      <DependentUpon>ManagementReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagementReport.aspx.designer.cs">
+      <DependentUpon>ManagementReport.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

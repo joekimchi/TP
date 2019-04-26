@@ -10,28 +10,33 @@ namespace Part2
         DBConnect objDB = new DBConnect();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["Username"] == null)
             {
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_CustomerSalesReport";
-                gvCustomer.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
-                gvCustomer.DataBind();
+                Response.Redirect("Login.aspx");
+                return;
+            }
+            else
+            {
+                if (!IsPostBack)
+                {
+                    SqlCommand objCommand = new SqlCommand();
+                    objCommand.CommandType = CommandType.StoredProcedure;
+                    objCommand.CommandText = "TP_CustomerSalesReport";
+                    gvCustomer.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
+                    gvCustomer.DataBind();
 
-                objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_SalesReport";
-                gvSales.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
-                gvSales.DataBind();
+                    objCommand = new SqlCommand();
+                    objCommand.CommandType = CommandType.StoredProcedure;
+                    objCommand.CommandText = "TP_SalesReport";
+                    gvSales.DataSource = objDB.GetDataSetUsingCmdObj(objCommand);
+                    gvSales.DataBind();
+                }
             }
         }
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            if (int.Parse(Session["AccountType"].ToString()) == 0)
-                Response.Redirect("CustomerHome.aspx", false);
-            else
-                Response.Redirect("MerchantHome.aspx", false);
+            Response.Redirect("MerchantHome.aspx", false);
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)

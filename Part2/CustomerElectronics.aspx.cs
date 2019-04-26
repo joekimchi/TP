@@ -51,35 +51,29 @@ namespace Part2
 
         public void DisplayProduct()
         {
-            // Create an HTTP Web Request and get the HTTP Web Response from the server.
             WebRequest request = WebRequest.Create(url + "1/");
             WebResponse response = request.GetResponse();
 
-            // Read the data from the Web Response, which requires working with streams.
             Stream theDataStream = response.GetResponseStream();
             StreamReader reader = new StreamReader(theDataStream);
             String data = reader.ReadToEnd();
             reader.Close();
             response.Close();
 
-            // Deserialize a JSON string that contains an array of JSON objects into an Array of Team objects.
             JavaScriptSerializer js = new JavaScriptSerializer();
             List<Product> products = js.Deserialize<List<Product>>(data);
 
 
             //For new Merchant
-            // Create an HTTP Web Request and get the HTTP Web Response from the server.
             WebRequest request1 = WebRequest.Create(url2 + "GetProductCatalog/1001/");
             WebResponse response1 = request1.GetResponse();
 
-            // Read the data from the Web Response, which requires working with streams.
             Stream theDataStream1 = response1.GetResponseStream();
             StreamReader reader1 = new StreamReader(theDataStream1);
             String data1 = reader1.ReadToEnd();
             reader1.Close();
             response1.Close();
 
-            // Deserialize a JSON string that contains an array of JSON objects into an Array of Team objects.
             JavaScriptSerializer js1 = new JavaScriptSerializer();
             List<Product> products1  = js.Deserialize<List<Product>>(data1);
 
@@ -89,18 +83,15 @@ namespace Part2
             }
 
             //For new Merchant2
-            // Create an HTTP Web Request and get the HTTP Web Response from the server.
             WebRequest request2 = WebRequest.Create("http://cis-iis2.temple.edu/Spring2019/CIS3342_tug40077/TermProjectWS/api/service/Merchants/GetProductCatalog/2");
             WebResponse response2 = request2.GetResponse();
 
-            // Read the data from the Web Response, which requires working with streams.
             Stream theDataStream2 = response2.GetResponseStream();
             StreamReader reader2 = new StreamReader(theDataStream2);
             String data2 = reader2.ReadToEnd();
             reader2.Close();
             response2.Close();
 
-            // Deserialize a JSON string that contains an array of JSON objects into an Array of Team objects.
             JavaScriptSerializer js2 = new JavaScriptSerializer();
             List<Product> products2 = js.Deserialize<List<Product>>(data2);
 
