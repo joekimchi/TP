@@ -9,7 +9,7 @@
                 <Columns>
                     <asp:TemplateField HeaderText="">
                         <ItemTemplate>
-                            <img src='<%# Eval("ImageUrl") %>' height="150" width="150" />
+                            <img src='<%# Eval("ImageURL") %>' height="150" width="150" />
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="Title" HeaderText="Title" ReadOnly="True">
