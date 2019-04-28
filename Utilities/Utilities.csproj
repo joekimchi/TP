@@ -76,7 +76,6 @@
   <ItemGroup>
     <Compile Include="APICalls.cs" />
     <Compile Include="Cart.cs" />
-    <Compile Include="CartItem.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="ContactInformation.cs" />
     <Compile Include="Customer.cs" />

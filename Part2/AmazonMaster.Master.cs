@@ -46,6 +46,18 @@ namespace Part2
             Response.Redirect("UpdateAccountInformation.aspx", false);
         }
 
+        protected void lnkbtnWishList_Click(object sender, EventArgs e)
+        {
+            if (Session["WishList"] != null)
+            {
+                Response.Redirect("WishList.aspx", false);
+            }
+            else
+            {
+                Response.Redirect("EmptyEmpty.aspx", false);
+            }
+        }
+
         protected void lnkbtnViewCart_Click(object sender, EventArgs e)
         {
             if (Session["ShoppingCart"] != null)

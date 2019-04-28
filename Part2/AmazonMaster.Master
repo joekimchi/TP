@@ -6,12 +6,6 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
-    <style type="text/css">
-        .auto-style2 {
-            width: 101px;
-            height: 37px;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,6 +13,7 @@
             <div class="row">
                 <div style="height: 38px; margin-right: 3px; margin-bottom: 11px;">
                     <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Account</asp:LinkButton>&nbsp;|
+                    <asp:LinkButton ID="lnkbtnWishList" runat="server" OnClick="lnkbtnWishList_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Wish List</asp:LinkButton>&nbsp;|
                     <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Shopping Cart</asp:LinkButton>&nbsp;|
                     <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click" Font-Underline="False" ForeColor="WhiteSmoke" CssClass="HeaderHyperlink">Logout</asp:LinkButton>
                 </div>
