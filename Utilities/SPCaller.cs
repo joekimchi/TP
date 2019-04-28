@@ -228,6 +228,44 @@ namespace Utilities
             return false;
         }
 
+        public bool AddToCart(int id, string title, string desc, double price, int qty, string imgUrl)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+
+            objCommand.CommandText = "TP_AddToCart";
+
+            objCommand.Parameters.AddWithValue("@CustomerID", id);
+            objCommand.Parameters.AddWithValue("@Title", title);
+            objCommand.Parameters.AddWithValue("@Description", desc);
+            objCommand.Parameters.AddWithValue("@Price", price);
+            objCommand.Parameters.AddWithValue("@Quantity", qty);
+            objCommand.Parameters.AddWithValue("@ImageURL", imgUrl);
+
+            int result = objDB.DoUpdateUsingCmdObj(objCommand);
+
+            if (result != -1)
+                return true;
+            return false;
+        }
+
+        public bool EmptyCart(int id)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+
+            objCommand.CommandText = "TP_EmptyCart";
+
+            objCommand.Parameters.AddWithValue("@CustomerID", id);
+
+            int result = objDB.DoUpdateUsingCmdObj(objCommand);
+
+            if (result != -1)
+                return true;
+            return false;
+        }
 
     }
 }

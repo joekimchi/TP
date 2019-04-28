@@ -11,7 +11,7 @@ namespace Part2
 {
     public class Global : System.Web.HttpApplication
     {
-
+        SPCaller spc = new SPCaller();
         protected void Application_Start(object sender, EventArgs e)
         {
 
@@ -41,8 +41,14 @@ namespace Part2
         {
             if (Session["ShoppingCart"] != null)
             {
-                Cart cart = (Cart)Session["ShoppingCart"];
+                List<Cart> cart = (List<Cart>)Session["ShoppingCart"];
+                foreach(Cart c in cart)
+                {
+                    spc.AddToCart(c.User, c.Title, c.price)
+                }
             }
+
+            
         }
 
         protected void Application_End(object sender, EventArgs e)

@@ -9,12 +9,12 @@ namespace Utilities
     [Serializable]
     public class Cart
     {
-        private int User { get; set; }
-        private String Title { get; set; }
-        private String Description { get; set; }
-        private double Price { get; set; }
-        private int Quantity { get; set; }
-        private String Image { get; set; }
+        public int User { get; set; }
+        public String Title { get; set; }
+        public String Description { get; set; }
+        public double Price { get; set; }
+        public int Quantity { get; set; }
+        public String Image { get; set; }
 
         public Cart()
         {

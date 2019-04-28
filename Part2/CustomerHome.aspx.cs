@@ -162,26 +162,38 @@ namespace Part2
         protected void gvProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             int rowIndex = gvProducts.SelectedIndex;
-
-            Product p = new Product();
-            p.ImageUrl = gvProducts.SelectedRow.Cells[0].Text;
-            p.Title = gvProducts.SelectedRow.Cells[1].Text;
-            p.Description = gvProducts.SelectedRow.Cells[2].Text;
-            p.Price = Double.Parse(gvProducts.SelectedRow.Cells[3].Text, System.Globalization.NumberStyles.Currency);
             TextBox Quantity = (TextBox)gvProducts.SelectedRow.FindControl("txtQuantity");
-            p.Quantity = Convert.ToInt32(Quantity.Text);
 
-            if (ViewState["ShoppingCart"] != null)
+            int i;
+            if (int.TryParse(Quantity.Text, out i) && int.Parse(Quantity.Text) > 0)
             {
-                shoppingCart = (ArrayList)ViewState["ShoppingCart"];
-                shoppingCart.Add(p);
+                Product p = new Product();
+                p.ImageUrl = gvProducts.SelectedRow.Cells[0].Text;
+                p.Title = gvProducts.SelectedRow.Cells[1].Text;
+                p.Description = gvProducts.SelectedRow.Cells[2].Text;
+                p.Price = Double.Parse(gvProducts.SelectedRow.Cells[3].Text, System.Globalization.NumberStyles.Currency);
+                p.Quantity = Convert.ToInt32(Quantity.Text);
+
+                if (ViewState["ShoppingCart"] != null)
+                {
+                    shoppingCart = (ArrayList)ViewState["ShoppingCart"];
+                    shoppingCart.Add(p);
+                }
+                else
+                {
+                    shoppingCart.Add(p);
+                }
+                ViewState["ShoppingCart"] = shoppingCart;
+                Session["ShoppingCart"] = shoppingCart;
             }
             else
-            {
-                shoppingCart.Add(p);
-            }
-            ViewState["ShoppingCart"] = shoppingCart;
-            Session["ShoppingCart"] = shoppingCart;
+                messageBox("Invalid quantity entered. Must be an integer over 0.");
+            
+        }
+
+        protected void messageBox(string message)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + message + "')", true);
         }
     }
 }
