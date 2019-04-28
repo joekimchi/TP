@@ -157,6 +157,7 @@
     <Content Include="ChangePasswordCust.aspx" />
     <Content Include="ChangePasswordMerch.aspx" />
     <Content Include="ManagementReport.aspx" />
+    <Content Include="EmptyCart.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AmazonMerchantMaster.Master.cs">
@@ -315,6 +316,13 @@
     </Compile>
     <Compile Include="ManagementReport.aspx.designer.cs">
       <DependentUpon>ManagementReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmptyCart.aspx.cs">
+      <DependentUpon>EmptyCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmptyCart.aspx.designer.cs">
+      <DependentUpon>EmptyCart.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

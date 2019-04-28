@@ -48,7 +48,14 @@ namespace Part2
 
         protected void lnkbtnViewCart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Cart.aspx", false);
+            if (Session["ShoppingCart"] != null)
+            {
+                Response.Redirect("Cart.aspx", false);
+            }
+            else
+            {
+                Response.Redirect("EmptyCart.aspx", false);
+            }
         }
 
         protected void lnkbtn1_Click(object sender, EventArgs e)

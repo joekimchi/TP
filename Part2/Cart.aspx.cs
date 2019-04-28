@@ -27,15 +27,7 @@ namespace Part2
 
             else if (!IsPostBack)
             {
-                if (gvCart.Rows.Count != 0)
-                {
-                    displayCart(TotalPriceFooter());
-                }
-                else
-                {
-                    btnCheckout.Visible = false;
-                    lblNoProducts.Visible = true;
-                }
+                displayCart(TotalPriceFooter());
             }
         }
 
@@ -43,7 +35,7 @@ namespace Part2
         public void displayCart(double totalcost)
         {
             gvCart.Columns[0].FooterText = "Total";
-            gvCart.Columns[4].FooterText = totalcost.ToString("C2");
+            gvCart.Columns[2].FooterText = totalcost.ToString("C2");
             shoppingCart = (ArrayList)Session["ShoppingCart"];
             gvCart.DataSource = shoppingCart;
             gvCart.DataBind();
@@ -54,6 +46,7 @@ namespace Part2
         {
             shoppingCart = (ArrayList)Session["ShoppingCart"];
             double totalPrice = 0.0;
+
             foreach (Product p in shoppingCart)
             {
                 double price = p.Price;
@@ -81,8 +74,8 @@ namespace Part2
         protected void gvCart_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             int rowIndex = e.RowIndex;
-            Product p = (Product)shoppingCart[rowIndex];
             shoppingCart = (ArrayList)Session["ShoppingCart"];
+            Product p = (Product)shoppingCart[rowIndex];
 
             TextBox TBox;
             TBox = (TextBox)gvCart.Rows[rowIndex].Cells[3].Controls[0];
@@ -126,7 +119,7 @@ namespace Part2
                     writer.Write(jsonCheckout);
                     writer.Flush();
                     writer.Close();
-                    
+
                     WebResponse response = request.GetResponse();
                     Stream theDataStream = response.GetResponseStream();
                     StreamReader reader = new StreamReader(theDataStream);

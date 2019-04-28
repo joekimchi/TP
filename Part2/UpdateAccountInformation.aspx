@@ -103,7 +103,7 @@
         <br />
         <br />
         <br />
-        <asp:Button ID="btnSubmitChanges" runat="server" OnClick="btnSubmitChanges_Click" Text="Submit Changes" CssClass="button" Height="43px" Width="300px" />
+        <asp:Button ID="btnSubmitChanges" runat="server" OnClick="btnSubmitChanges_Click" Text="Save Changes" CssClass="button" Height="43px" Width="300px" />
         <br />
         <asp:Label ID="lblResult" runat="server"></asp:Label>
         <br />
