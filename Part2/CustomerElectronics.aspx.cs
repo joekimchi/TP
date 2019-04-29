@@ -111,19 +111,17 @@ namespace Part2
             //Add to Wish List button
             if (e.CommandName == "AddToWishList")
             {
-                int rowIndex = gvProducts.SelectedIndex;
-
+                int index = Convert.ToInt32(e.CommandArgument);
                 Product p = new Product();
 
-                Image image = (Image)gvProducts.SelectedRow.FindControl("ImageURL");
+                Image image = gvProducts.Rows[index].FindControl("ImageURL") as Image;
                 string imgPath = image.ImageUrl;
 
                 p.ImageUrl = imgPath;
-
-                p.Title = gvProducts.SelectedRow.Cells[1].Text;
-                p.Description = gvProducts.SelectedRow.Cells[2].Text;
-                p.Price = Double.Parse(gvProducts.SelectedRow.Cells[3].Text, System.Globalization.NumberStyles.Currency);
-                TextBox Quantity = (TextBox)gvProducts.SelectedRow.FindControl("txtQuantity");
+                p.Title = gvProducts.Rows[index].Cells[1].Text;
+                p.Description = gvProducts.Rows[index].Cells[2].Text;
+                p.Price = Double.Parse(gvProducts.Rows[index].Cells[3].Text, System.Globalization.NumberStyles.Currency);
+                TextBox Quantity = (TextBox)gvProducts.Rows[index].FindControl("txtQuantity");
                 p.Quantity = Convert.ToInt32(Quantity.Text);
 
                 if (ViewState["WishList"] != null)
@@ -142,19 +140,17 @@ namespace Part2
             //Add to Cart button
             if (e.CommandName == "AddToCart")
             {
-                int rowIndex = gvProducts.SelectedIndex;
-
+                int index = Convert.ToInt32(e.CommandArgument);
                 Product p = new Product();
 
-                Image image = (Image)gvProducts.SelectedRow.FindControl("ImageURL");
+                Image image = gvProducts.Rows[index].FindControl("ImageURL") as Image;
                 string imgPath = image.ImageUrl;
 
                 p.ImageUrl = imgPath;
-
-                p.Title = gvProducts.SelectedRow.Cells[1].Text;
-                p.Description = gvProducts.SelectedRow.Cells[2].Text;
-                p.Price = Double.Parse(gvProducts.SelectedRow.Cells[3].Text, System.Globalization.NumberStyles.Currency);
-                TextBox Quantity = (TextBox)gvProducts.SelectedRow.FindControl("txtQuantity");
+                p.Title = gvProducts.Rows[index].Cells[1].Text;
+                p.Description = gvProducts.Rows[index].Cells[2].Text;
+                p.Price = Double.Parse(gvProducts.Rows[index].Cells[3].Text, System.Globalization.NumberStyles.Currency);
+                TextBox Quantity = (TextBox)gvProducts.Rows[index].FindControl("txtQuantity");
                 p.Quantity = Convert.ToInt32(Quantity.Text);
 
                 if (ViewState["ShoppingCart"] != null)
