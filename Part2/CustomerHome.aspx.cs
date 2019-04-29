@@ -168,10 +168,7 @@ namespace Part2
                 int index = Convert.ToInt32(e.CommandArgument);
                 Product p = new Product();
 
-                Image image = (Image)gvProducts.Rows[index].FindControl("ImageURL");
-                string imgPath = image.ImageUrl;
-
-                p.ImageUrl = imgPath;
+                p.ImageUrl = gvProducts.Rows[index].Cells[0].Text;
                 p.Title = gvProducts.Rows[index].Cells[1].Text;
                 p.Description = gvProducts.Rows[index].Cells[2].Text;
                 p.Price = Double.Parse(gvProducts.Rows[index].Cells[3].Text, System.Globalization.NumberStyles.Currency);
@@ -197,10 +194,7 @@ namespace Part2
                 int index = Convert.ToInt32(e.CommandArgument);
                 Product p = new Product();
 
-                Image image = (Image)gvProducts.Rows[index].FindControl("ImageURL");
-                string imgPath = image.ImageUrl;
-
-                p.ImageUrl = imgPath;
+                p.ImageUrl = gvProducts.Rows[index].Cells[0].Text;
                 p.Title = gvProducts.Rows[index].Cells[1].Text;
                 p.Description = gvProducts.Rows[index].Cells[2].Text;
                 p.Price = Double.Parse(gvProducts.Rows[index].Cells[3].Text, System.Globalization.NumberStyles.Currency);

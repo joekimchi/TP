@@ -5,11 +5,11 @@
         <h2>Your Wish List</h2>
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
         <div id="ViewCart" style="text-align: center">
-            <asp:GridView ID="gvCart" runat="server" Width="100%" ShowFooter="True" EmptyDataText="Your Cart is Empty" AutoGenerateColumns="False" OnRowDeleting="gvCart_RowDeleting" OnSelectedIndexChanged="gvCart_SelectedIndexChanged">
+            <asp:GridView ID="gvCart" runat="server" Width="100%" ShowFooter="True" EmptyDataText="Your Wish List is Empty" AutoGenerateColumns="False" OnRowDeleting="gvCart_RowDeleting" OnSelectedIndexChanged="gvCart_SelectedIndexChanged">
                 <Columns>
                     <asp:TemplateField HeaderText="">
                         <ItemTemplate>
-                            <img src='<%# Eval("ImageURL") %>' height="150" width="150" />
+                        <img ID="ImageURL" runat="server" src='<%# Eval("ImageURL") %>' height="150" width="150" />
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="Title" HeaderText="Title" ReadOnly="True">

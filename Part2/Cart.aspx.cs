@@ -82,7 +82,7 @@ namespace Part2
             Product p = (Product)shoppingCart[rowIndex];
 
             TextBox TBox;
-            TBox = (TextBox)gvCart.Rows[rowIndex].Cells[3].Controls[0];
+            TBox = (TextBox)gvCart.Rows[rowIndex].Cells[4].Controls[0];
             p.Quantity = Int32.Parse(TBox.Text);
 
             Session["ShoppingCart"] = shoppingCart;

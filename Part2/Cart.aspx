@@ -9,7 +9,7 @@
                 <Columns>
                     <asp:TemplateField HeaderText="">
                     <ItemTemplate>
-                        <img src='<%# Eval("ImageUrl") %>' height="150" width="150" />
+                        <img ID="ImageURL" runat="server" src='<%# Eval("ImageURL") %>' height="150" width="150" />
                     </ItemTemplate>
                 </asp:TemplateField>
                     <asp:BoundField DataField="Title" HeaderText="Title" ReadOnly="True">
@@ -39,7 +39,7 @@
         </div>
         <br />
         <asp:Button ID="btnCheckout" runat="server" Text="Checkout" CssClass="button" OnClick="btnCheckout_Click" />
-        <asp:Button ID="btnEmptyCart" runat="server" CssClass="button" OnClick="btnEmptyCart_Click" Text="Empty Cart" />
+        <asp:Button ID="btnEmptyCart" runat="server" CssClass="button1" OnClick="btnEmptyCart_Click" Text="Empty Cart" />
         <br />
         <br />
     </div>
