@@ -35,6 +35,11 @@ namespace Utilities
             return objDB.GetDataSetUsingCmdObj(objCommand);
         }
 
+        public void AddToCart(global::Part2.Cart c)
+        {
+            throw new NotImplementedException();
+        }
+
         public DataSet GetCCInfoByCardID(int cardID)
         {
             DBConnect objDB = new DBConnect();
@@ -228,7 +233,7 @@ namespace Utilities
             return false;
         }
 
-        public bool AddToCart(int id, string title, string desc, double price, int qty, string imgUrl)
+        public bool AddToCart(CartItem cart)
         {
             DBConnect objDB = new DBConnect();
             SqlCommand objCommand = new SqlCommand();
@@ -236,12 +241,12 @@ namespace Utilities
 
             objCommand.CommandText = "TP_AddToCart";
 
-            objCommand.Parameters.AddWithValue("@CustomerID", id);
-            objCommand.Parameters.AddWithValue("@Title", title);
-            objCommand.Parameters.AddWithValue("@Description", desc);
-            objCommand.Parameters.AddWithValue("@Price", price);
-            objCommand.Parameters.AddWithValue("@Quantity", qty);
-            objCommand.Parameters.AddWithValue("@ImageURL", imgUrl);
+            objCommand.Parameters.AddWithValue("@CustomerID", cart.User);
+            objCommand.Parameters.AddWithValue("@Title", cart.Title);
+            objCommand.Parameters.AddWithValue("@Description", cart.Description);
+            objCommand.Parameters.AddWithValue("@Price", cart.Price);
+            objCommand.Parameters.AddWithValue("@Quantity", cart.Quantity);
+            objCommand.Parameters.AddWithValue("@ImageURL", cart.Image);
 
             int result = objDB.DoUpdateUsingCmdObj(objCommand);
 

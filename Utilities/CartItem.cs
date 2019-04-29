@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Utilities
 {
     [Serializable]
-    public class Cart
+    public class CartItem
     {
         public int User { get; set; }
         public String Title { get; set; }
@@ -16,7 +16,7 @@ namespace Utilities
         public int Quantity { get; set; }
         public String Image { get; set; }
 
-        public Cart()
+        public CartItem()
         {
 
         }

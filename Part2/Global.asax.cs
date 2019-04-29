@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -11,7 +13,6 @@ namespace Part2
 {
     public class Global : System.Web.HttpApplication
     {
-        SPCaller spc = new SPCaller();
         protected void Application_Start(object sender, EventArgs e)
         {
 
@@ -41,14 +42,26 @@ namespace Part2
         {
             if (Session["ShoppingCart"] != null)
             {
-                List<Cart> cart = (List<Cart>)Session["ShoppingCart"];
-                foreach(Cart c in cart)
+                List<CartItem> cart = (List<CartItem>)Session["ShoppingCart"];
+
+                foreach(CartItem ci in cart)
                 {
-                    spc.AddToCart(c.User, c.Title, c.price)
+                    DBConnect objDB = new DBConnect();
+                    SqlCommand objCommand = new SqlCommand();
+                    objCommand.CommandType = CommandType.StoredProcedure;
+
+                    objCommand.CommandText = "TP_AddToCart";
+
+                    objCommand.Parameters.AddWithValue("@CustomerID", ci.User);
+                    objCommand.Parameters.AddWithValue("@Title", ci.Title);
+                    objCommand.Parameters.AddWithValue("@Description", ci.Description);
+                    objCommand.Parameters.AddWithValue("@Price", ci.Price);
+                    objCommand.Parameters.AddWithValue("@Quantity", ci.Quantity);
+                    objCommand.Parameters.AddWithValue("@ImageURL", ci.Image);
+
+                    objDB.DoUpdateUsingCmdObj(objCommand);
                 }
             }
-
-            
         }
 
         protected void Application_End(object sender, EventArgs e)
