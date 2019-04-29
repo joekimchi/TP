@@ -35,7 +35,7 @@ namespace Utilities
             return objDB.GetDataSetUsingCmdObj(objCommand);
         }
 
-        public void AddToCart(global::Part2.Cart c)
+        public void AddToCart(CartItem c)
         {
             throw new NotImplementedException();
         }
@@ -225,28 +225,6 @@ namespace Utilities
             objCommand.Parameters.AddWithValue("@City", city);
             objCommand.Parameters.AddWithValue("@State", state);
             objCommand.Parameters.AddWithValue("@ZipCode", zipCode);
-
-            int result = objDB.DoUpdateUsingCmdObj(objCommand);
-
-            if (result != -1)
-                return true;
-            return false;
-        }
-
-        public bool AddToCart(CartItem cart)
-        {
-            DBConnect objDB = new DBConnect();
-            SqlCommand objCommand = new SqlCommand();
-            objCommand.CommandType = CommandType.StoredProcedure;
-
-            objCommand.CommandText = "TP_AddToCart";
-
-            objCommand.Parameters.AddWithValue("@CustomerID", cart.User);
-            objCommand.Parameters.AddWithValue("@Title", cart.Title);
-            objCommand.Parameters.AddWithValue("@Description", cart.Description);
-            objCommand.Parameters.AddWithValue("@Price", cart.Price);
-            objCommand.Parameters.AddWithValue("@Quantity", cart.Quantity);
-            objCommand.Parameters.AddWithValue("@ImageURL", cart.Image);
 
             int result = objDB.DoUpdateUsingCmdObj(objCommand);
 
