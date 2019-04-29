@@ -8,10 +8,10 @@
             <asp:GridView ID="gvCart" runat="server" Width="100%" ShowFooter="True" EmptyDataText="Your Cart is Empty" AutoGenerateColumns="False" OnRowCancelingEdit="gvCart_RowCancelingEdit" OnRowEditing="gvCart_RowEditing" OnRowUpdating="gvCart_RowUpdating" OnRowDeleting="gvCart_RowDeleting">
                 <Columns>
                     <asp:TemplateField HeaderText="">
-                        <ItemTemplate>
-                            <img src='<%# Eval("ImageURL") %>' height="150" width="150" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    <ItemTemplate>
+                        <img src='<%# Eval("ImageUrl") %>' height="150" width="150" />
+                    </ItemTemplate>
+                </asp:TemplateField>
                     <asp:BoundField DataField="Title" HeaderText="Title" ReadOnly="True">
                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:BoundField>
@@ -39,6 +39,7 @@
         </div>
         <br />
         <asp:Button ID="btnCheckout" runat="server" Text="Checkout" CssClass="button" OnClick="btnCheckout_Click" />
+        <asp:Button ID="btnEmptyCart" runat="server" CssClass="button" OnClick="btnEmptyCart_Click" Text="Empty Cart" />
         <br />
         <br />
     </div>

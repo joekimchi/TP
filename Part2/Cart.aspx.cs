@@ -41,6 +41,12 @@ namespace Part2
             gvCart.DataBind();
         }
 
+        public void emptyCart()
+        {
+            gvCart.DataSource = null;
+            gvCart.DataBind();
+        }
+
         //Total Price for Footer
         public double TotalPriceFooter()
         {
@@ -140,6 +146,11 @@ namespace Part2
                     lblMessage.Text = "Error: " + ex.Message;
                 }
             }
+        }
+
+        protected void btnEmptyCart_Click(object sender, EventArgs e)
+        {
+            emptyCart();
         }
     }
 }
