@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
@@ -20,7 +23,24 @@ namespace Part2
 
         protected void Session_Start(object sender, EventArgs e)
         {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            SPCaller spc = new SPCaller();
 
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetCart";
+
+            objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["LoginID"].ToString()));
+
+            if (objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows.Count > 0)
+            {
+                byte[] cartBytes = (byte[])objDB.GetField("Cart", 0);
+                BinaryFormatter deserializer = new BinaryFormatter();
+                MemoryStream memStream = new MemoryStream(cartBytes);
+
+                ArrayList cart = (ArrayList)deserializer.Deserialize(memStream);
+                Session["ShoppingCart"] = cart;
+            }
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -42,25 +62,23 @@ namespace Part2
         {
             if (Session["ShoppingCart"] != null)
             {
-                List<CartItem> cart = (List<CartItem>)Session["ShoppingCart"];
+                ArrayList cart = (ArrayList)Session["ShoppingCart"];
 
-                foreach(CartItem ci in cart)
-                {
-                    DBConnect objDB = new DBConnect();
-                    SqlCommand objCommand = new SqlCommand();
-                    objCommand.CommandType = CommandType.StoredProcedure;
+                BinaryFormatter serializer = new BinaryFormatter();
+                MemoryStream memStream = new MemoryStream();
+                serializer.Serialize(memStream, cart);
 
-                    objCommand.CommandText = "TP_AddToCart";
+                byte[] cartBytes = memStream.ToArray();
 
-                    objCommand.Parameters.AddWithValue("@CustomerID", ci.User);
-                    objCommand.Parameters.AddWithValue("@Title", ci.Title);
-                    objCommand.Parameters.AddWithValue("@Description", ci.Description);
-                    objCommand.Parameters.AddWithValue("@Price", ci.Price);
-                    objCommand.Parameters.AddWithValue("@Quantity", ci.Quantity);
-                    objCommand.Parameters.AddWithValue("@ImageURL", ci.Image);
+                SPCaller spc = new SPCaller();
+                DBConnect objDB = new DBConnect();
+                SqlCommand objCommand = new SqlCommand();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "TP_StoreCart";
 
-                    objDB.DoUpdateUsingCmdObj(objCommand);
-                }
+                objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["LoginID"].ToString()));
+                objCommand.Parameters.AddWithValue("@Cart", cartBytes);
+                objDB.DoUpdateUsingCmdObj(objCommand);
             }
         }
 

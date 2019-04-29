@@ -148,20 +148,7 @@ namespace Part2
 
         protected void btnEmptyCart_Click(object sender, EventArgs e)
         {
-            SPCaller spc = new SPCaller();
-            int id = spc.GetCustomerIDByEmail(Session["LoginID"].ToString());
-
-            DBConnect objDB = new DBConnect();
-            SqlCommand objCommand = new SqlCommand();
-            objCommand.CommandType = CommandType.StoredProcedure;
-
-            objCommand.CommandText = "TP_EmptyCart";
-
-            objCommand.Parameters.AddWithValue("@CustomerID", id);
-
-            objDB.DoUpdateUsingCmdObj(objCommand);
-
-            Response.Redirect("EmptyCart.aspx", false);
+            
         }
     }
 }

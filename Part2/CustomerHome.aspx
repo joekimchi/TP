@@ -21,12 +21,12 @@
                 </asp:TemplateField>
                 <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:Button ID="btnAddToWishList" runat="server" Text="Add To Wish List" CommandName="AddToWishList" CommandArgument="<%# Container.DataItemIndex %>" class="button1" />
+                            <asp:Button ID="btnAddToWishList" runat="server" Text="Add To Wish List" CommandName="AddToWishList" class="button1" />
                         </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CommandName="AddToCart" CommandArgument="<%# Container.DataItemIndex %>" class="button" />
+                            <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CommandName="AddToCart" class="button" />
                         </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
