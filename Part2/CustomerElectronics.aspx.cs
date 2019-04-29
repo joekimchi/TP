@@ -100,8 +100,7 @@ namespace Part2
             {
                 products.Add(p);
             }
-
-
+           
             gvProducts.DataSource = products;
             gvProducts.DataBind();
         }
@@ -114,7 +113,7 @@ namespace Part2
                 int index = Convert.ToInt32(e.CommandArgument);
                 Product p = new Product();
 
-                Image image = gvProducts.Rows[index].FindControl("ImageURL") as Image;
+                Image image = (Image)gvProducts.Rows[index].FindControl("ImageURL");
                 string imgPath = image.ImageUrl;
 
                 p.ImageUrl = imgPath;
@@ -143,7 +142,7 @@ namespace Part2
                 int index = Convert.ToInt32(e.CommandArgument);
                 Product p = new Product();
 
-                Image image = gvProducts.Rows[index].FindControl("ImageURL") as Image;
+                Image image = (Image)gvProducts.Rows[index].FindControl("ImageURL");
                 string imgPath = image.ImageUrl;
 
                 p.ImageUrl = imgPath;

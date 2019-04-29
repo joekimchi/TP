@@ -5,9 +5,9 @@
         <asp:Label ID="lblProducts" runat="server" Text="Product Catalog" Font-Bold="True" Font-Size="X-Large"></asp:Label>
         <asp:GridView ID="gvProducts" runat="server" AutoGenerateColumns="False" Width="100%" OnRowCommand="gvProducts_RowCommand">
             <Columns>
-                <asp:TemplateField HeaderText="">
+                <asp:TemplateField>
                     <ItemTemplate>
-                        <img src='<%# Eval("ImageURL") %>' height="150" width="150" />
+                        <img ID="ImageURL" runat="server" src='<%# Eval("ImageURL") %>' height="150" width="150" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="Title" HeaderText="Title" />
@@ -21,12 +21,12 @@
                 </asp:TemplateField>
                 <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:Button ID="btnAddToWishList" runat="server" Text="Add To Wish List" CommandName="AddToWishList" class="button1" />
+                            <asp:Button ID="btnAddToWishList" runat="server" Text="Add To Wish List" CommandName="AddToWishList" CommandArgument="<%# Container.DataItemIndex %>" class="button1" />
                         </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CommandName="AddToCart" class="button" />
+                            <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CommandName="AddToCart" CommandArgument="<%# Container.DataItemIndex %>" class="button" />
                         </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
