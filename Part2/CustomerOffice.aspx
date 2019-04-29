@@ -19,8 +19,15 @@
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                 </asp:TemplateField>
-                <asp:CommandField ButtonType="Button" ShowSelectButton="true" SelectText="Add to cart">
+                <asp:CommandField ButtonType="Button" ShowSelectButton="true" SelectText="Add to Wish List">
                     <ControlStyle CssClass="button1" />
+                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                </asp:CommandField>
+
+
+
+                <asp:CommandField ButtonType="Button" ShowSelectButton="true" SelectText="Add to Cart">
+                    <ControlStyle CssClass="button" />
                     <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                 </asp:CommandField>
             </Columns>

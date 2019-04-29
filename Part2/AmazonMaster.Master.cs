@@ -54,7 +54,7 @@ namespace Part2
             }
             else
             {
-                Response.Redirect("EmptyEmpty.aspx", false);
+                Response.Redirect("EmptyWishList.aspx", false);
             }
         }
 
