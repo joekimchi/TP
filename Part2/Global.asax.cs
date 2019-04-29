@@ -23,23 +23,26 @@ namespace Part2
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            DBConnect objDB = new DBConnect();
-            SqlCommand objCommand = new SqlCommand();
-            SPCaller spc = new SPCaller();
-
-            objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "TP_GetCart";
-
-            objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["LoginID"].ToString()));
-
-            if (objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows.Count > 0)
+            if (Session["LoginID"] != null)
             {
-                byte[] cartBytes = (byte[])objDB.GetField("Cart", 0);
-                BinaryFormatter deserializer = new BinaryFormatter();
-                MemoryStream memStream = new MemoryStream(cartBytes);
+                DBConnect objDB = new DBConnect();
+                SqlCommand objCommand = new SqlCommand();
+                SPCaller spc = new SPCaller();
 
-                ArrayList cart = (ArrayList)deserializer.Deserialize(memStream);
-                Session["ShoppingCart"] = cart;
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "TP_GetCart";
+
+                objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["LoginID"].ToString()));
+
+                if (objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows.Count > 0)
+                {
+                    byte[] cartBytes = (byte[])objDB.GetField("Cart", 0);
+                    BinaryFormatter deserializer = new BinaryFormatter();
+                    MemoryStream memStream = new MemoryStream(cartBytes);
+
+                    ArrayList cart = (ArrayList)deserializer.Deserialize(memStream);
+                    Session["ShoppingCart"] = cart;
+                }
             }
         }
 
