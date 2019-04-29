@@ -23,24 +23,27 @@ namespace Part2
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            //DBConnect objDB = new DBConnect();
-            //SqlCommand objCommand = new SqlCommand();
-            //SPCaller spc = new SPCaller();
+            if (Session["LoginID"] != null)
+            {
+                DBConnect objDB = new DBConnect();
+                SqlCommand objCommand = new SqlCommand();
+                SPCaller spc = new SPCaller();
 
-            //objCommand.CommandType = CommandType.StoredProcedure;
-            //objCommand.CommandText = "TP_GetCart";
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "TP_GetCart";
 
-            //objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["LoginID"].ToString()));
+                objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["LoginID"].ToString()));
 
-            //if (objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows.Count > 0)
-            //{
-            //    byte[] cartBytes = (byte[])objDB.GetField("Cart", 0);
-            //    BinaryFormatter deserializer = new BinaryFormatter();
-            //    MemoryStream memStream = new MemoryStream(cartBytes);
+                if (objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows.Count > 0)
+                {
+                    byte[] cartBytes = (byte[])objDB.GetField("Cart", 0);
+                    BinaryFormatter deserializer = new BinaryFormatter();
+                    MemoryStream memStream = new MemoryStream(cartBytes);
 
-            //    ArrayList cart = (ArrayList)deserializer.Deserialize(memStream);
-            //    Session["ShoppingCart"] = cart;
-            //}
+                    ArrayList cart = (ArrayList)deserializer.Deserialize(memStream);
+                    Session["ShoppingCart"] = cart;
+                }
+            }
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

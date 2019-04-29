@@ -181,10 +181,8 @@ namespace Part2
                     wishList.Add(p);
                 }
                 else
-                {
                     wishList.Add(p);
-                }
-                ViewState["WishList"] = wishList;
+
                 Session["WishList"] = wishList;
             }
 
@@ -207,10 +205,8 @@ namespace Part2
                     shoppingCart.Add(p);
                 }
                 else
-                {
                     shoppingCart.Add(p);
-                }
-                ViewState["ShoppingCart"] = shoppingCart;
+
                 Session["ShoppingCart"] = shoppingCart;
             }
         }
