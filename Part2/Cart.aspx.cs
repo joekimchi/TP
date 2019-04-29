@@ -110,7 +110,7 @@ namespace Part2
             //Adding each product into the database
             foreach (Product p in shoppingCart)
             {
-                p.CustomerID = Convert.ToInt32(Session["customerID"].ToString());
+                p.Email = Session["Username"].ToString();
                 String jsonCheckout = js.Serialize(p);
                 try
                 {
@@ -144,12 +144,6 @@ namespace Part2
                     lblMessage.Text = "Error: " + ex.Message;
                 }
             }
-        }
-
-        protected void btnEmptyCart_Click(object sender, EventArgs e)
-        {
-            gvCart.DataSource = null;
-            gvCart.DataBind();
         }
     }
 }

@@ -20,13 +20,13 @@
                     <asp:BoundField DataField="Price" HeaderText="Price" ReadOnly="True" DataFormatString="${0:###,###,###.00}">
                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:BoundField>
-                    <asp:CommandField ButtonType="Button" ShowEditButton="True" EditText="Update">
-                        <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                        <ControlStyle CssClass="button1" />
-                    </asp:CommandField>
                     <asp:CommandField ButtonType="Button" EditText="" ShowDeleteButton="True" DeleteText="Remove">
                         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                         <ControlStyle CssClass="button1" />
+                    </asp:CommandField>
+                    <asp:CommandField ButtonType="Button" ShowEditButton="True" EditText="Update">
+                        <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                        <ControlStyle CssClass="button" />
                     </asp:CommandField>
                 </Columns>
                 <HeaderStyle HorizontalAlign="Center" />
@@ -34,7 +34,6 @@
         </div>
         <br />
         <asp:Button ID="btnCheckout" runat="server" Text="Checkout" CssClass="button" OnClick="btnCheckout_Click" />
-        <asp:Button ID="btnEmptyCart" runat="server" CssClass="button1" OnClick="btnEmptyCart_Click" Text="Empty Cart" />
         <br />
         <br />
     </div>

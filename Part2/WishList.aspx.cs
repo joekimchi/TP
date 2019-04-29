@@ -73,8 +73,8 @@ namespace Part2
             Product p = new Product();
             p.Title = gvCart.SelectedRow.Cells[0].Text;
             p.Description = gvCart.SelectedRow.Cells[1].Text;
-            p.Price = Double.Parse(gvCart.SelectedRow.Cells[2].Text, System.Globalization.NumberStyles.Currency);
-            p.Quantity = Convert.ToInt32(gvCart.SelectedRow.Cells[3].Text);
+            p.Quantity = Convert.ToInt32(gvCart.SelectedRow.Cells[2].Text);
+            p.Price = Double.Parse(gvCart.SelectedRow.Cells[3].Text, System.Globalization.NumberStyles.Currency);
 
             if (Session["ShoppingCart"] != null)
             {
