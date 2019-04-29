@@ -18,27 +18,6 @@ namespace Part2
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            if (Session["Username"] != null)
-            {
-                DBConnect objDB = new DBConnect();
-                SqlCommand objCommand = new SqlCommand();
-                SPCaller spc = new SPCaller();
-
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_GetCart";
-
-                objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["Username"].ToString()));
-
-                if (objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows.Count > 0)
-                {
-                    byte[] cartBytes = (byte[])objDB.GetField("Cart", 0);
-                    BinaryFormatter deserializer = new BinaryFormatter();
-                    MemoryStream memStream = new MemoryStream(cartBytes);
-
-                    ArrayList cart = (ArrayList)deserializer.Deserialize(memStream);
-                    Session["ShoppingCart"] = cart;
-                }
-            }
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -58,26 +37,7 @@ namespace Part2
 
         protected void Session_End(object sender, EventArgs e)
         {
-            if (Session["ShoppingCart"] != null)
-            {
-                ArrayList cart = (ArrayList)Session["ShoppingCart"];
 
-                BinaryFormatter serializer = new BinaryFormatter();
-                MemoryStream memStream = new MemoryStream();
-                serializer.Serialize(memStream, cart);
-
-                byte[] cartBytes = memStream.ToArray();
-
-                SPCaller spc = new SPCaller();
-                DBConnect objDB = new DBConnect();
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "TP_StoreCart";
-
-                objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["Username"].ToString()));
-                objCommand.Parameters.AddWithValue("@Cart", cartBytes);
-                objDB.DoUpdateUsingCmdObj(objCommand);
-            }
         }
 
         protected void Application_End(object sender, EventArgs e)

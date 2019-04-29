@@ -7,6 +7,7 @@ using System.Net;
 using Utilities;
 using System.Data.SqlClient;
 using System.Data;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Part2
 {
@@ -35,13 +36,8 @@ namespace Part2
             gvCart.Columns[0].FooterText = "Total";
             gvCart.Columns[3].FooterText = totalcost.ToString("C2");
             shoppingCart = (ArrayList)Session["ShoppingCart"];
-            gvCart.DataSource = shoppingCart;
-            gvCart.DataBind();
-        }
 
-        public void emptyCart()
-        {
-            gvCart.DataSource = null;
+            gvCart.DataSource = shoppingCart;
             gvCart.DataBind();
         }
 

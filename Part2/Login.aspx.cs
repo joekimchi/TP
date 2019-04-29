@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
 using Utilities;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System.Collections;
 
 namespace Part2
 {
@@ -74,6 +71,28 @@ namespace Part2
                     Session["AccountType"] = 0;
                     Session["Username"] = username;
                     Session["Password"] = password;
+
+                    //check if customer already has cart in db
+                    SPCaller spc = new SPCaller();
+                    DBConnect objDB = new DBConnect();
+                    SqlCommand objCommand = new SqlCommand();
+                    objCommand.CommandType = CommandType.StoredProcedure;
+                    objCommand.CommandText = "TP_GetCart";
+
+                    int custID = spc.GetCustomerIDByEmail(Session["Username"].ToString());
+                    objCommand.Parameters.AddWithValue("@CustomerID", custID);
+
+                    DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+                    if (myDS != null)
+                    {
+                        byte[] cartBytes = (byte[])myDS.Tables[0].Rows[0][0];
+                        BinaryFormatter deserializer = new BinaryFormatter();
+                        MemoryStream ms = new MemoryStream(cartBytes);
+
+                        ArrayList shoppingCart = (ArrayList)deserializer.Deserialize(ms);
+                        Session["ShoppingCart"] = shoppingCart;
+                    }
+
                     Response.Redirect("CustomerHome.aspx");
                 }
             }
