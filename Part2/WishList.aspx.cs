@@ -71,22 +71,21 @@ namespace Part2
             int rowIndex = gvCart.SelectedIndex;
 
             Product p = new Product();
-            p.ImageUrl = gvCart.SelectedRow.Cells[0].Text;
-            p.Title = gvCart.SelectedRow.Cells[1].Text;
-            p.Description = gvCart.SelectedRow.Cells[2].Text;
-            p.Price = Double.Parse(gvCart.SelectedRow.Cells[3].Text, System.Globalization.NumberStyles.Currency);
-            p.Quantity = Convert.ToInt32(gvCart.SelectedRow.Cells[4].Text);
+            p.Title = gvCart.SelectedRow.Cells[0].Text;
+            p.Description = gvCart.SelectedRow.Cells[1].Text;
+            p.Price = Double.Parse(gvCart.SelectedRow.Cells[2].Text, System.Globalization.NumberStyles.Currency);
+            p.Quantity = Convert.ToInt32(gvCart.SelectedRow.Cells[3].Text);
 
-            if (ViewState["ShoppingCart"] != null)
+            if (Session["ShoppingCart"] != null)
             {
-                shoppingCart = (ArrayList)ViewState["ShoppingCart"];
+                shoppingCart = (ArrayList)Session["ShoppingCart"];
                 shoppingCart.Add(p);
             }
             else
             {
                 shoppingCart.Add(p);
             }
-            ViewState["ShoppingCart"] = shoppingCart;
+            System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "alert('Product added to cart');", true);
             Session["ShoppingCart"] = shoppingCart;
         }
     }

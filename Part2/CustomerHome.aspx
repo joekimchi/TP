@@ -7,7 +7,7 @@
             <Columns>
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <img ID="ImageURL" runat="server" src='<%# Eval("ImageURL") %>' height="150" width="150" />
+                        <img ID="image" runat="server" src='<%# Eval("ImageURL") %>' height="150" width="150" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="Title" HeaderText="Title" />

@@ -26,7 +26,7 @@
             </div>
             <br />
             <nav>
-                <asp:LinkButton ID="lnkbtnHome" runat="server" CssClass="Hyperlink" Font-Bold="True" Font-Size="X-Large" Font-Underline="False" ForeColor="WhiteSmoke" OnClick="lnkbtnHome_Click">Home</asp:LinkButton>
+                <asp:LinkButton ID="lnkbtnHome" runat="server" CssClass="Hyperlink" Font-Bold="True" Font-Size="X-Large" Font-Underline="False" ForeColor="WhiteSmoke" OnClick="lnkbtnHome_Click"><img src="img/home.png" height="25" width="25"/>Home</asp:LinkButton>
                 &nbsp;|
                 <asp:LinkButton ID="lnkbtn1" runat="server" CssClass="HeaderHyperlink" Font-Bold="True" Font-Size="X-Large" Font-Underline="False" ForeColor="WhiteSmoke" OnClick="lnkbtn1_Click">Management Report</asp:LinkButton>
             </nav>
