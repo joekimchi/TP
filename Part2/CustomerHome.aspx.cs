@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Collections;
 using System.Web.Script.Serialization;
 using System.IO;
 using System.Net;
 using Utilities;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace Part2
@@ -168,7 +164,7 @@ namespace Part2
                 int index = Convert.ToInt32(e.CommandArgument);
                 Product p = new Product();
 
-                Image image = (Image)gvProducts.Rows[index].FindControl("ImageURL");
+                Image image = (Image)gvProducts.Rows[index].Cells[0].Controls[0];
                 string imgPath = image.ImageUrl;
 
                 p.ImageUrl = imgPath;
@@ -197,17 +193,16 @@ namespace Part2
                 int index = Convert.ToInt32(e.CommandArgument);
                 Product p = new Product();
 
-                Image image = (Image)gvProducts.Rows[index].FindControl("ImageURL");
-                string imgPath = image.ImageUrl;
+                //string imgPath = (gvProducts.Rows[index].Cells[0].FindControl("ImageURL") as Image).ImageUrl;
 
-                p.ImageUrl = imgPath;
+                //p.ImageUrl = imgPath;
                 p.Title = gvProducts.Rows[index].Cells[1].Text;
                 p.Description = gvProducts.Rows[index].Cells[2].Text;
                 p.Price = Double.Parse(gvProducts.Rows[index].Cells[3].Text, System.Globalization.NumberStyles.Currency);
                 TextBox Quantity = (TextBox)gvProducts.Rows[index].FindControl("txtQuantity");
                 p.Quantity = Convert.ToInt32(Quantity.Text);
 
-                if (ViewState["ShoppingCart"] != null)
+                /*if (ViewState["ShoppingCart"] != null)
                 {
                     shoppingCart = (ArrayList)ViewState["ShoppingCart"];
                     shoppingCart.Add(p);
@@ -216,7 +211,9 @@ namespace Part2
                 {
                     shoppingCart.Add(p);
                 }
-                ViewState["ShoppingCart"] = shoppingCart;
+                */
+                //ViewState["ShoppingCart"] = shoppingCart;
+                shoppingCart.Add(p);
                 Session["ShoppingCart"] = shoppingCart;
             }
         }

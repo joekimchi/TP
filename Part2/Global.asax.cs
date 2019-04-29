@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
 
 using Utilities;
 
@@ -23,7 +18,7 @@ namespace Part2
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            if (Session["LoginID"] != null)
+            if (Session["Username"] != null)
             {
                 DBConnect objDB = new DBConnect();
                 SqlCommand objCommand = new SqlCommand();
@@ -32,7 +27,7 @@ namespace Part2
                 objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "TP_GetCart";
 
-                objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["LoginID"].ToString()));
+                objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["Username"].ToString()));
 
                 if (objDB.GetDataSetUsingCmdObj(objCommand).Tables[0].Rows.Count > 0)
                 {
@@ -79,7 +74,7 @@ namespace Part2
                 objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "TP_StoreCart";
 
-                objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["LoginID"].ToString()));
+                objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["Username"].ToString()));
                 objCommand.Parameters.AddWithValue("@Cart", cartBytes);
                 objDB.DoUpdateUsingCmdObj(objCommand);
             }

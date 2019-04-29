@@ -7,6 +7,7 @@ using System.Net;
 using Utilities;
 using System.Data.SqlClient;
 using System.Data;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Part2
 {
@@ -22,11 +23,8 @@ namespace Part2
                 Response.Redirect("Login.aspx");
                 return;
             }
-
-            else if (!IsPostBack)
-            {
+            if (!IsPostBack)
                 displayCart(TotalPriceFooter());
-            }
         }
 
         //Show Shopping Cart by Session
@@ -34,7 +32,28 @@ namespace Part2
         {
             gvCart.Columns[0].FooterText = "Total";
             gvCart.Columns[3].FooterText = totalcost.ToString("C2");
-            shoppingCart = (ArrayList)Session["ShoppingCart"];
+
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            SPCaller spc = new SPCaller();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetCart";
+
+            objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["Username"].ToString()));
+
+            DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+            if (myDS.Tables[0].Rows[0][0] != DBNull.Value)
+            {
+                byte[] cartBytes = (byte[])objDB.GetField("Cart", 0);
+                BinaryFormatter deserializer = new BinaryFormatter();
+                MemoryStream memStream = new MemoryStream(cartBytes);
+
+                shoppingCart = (ArrayList)deserializer.Deserialize(memStream);
+            }
+            else
+                shoppingCart = (ArrayList)Session["ShoppingCart"];
+
             gvCart.DataSource = shoppingCart;
             gvCart.DataBind();
         }
@@ -148,7 +167,7 @@ namespace Part2
 
         protected void btnEmptyCart_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
