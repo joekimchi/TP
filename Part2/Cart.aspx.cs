@@ -128,7 +128,7 @@ namespace Part2
                     response.Close();
                     if (data == "true")
                     {
-                        lblMessage.Text = "Order successfully placed.";
+                        Response.Redirect("Confirmation.aspx", false);
                     }
                     else
                     {

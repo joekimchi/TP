@@ -82,6 +82,7 @@
     <Content Include="img\home.png" />
     <Content Include="img\office.png" />
     <Content Include="img\videogame.png" />
+    <Content Include="Confirmation.aspx" />
     <Content Include="WishList.aspx" />
     <Content Include="CustomerVideoGames.aspx" />
     <Content Include="CustomerOffice.aspx" />
@@ -179,6 +180,13 @@
     </Compile>
     <Compile Include="EmptyWishList.aspx.designer.cs">
       <DependentUpon>EmptyWishList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Confirmation.aspx.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirmation.aspx.designer.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="WishList.aspx.cs">
       <DependentUpon>WishList.aspx</DependentUpon>
