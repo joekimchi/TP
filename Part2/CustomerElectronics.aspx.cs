@@ -114,7 +114,12 @@ namespace Part2
                 int rowIndex = gvProducts.SelectedIndex;
 
                 Product p = new Product();
-                p.ImageUrl = gvProducts.SelectedRow.Cells[0].Text;
+
+                Image img = (Image)gvProducts.SelectedRow.Cells[0].FindControl("ImageURL");
+                string url = img.ImageUrl;
+
+                p.ImageUrl = url;
+
                 p.Title = gvProducts.SelectedRow.Cells[1].Text;
                 p.Description = gvProducts.SelectedRow.Cells[2].Text;
                 p.Price = Double.Parse(gvProducts.SelectedRow.Cells[3].Text, System.Globalization.NumberStyles.Currency);

@@ -86,10 +86,10 @@ namespace Part2
             gvProducts.DataBind();
         }
 
-        protected void gvProducts_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gvProducts_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             //Add to Wish List button
-            if (gvProducts.SelectedIndex == 5)
+            if (e.CommandName == "AddToWishList")
             {
                 int rowIndex = gvProducts.SelectedIndex;
 
@@ -115,7 +115,7 @@ namespace Part2
             }
 
             //Add to Cart button
-            if (gvProducts.SelectedIndex == 6)
+            if (e.CommandName == "AddToCart")
             {
                 int rowIndex = gvProducts.SelectedIndex;
 
