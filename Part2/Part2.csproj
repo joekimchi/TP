@@ -375,14 +375,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\" />
+    <Folder Include="obj\Release\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{5bdda229-3479-47f7-b7fc-501a4fbd8511}</Project>
       <Name>Utilities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\" />
-    <Folder Include="obj\Release\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Collections;
 using System.Web.Script.Serialization;
@@ -16,7 +12,7 @@ namespace Part2
 {
     public partial class Cart : System.Web.UI.Page
     {
-        string url = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug46231/TermProjectWS/api/service/Merchants/Record/Purchase/";
+        string url = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug46231/TermProjectWS/api/service/Merchants/Rec/";
         ArrayList shoppingCart = new ArrayList();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -155,8 +151,6 @@ namespace Part2
             SPCaller spc = new SPCaller();
             int id = spc.GetCustomerIDByEmail(Session["LoginID"].ToString());
 
-            emptyCart();
-
             DBConnect objDB = new DBConnect();
             SqlCommand objCommand = new SqlCommand();
             objCommand.CommandType = CommandType.StoredProcedure;
@@ -165,7 +159,9 @@ namespace Part2
 
             objCommand.Parameters.AddWithValue("@CustomerID", id);
 
-            int result = objDB.DoUpdateUsingCmdObj(objCommand);
+            objDB.DoUpdateUsingCmdObj(objCommand);
+
+            Response.Redirect("EmptyCart.aspx", false);
         }
     }
 }
