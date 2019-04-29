@@ -11,7 +11,6 @@ namespace Utilities
     {
         private int productID;
         private String title;
-        private String description;
         private double price;
         private int quantity;
         private String imageUrl;
@@ -32,12 +31,6 @@ namespace Utilities
         {
             get { return title; }
             set { title = value; }
-        }
-
-        public String Description
-        {
-            get { return description; }
-            set { description = value; }
         }
 
         public double Price
