@@ -35,7 +35,7 @@ namespace Part2
         public void displayCart(double totalcost)
         {
             gvCart.Columns[0].FooterText = "Total";
-            gvCart.Columns[2].FooterText = totalcost.ToString("C2");
+            gvCart.Columns[3].FooterText = totalcost.ToString("C2");
             shoppingCart = (ArrayList)Session["ShoppingCart"];
             gvCart.DataSource = shoppingCart;
             gvCart.DataBind();

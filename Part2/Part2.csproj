@@ -77,6 +77,8 @@
     <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
     <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="EmptyWishList.aspx" />
+    <Content Include="WishList.aspx" />
     <Content Include="CustomerVideoGames.aspx" />
     <Content Include="CustomerOffice.aspx" />
     <Content Include="CustomerElectronics.aspx" />
@@ -166,6 +168,20 @@
     </Compile>
     <Compile Include="AmazonMerchantMaster.Master.designer.cs">
       <DependentUpon>AmazonMerchantMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="EmptyWishList.aspx.cs">
+      <DependentUpon>EmptyWishList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmptyWishList.aspx.designer.cs">
+      <DependentUpon>EmptyWishList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WishList.aspx.cs">
+      <DependentUpon>WishList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WishList.aspx.designer.cs">
+      <DependentUpon>WishList.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerVideoGames.aspx.cs">
       <DependentUpon>CustomerVideoGames.aspx</DependentUpon>

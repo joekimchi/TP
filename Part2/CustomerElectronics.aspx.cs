@@ -19,6 +19,7 @@ namespace Part2
         DBConnect objDB = new DBConnect();
         SqlCommand objcomm = new SqlCommand();
         ArrayList shoppingCart = new ArrayList();
+        ArrayList wishList = new ArrayList();
         SPCaller spc = new SPCaller();
 
         string url = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug46231/TermProjectWS/api/service/Merchants/";
@@ -105,29 +106,59 @@ namespace Part2
             gvProducts.DataBind();
         }
 
-        protected void gvProducts_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gvProducts_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            int rowIndex = gvProducts.SelectedIndex;
-
-            Product p = new Product();
-            p.ImageUrl = gvProducts.SelectedRow.Cells[0].Text;
-            p.Title = gvProducts.SelectedRow.Cells[1].Text;
-            p.Description = gvProducts.SelectedRow.Cells[2].Text;
-            p.Price = Double.Parse(gvProducts.SelectedRow.Cells[3].Text, System.Globalization.NumberStyles.Currency);
-            TextBox Quantity = (TextBox)gvProducts.SelectedRow.FindControl("txtQuantity");
-            p.Quantity = Convert.ToInt32(Quantity.Text);
-
-            if (ViewState["ShoppingCart"] != null)
+            //Add to Wish List button
+            if (e.CommandName == "AddToWishList")
             {
-                shoppingCart = (ArrayList)ViewState["ShoppingCart"];
-                shoppingCart.Add(p);
+                int rowIndex = gvProducts.SelectedIndex;
+
+                Product p = new Product();
+                p.ImageUrl = gvProducts.SelectedRow.Cells[0].Text;
+                p.Title = gvProducts.SelectedRow.Cells[1].Text;
+                p.Description = gvProducts.SelectedRow.Cells[2].Text;
+                p.Price = Double.Parse(gvProducts.SelectedRow.Cells[3].Text, System.Globalization.NumberStyles.Currency);
+                TextBox Quantity = (TextBox)gvProducts.SelectedRow.FindControl("txtQuantity");
+                p.Quantity = Convert.ToInt32(Quantity.Text);
+
+                if (ViewState["WishList"] != null)
+                {
+                    wishList = (ArrayList)ViewState["WishList"];
+                    wishList.Add(p);
+                }
+                else
+                {
+                    wishList.Add(p);
+                }
+                ViewState["WishList"] = wishList;
+                Session["WishList"] = wishList;
             }
-            else
+
+            //Add to Cart button
+            if (e.CommandName == "AddToCart")
             {
-                shoppingCart.Add(p);
+                int rowIndex = gvProducts.SelectedIndex;
+
+                Product p = new Product();
+                p.ImageUrl = gvProducts.SelectedRow.Cells[0].Text;
+                p.Title = gvProducts.SelectedRow.Cells[1].Text;
+                p.Description = gvProducts.SelectedRow.Cells[2].Text;
+                p.Price = Double.Parse(gvProducts.SelectedRow.Cells[3].Text, System.Globalization.NumberStyles.Currency);
+                TextBox Quantity = (TextBox)gvProducts.SelectedRow.FindControl("txtQuantity");
+                p.Quantity = Convert.ToInt32(Quantity.Text);
+
+                if (ViewState["ShoppingCart"] != null)
+                {
+                    shoppingCart = (ArrayList)ViewState["ShoppingCart"];
+                    shoppingCart.Add(p);
+                }
+                else
+                {
+                    shoppingCart.Add(p);
+                }
+                ViewState["ShoppingCart"] = shoppingCart;
+                Session["ShoppingCart"] = shoppingCart;
             }
-            ViewState["ShoppingCart"] = shoppingCart;
-            Session["ShoppingCart"] = shoppingCart;
         }
     }
 }
