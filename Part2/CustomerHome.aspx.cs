@@ -168,7 +168,7 @@ namespace Part2
                 int index = Convert.ToInt32(e.CommandArgument);
                 Product p = new Product();
 
-                Image image = gvProducts.Rows[index].FindControl("ImageURL") as Image;
+                Image image = (Image)gvProducts.Rows[index].FindControl("ImageURL");
                 string imgPath = image.ImageUrl;
 
                 p.ImageUrl = imgPath;
@@ -197,7 +197,7 @@ namespace Part2
                 int index = Convert.ToInt32(e.CommandArgument);
                 Product p = new Product();
 
-                Image image = gvProducts.Rows[index].FindControl("ImageURL") as Image;
+                Image image = (Image)gvProducts.Rows[index].FindControl("ImageURL");
                 string imgPath = image.ImageUrl;
 
                 p.ImageUrl = imgPath;
@@ -220,5 +220,6 @@ namespace Part2
                 Session["ShoppingCart"] = shoppingCart;
             }
         }
+
     }
 }
