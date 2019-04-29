@@ -9,6 +9,8 @@ using System.Web.Script.Serialization;
 using System.IO;
 using System.Net;
 using Utilities;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Part2
 {
@@ -150,7 +152,20 @@ namespace Part2
 
         protected void btnEmptyCart_Click(object sender, EventArgs e)
         {
+            SPCaller spc = new SPCaller();
+            int id = spc.GetCustomerIDByEmail(Session["LoginID"].ToString());
+
             emptyCart();
+
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+
+            objCommand.CommandText = "TP_EmptyCart";
+
+            objCommand.Parameters.AddWithValue("@CustomerID", id);
+
+            int result = objDB.DoUpdateUsingCmdObj(objCommand);
         }
     }
 }
