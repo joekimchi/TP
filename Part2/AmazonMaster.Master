@@ -28,10 +28,10 @@
             </div>
             <br />
             <nav>
-                <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="Hyperlink">Home</asp:LinkButton>&nbsp;|
-                <asp:LinkButton ID="lnkbtn1" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink" OnClick="lnkbtn1_Click">Electronics</asp:LinkButton>&nbsp;|
-                <asp:LinkButton ID="lnkbtn2" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink" OnClick="lnkbtn2_Click">Office</asp:LinkButton>&nbsp;|
-                <asp:LinkButton ID="lnkbtn3" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink" OnClick="lnkbtn3_Click">Video Games</asp:LinkButton>
+                <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="Hyperlink"><img src="img/home.png" height="25" width="25"/>Home</asp:LinkButton>&nbsp;|
+                <asp:LinkButton ID="lnkbtn1" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink" OnClick="lnkbtn1_Click"><img src="img/electronics.png" height="25" width="25"/>Electronics</asp:LinkButton>&nbsp;|
+                <asp:LinkButton ID="lnkbtn2" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink" OnClick="lnkbtn2_Click"><img src="img/office.png" height="25" width="25"/>Office</asp:LinkButton>&nbsp;|
+                <asp:LinkButton ID="lnkbtn3" runat="server" Font-Underline="False" ForeColor="WhiteSmoke" Font-Bold="True" Font-Size="X-Large" CssClass="HeaderHyperlink" OnClick="lnkbtn3_Click"><img src="img/videogame.png" height="25" width="25"/>Video Games</asp:LinkButton>
             </nav>
         </div>
         <br />

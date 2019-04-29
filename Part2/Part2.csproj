@@ -78,6 +78,10 @@
     <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="EmptyWishList.aspx" />
+    <Content Include="img\electronics.png" />
+    <Content Include="img\home.png" />
+    <Content Include="img\office.png" />
+    <Content Include="img\videogame.png" />
     <Content Include="WishList.aspx" />
     <Content Include="CustomerVideoGames.aspx" />
     <Content Include="CustomerOffice.aspx" />

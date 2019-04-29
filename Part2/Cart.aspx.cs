@@ -7,7 +7,6 @@ using System.Net;
 using Utilities;
 using System.Data.SqlClient;
 using System.Data;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Part2
 {
@@ -23,8 +22,11 @@ namespace Part2
                 Response.Redirect("Login.aspx");
                 return;
             }
-            if (!IsPostBack)
+
+            else if (!IsPostBack)
+            {
                 displayCart(TotalPriceFooter());
+            }
         }
 
         //Show Shopping Cart by Session
@@ -32,28 +34,7 @@ namespace Part2
         {
             gvCart.Columns[0].FooterText = "Total";
             gvCart.Columns[3].FooterText = totalcost.ToString("C2");
-
-            DBConnect objDB = new DBConnect();
-            SqlCommand objCommand = new SqlCommand();
-            SPCaller spc = new SPCaller();
-
-            objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "TP_GetCart";
-
-            objCommand.Parameters.AddWithValue("@CustomerID", spc.GetCustomerIDByEmail(Session["Username"].ToString()));
-
-            DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
-            if (myDS.Tables[0].Rows[0][0] != DBNull.Value)
-            {
-                byte[] cartBytes = (byte[])objDB.GetField("Cart", 0);
-                BinaryFormatter deserializer = new BinaryFormatter();
-                MemoryStream memStream = new MemoryStream(cartBytes);
-
-                shoppingCart = (ArrayList)deserializer.Deserialize(memStream);
-            }
-            else
-                shoppingCart = (ArrayList)Session["ShoppingCart"];
-
+            shoppingCart = (ArrayList)Session["ShoppingCart"];
             gvCart.DataSource = shoppingCart;
             gvCart.DataBind();
         }
@@ -129,7 +110,7 @@ namespace Part2
             //Adding each product into the database
             foreach (Product p in shoppingCart)
             {
-                p.CustomerID = Convert.ToInt32(Session["customerID"].ToString());
+                p.Email = Session["Username"].ToString();
                 String jsonCheckout = js.Serialize(p);
                 try
                 {
@@ -163,11 +144,6 @@ namespace Part2
                     lblMessage.Text = "Error: " + ex.Message;
                 }
             }
-        }
-
-        protected void btnEmptyCart_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
