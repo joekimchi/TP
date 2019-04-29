@@ -115,10 +115,10 @@ namespace Part2
 
                 Product p = new Product();
 
-                Image img = (Image)gvProducts.SelectedRow.Cells[0].FindControl("ImageURL");
-                string url = img.ImageUrl;
+                Image image = (Image)gvProducts.SelectedRow.FindControl("ImageURL");
+                string imgPath = image.ImageUrl;
 
-                p.ImageUrl = url;
+                p.ImageUrl = imgPath;
 
                 p.Title = gvProducts.SelectedRow.Cells[1].Text;
                 p.Description = gvProducts.SelectedRow.Cells[2].Text;
@@ -145,7 +145,12 @@ namespace Part2
                 int rowIndex = gvProducts.SelectedIndex;
 
                 Product p = new Product();
-                p.ImageUrl = gvProducts.SelectedRow.Cells[0].Text;
+
+                Image image = (Image)gvProducts.SelectedRow.FindControl("ImageURL");
+                string imgPath = image.ImageUrl;
+
+                p.ImageUrl = imgPath;
+
                 p.Title = gvProducts.SelectedRow.Cells[1].Text;
                 p.Description = gvProducts.SelectedRow.Cells[2].Text;
                 p.Price = Double.Parse(gvProducts.SelectedRow.Cells[3].Text, System.Globalization.NumberStyles.Currency);
