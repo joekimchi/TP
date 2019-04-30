@@ -102,31 +102,21 @@ namespace Part2
         {
             shoppingCart = (ArrayList)Session["ShoppingCart"];
             JavaScriptSerializer js = new JavaScriptSerializer();
+            APICalls api = new APICalls();
+            SPCaller spc = new SPCaller();
+
+            Customer c = new Customer();
+            c.Email = Session["Username"].ToString();
+            c.CustomerID = spc.GetCustomerIDByEmail(c.Email);
 
             //Adding each product into the database
             foreach (Product p in shoppingCart)
             {
-                p.Email = Session["Username"].ToString();
-                String jsonCheckout = js.Serialize(p);
+                //String jsonCheckout = js.Serialize(p);
                 try
                 {
-                    WebRequest request = WebRequest.Create(url);
-                    request.Method = "POST";
-                    request.ContentLength = jsonCheckout.Length;
-                    request.ContentType = "application/json";
-
-                    StreamWriter writer = new StreamWriter(request.GetRequestStream());
-                    writer.Write(jsonCheckout);
-                    writer.Flush();
-                    writer.Close();
-
-                    WebResponse response = request.GetResponse();
-                    Stream theDataStream = response.GetResponseStream();
-                    StreamReader reader = new StreamReader(theDataStream);
-                    String data = reader.ReadToEnd();
-                    reader.Close();
-                    response.Close();
-                    if (data == "true")
+                    bool data = api.RecordPurchase(url, p.ID.ToString(), p.Quantity, "1", "0", DateTime.Now.ToString(), DateTime.Now.TimeOfDay.ToString(), c);
+                    if (data == true)
                     {
                         Response.Redirect("Confirmation.aspx", false);
                     }

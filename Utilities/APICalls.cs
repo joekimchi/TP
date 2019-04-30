@@ -62,13 +62,13 @@ namespace Utilities
             return data;
         }
 
-        public bool RecordPurchase(string url, String ProductID, int Quantity, String SellerSiteID, String APIKey,
+        public bool RecordPurchase(string url, String ProductID, int Quantity, String SellerSiteID, String APIKey, String Date, String Time,
                                    Customer CustInfo)
         {
             JavaScriptSerializer js = new JavaScriptSerializer();
             string jsonCust = js.Serialize(CustInfo);
 
-            WebRequest request = WebRequest.Create(url + "Rec/" + ProductID + "/" + Quantity + "/" + SellerSiteID + "/" + APIKey);
+            WebRequest request = WebRequest.Create(url + "Rec/" + ProductID + "/" + Quantity + "/" + SellerSiteID + "/" + APIKey + "/" + Date + "/" + Time);
             request.Method = "POST";
             request.ContentLength = jsonCust.Length;
             request.ContentType = "application/json";
