@@ -141,5 +141,28 @@ namespace Part2
                 }
             }
         }
+
+        protected void btnEmpty_Click(object sender, EventArgs e)
+        {
+            gvCart.DataSource = new DataTable();
+            gvCart.DataBind();
+
+            Session.Remove("ShoppingCart");
+            Response.Redirect("EmptyCart.aspx", false);
+
+            DBConnect objDB = new DBConnect();
+            SPCaller spc = new SPCaller();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_EmptyCart";
+
+            int custID = spc.GetCustomerIDByEmail(Session["Username"].ToString());
+
+            objCommand.Parameters.AddWithValue("@CustomerID", custID);
+            objCommand.Parameters.Add("@New", SqlDbType.VarBinary, -1);
+            objCommand.Parameters["@New"].Value = DBNull.Value;
+
+            objDB.DoUpdateUsingCmdObj(objCommand);
+        }
     }
 }

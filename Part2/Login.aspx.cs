@@ -83,7 +83,7 @@ namespace Part2
                     objCommand.Parameters.AddWithValue("@CustomerID", custID);
 
                     DataSet myDS = objDB.GetDataSetUsingCmdObj(objCommand);
-                    if (myDS != null)
+                    if (myDS.Tables[0].Rows[0][0] != System.DBNull.Value)
                     {
                         byte[] cartBytes = (byte[])myDS.Tables[0].Rows[0][0];
                         BinaryFormatter deserializer = new BinaryFormatter();
@@ -93,6 +93,21 @@ namespace Part2
                         Session["ShoppingCart"] = shoppingCart;
                     }
 
+                    objCommand = new SqlCommand();
+                    objCommand.CommandType = CommandType.StoredProcedure;
+                    objCommand.CommandText = "TP_GetWishList";
+                    objCommand.Parameters.AddWithValue("@CustomerID", custID);
+
+                    myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+                    if (myDS.Tables[0].Rows[0][0] != System.DBNull.Value)
+                    {
+                        byte[] wlBytes = (byte[])myDS.Tables[0].Rows[0][0];
+                        BinaryFormatter deserializer = new BinaryFormatter();
+                        MemoryStream ms = new MemoryStream(wlBytes);
+
+                        ArrayList wishList = (ArrayList)deserializer.Deserialize(ms);
+                        Session["WishList"] = wishList;
+                    }
                     Response.Redirect("CustomerHome.aspx");
                 }
             }

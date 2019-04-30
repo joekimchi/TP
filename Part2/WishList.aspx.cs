@@ -9,6 +9,8 @@ using System.Web.Script.Serialization;
 using System.IO;
 using System.Net;
 using Utilities;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Part2
 {
@@ -87,6 +89,30 @@ namespace Part2
             }
             System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "alert('Product added to cart');", true);
             Session["ShoppingCart"] = shoppingCart;
+        }
+
+        protected void btnEmpty_Click(object sender, EventArgs e)
+        {
+            gvCart.DataSource = new DataTable();
+            gvCart.DataBind();
+
+            Session.Remove("WishList");
+            Response.Redirect("EmptyWishList.aspx", false);
+
+            DBConnect objDB = new DBConnect();
+            SPCaller spc = new SPCaller();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_EmptyWishList";
+
+            int custID = spc.GetCustomerIDByEmail(Session["Username"].ToString());
+
+            objCommand.Parameters.AddWithValue("@CustomerID", custID);
+            objCommand.Parameters.Add("@New", SqlDbType.VarBinary, -1);
+            objCommand.Parameters["@New"].Value = DBNull.Value;
+
+            objDB.DoUpdateUsingCmdObj(objCommand);
+        
         }
     }
 }

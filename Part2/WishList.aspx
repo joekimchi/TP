@@ -32,6 +32,7 @@
                 <HeaderStyle HorizontalAlign="Center" />
             </asp:GridView>
         </div>
+        <asp:Button ID="btnEmpty" runat="server" CssClass="button" OnClick="btnEmpty_Click" Text="Empty Wish List" />
         <br />
     </div>
 </asp:Content>
