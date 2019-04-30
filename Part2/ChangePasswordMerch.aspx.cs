@@ -8,6 +8,7 @@ namespace Part2
         SPCaller spc = new SPCaller();
         string loginID;
         int accountType;
+        Validation val = new Validation();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,17 +27,24 @@ namespace Part2
             string newPW = txtNewPassword.Text;
             string newPW2 = txtConfirmPassword.Text;
 
-            if (newPW == newPW2)
+            if (!val.isBlank(newPW) && !val.isBlank(newPW2))
             {
-                bool result = spc.ChangePassword(accountType, loginID, oldPW, newPW);
+                if (newPW == newPW2)
+                {
+                    bool result = spc.ChangePassword(accountType, loginID, oldPW, newPW);
 
-                if (result)
-                    lblResult.Text = "Password successfully updated.";
+                    if (result)
+                        lblResult.Text = "Password successfully updated.";
+                    else
+                        lblResult.Text = "Oops. There was an error updating your password.";
+                }
                 else
-                    lblResult.Text = "Oops. There was an error updating your password.";
+                    lblNotMatched.Text = "Check that your new passwords match.";
             }
-            else
-                lblNotMatched.Text = "Check that your new passwords match.";
+            if (val.isBlank(newPW))
+                lblResult.Text += "<br>YDo not leave password blank.";
+            if (val.isBlank(newPW2))
+                lblResult.Text += "<br>YDo not leave password blank.";
         }
     }
 }

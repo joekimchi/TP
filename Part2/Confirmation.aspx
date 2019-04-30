@@ -5,8 +5,17 @@
         <br />
         Confirmation email sent to 
         <asp:Label ID="lblEmail" runat="server" Font-Bold="True" ForeColor="Blue" Text=""></asp:Label>.<br />
+        Address:
+        <asp:Label ID="lblAddress" runat="server"></asp:Label>
+        ,
+        <asp:Label ID="lblCity" runat="server"></asp:Label>
+        ,
+        <asp:Label ID="lblState" runat="server"></asp:Label>
+        ,
+        <asp:Label ID="lblZipcode" runat="server"></asp:Label>
         <br />
-        <h3>Your Order</h3>
+        <br />
+        <h3>Your Order Summary</h3>
         <asp:GridView ID="gvCart" runat="server" Width="100%" ShowFooter="True" AutoGenerateColumns="False">
                 <Columns>
                     <asp:BoundField DataField="Title" HeaderText="Title" ReadOnly="True">
@@ -25,5 +34,6 @@
                 </Columns>
                 <HeaderStyle HorizontalAlign="Center" />
             </asp:GridView>
+        <br />
     </div>
 </asp:Content>

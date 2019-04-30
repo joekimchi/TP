@@ -9,6 +9,7 @@ namespace Part2
         string loginID;
         int accountType;
         SPCaller spc = new SPCaller();
+        Validation val = new Validation();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,18 +45,33 @@ namespace Part2
 
         protected void btnSubmitChanges_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text;
-            string phone = txtPhoneNumber.Text;
-            string address = txtAddress.Text;
-            string city = txtCity.Text;
-            string state = ddlState.SelectedValue;
-            int zipCode = int.Parse(txtZipCode.Text);
+            if (!val.isBlank(txtName.Text) && val.isValidNumber(txtPhoneNumber.Text) && !val.isBlank(txtAddress.Text) &&
+                val.hasLettersOnly(txtCity.Text) && val.isValidNumber(txtZipCode.Text))
+            {
+                string name = txtName.Text;
+                string phone = txtPhoneNumber.Text;
+                string address = txtAddress.Text;
+                string city = txtCity.Text;
+                string state = ddlState.SelectedValue;
+                int zipCode = int.Parse(txtZipCode.Text);
 
-            bool result = spc.UpdateAccountInfo(accountType, loginID, name, phone, address, city, state, zipCode);
-            if (result)
-                lblResult.Text = "Account information successfully updated.";
-            else
-                lblResult.Text = "Something went wrong. Your account information was not updated.";
+                bool result = spc.UpdateAccountInfo(accountType, loginID, name, phone, address, city, state, zipCode);
+                if (result)
+                    lblResult.Text = "Account information successfully updated.";
+                else
+                    lblResult.Text = "Something went wrong. Your account information was not updated.";
+            }
+            lblResult.Text = "Invalid inputs: ";
+            if (val.isBlank(txtName.Text))
+                lblResult.Text += "<br>You entered an invalid name.";
+            if (!val.isValidNumber(txtPhoneNumber.Text))
+                lblResult.Text += "<br>You entered an invalid phone number.";
+            if (!val.isBlank(txtAddress.Text))
+                lblResult.Text += "<br>You entered an invalid address.";
+            if (!val.hasLettersOnly(txtCity.Text))
+                lblResult.Text += "<br>You entered an invalid city.";
+            if (!val.isValidNumber(txtZipCode.Text))
+                lblResult.Text += "<br>You entered an invalid zipcode. Numbers only.";
         }
 
         protected void btnChangePassword_Click(object sender, EventArgs e)
